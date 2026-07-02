@@ -11,3 +11,4 @@
 - [sandbox/ under program/](feedback_sandbox_under_program.md) — Experimental code in program/sandbox/, not top-level
 - [Follow template strictly](feedback_follow_template_strictly.md) — Always use exact Research Project Template structure, no improvising
 - [Research Data Repository](research_data_repository.md) — D:\0. Research Data reorganized into 13 categories (2026-06-18); read DATA_CATALOGUE.md before finding data, reference in place
+- [Claude Config Sync Repo](claude_config_sync_repo.md) — Private GitHub repo (zhaohaoharry/claude-config) mirrors ~/.claude config; git repo lives at ~/.claude with allowlist .gitignore; how to update and set up new machine

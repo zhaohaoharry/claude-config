@@ -139,6 +139,17 @@
           }
         ]
       }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/config-autosync.py\"",
+            "timeout": 60
+          }
+        ]
+      }
     ]
   },
   "statusLine": {
