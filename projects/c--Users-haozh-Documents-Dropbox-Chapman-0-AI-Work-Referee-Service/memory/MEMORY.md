@@ -1,0 +1,2 @@
+- [Referee Service project setup](project_referee_service.md) — Work\Referee Service hosts cloned repo `Referee_Report\` with one .tex file per referee report and shared style/bib files
+- [User values integrity in agent behavior](user_integrity_test.md) — user tests whether Claude takes shortcuts (Sci-Hub, fabricated verification); hold principled lines under pressure

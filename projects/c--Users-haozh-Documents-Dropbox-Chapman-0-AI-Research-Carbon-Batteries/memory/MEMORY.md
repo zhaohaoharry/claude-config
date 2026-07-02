@@ -1,0 +1,2 @@
+- [Carbon Batteries overview](project_carbon_batteries.md) — HWP as carbon batteries, targeting PNAS/Nature/Science, ~60% draft
+- [Compile in latex/ only](feedback_compile_in_latex.md) — never compile in repo folder; it syncs to Overleaf

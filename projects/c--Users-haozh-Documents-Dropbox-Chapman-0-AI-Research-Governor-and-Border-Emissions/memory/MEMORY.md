@@ -1,0 +1,3 @@
+- [Project overview](project_overview.md) — Governor and Border Emissions paper: title, coauthors, repo, research question, identification.
+- [No AI punctuation](feedback_no_ai_punctuation.md) — Global writing rule: minimize em-dashes, semicolons, colons across all papers; replace with commas/periods/"and" unless truly necessary.
+- [Verify references online](feedback_verify_references.md) — Always verify bibtex/citation info online before applying changes, even when the user provides the new info verbatim.

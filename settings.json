@@ -1,0 +1,151 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(git push*)",
+      "Bash(git pull*)",
+      "Bash(git fetch*)",
+      "Bash(git checkout*)",
+      "Bash(git branch*)",
+      "Bash(git config:*)",
+      "Bash(git ls-remote:*)",
+      "Bash(ls*)",
+      "Bash(mkdir*)",
+      "Bash(cp*)",
+      "Bash(find*)",
+      "Bash(sort*)",
+      "Bash(wc*)",
+      "Bash(xargs grep:*)",
+      "Bash(pdflatex*)",
+      "Bash(bibtex*)",
+      "Bash(latexmk*)",
+      "Bash(python*)",
+      "Bash(python3*)",
+      "Bash(Rscript*)",
+      "Bash(julia*)",
+      "Bash(pip install:*)",
+      "Bash(gh auth:*)",
+      "PowerShell(Start-Process code*)",
+      "Skill(compile-latex)",
+      "Skill(compile-latex:*)",
+      "WebSearch",
+      "Read(//c/Users/haozh/.claude/rules/**)",
+      "Read(//c/Users/haozh/.claude/agents/**)",
+      "Read(//c/Users/haozh/.claude/hooks/**)",
+      "Read(//c/Users/haozh/.claude/skills/__TRACKED_VAR__/**)",
+      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/**)",
+      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/Claude Master/**)",
+      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/state capacity under fire/**)",
+      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/SNWTP and Health/**)",
+      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/0. Research Data/7. Health/nanyang/2014-2023birth/**)",
+      "Read(//tmp/**)"
+    ],
+    "deny": [
+      "Edit(**/data/raw/**)",
+      "Write(**/data/raw/**)",
+      "Read(**/.env)",
+      "Bash(rm -rf*)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git clean -f*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\ESG Green Premium",
+      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Work",
+      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research",
+      "C:\\Users\\haozh\\.claude\\skills\\__TRACKED_VAR__",
+      "c:\\Users\\haozh\\.claude\\projects\\c--Users-haozh-Documents-Dropbox-Chapman-0-AI-Research-Water-and-Crop",
+      "C:\\Users\\haozh\\.claude\\projects\\c--Users-haozh-Documents-Dropbox-Chapman-0-AI-Research-Social-Capital",
+      "C:\\Users\\haozh\\.claude\\rules",
+      "C:\\Users\\haozh\\.claude",
+      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
+      "C:\\Users\\haozh\\.claude\\plans",
+      "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
+    ]
+  },
+  "env": {
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "hooks": {
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/pre-compact.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/log-reminder.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/econ-craft-reminder.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/bib-guard.py\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/latex-autocheck.py\"",
+            "timeout": 120
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"C:/Users/haozh/.claude/hooks/session-start-resume.py\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python \"C:/Users/haozh/.claude/statusline.py\""
+  },
+  "effortLevel": "xhigh",
+  "switchModelsOnFlag": true,
+  "model": "opus[1m]"
+}

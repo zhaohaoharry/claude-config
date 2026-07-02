@@ -1,0 +1,48 @@
+# ============================================================
+#  Claude Code config sync  —  ALLOWLIST model
+# ------------------------------------------------------------
+#  Everything under ~/.claude is IGNORED by default.
+#  Only the paths explicitly re-included below are tracked.
+#  This guarantees secrets (.credentials.json), machine state,
+#  and the ~1.4 GB of session transcripts/caches are NEVER
+#  committed — including any new secret files added later.
+# ============================================================
+
+# 1) Ignore every top-level entry
+/*
+
+# 2) Track this ignore file + the readme
+!/.gitignore
+!/README.md
+
+# 3) Track individual config files
+!/CLAUDE.md
+!/settings.json
+!/statusline.py
+!/register-zotero-mcp.py
+
+# 4) Track config directories (whole tree)
+!/rules/
+!/skills/
+!/agents/
+!/hooks/
+
+# 5) Track ONLY the memory folders that live under projects/
+#    (the valuable curated memory, sitting next to the huge
+#     transcript .jsonl files which we do NOT want)
+!/projects/
+/projects/*
+!/projects/*/
+/projects/*/*
+!/projects/*/memory/
+
+# ------------------------------------------------------------
+# Belt-and-suspenders: never track these even if a rule widens
+# ------------------------------------------------------------
+.credentials.json
+*credentials*.json
+settings.local.json
+settings.backup-*.json
+.last-cleanup
+.oauth_refresh.lock
+mcp-needs-auth-cache.json
