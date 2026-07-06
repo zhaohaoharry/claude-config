@@ -156,7 +156,7 @@
     "type": "command",
     "command": "python \"C:/Users/haozh/.claude/statusline.py\""
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "switchModelsOnFlag": true,
-  "model": "opus[1m]"
+  "model": "claude-fable-5[1m]"
 }
