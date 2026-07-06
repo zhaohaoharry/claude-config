@@ -158,5 +158,5 @@
   },
   "effortLevel": "xhigh",
   "switchModelsOnFlag": true,
-  "model": "claude-fable-5[1m]"
+  "model": "opus[1m]"
 }
