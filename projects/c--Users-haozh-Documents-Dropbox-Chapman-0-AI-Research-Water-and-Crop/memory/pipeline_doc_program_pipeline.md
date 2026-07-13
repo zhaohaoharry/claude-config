@@ -7,6 +7,12 @@ metadata:
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
 ---
 
+USER TERMINOLOGY (2026-07-12): when the user says "the pipeline" or "update the pipeline",
+they mean `program/program_pipeline.tex` (this curated doc), NOT PIPELINE.md. Update the .tex
+(exhibit numbers, R-sections, in/out lists), recompile its PDF, and run the two auto tools as
+a side gate. Manuscript exhibit renumbering (figure moves) must be propagated into the doc's
+"Figure N / Figure AN" mentions.
+
 SETTLED 2026-06-28 (Water and Crop). The curated, hand-verified pipeline document is
 `program/program_pipeline.{tex,pdf}` — renamed from `PIPELINE_manual.{tex,pdf}`. It is THE pipeline
 document going forward, and all new pipeline documentation must follow its format (the `\step` /
