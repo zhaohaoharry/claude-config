@@ -24,7 +24,8 @@
 - [Legacy water folder](reference_legacy_water_folder.md) — PhD-era data at E:\Dropbox (Chapman)\1. Research Projects\water\
 - [Sustainable yield (CF cap)](sustainable_yield_construction.md) — Pro-rata SY_k=(1-rho)*avg_pump, rho=16% from BPW2024+WEF2024; alternatives reported not binding
 - [Aquifer elasticity calibration](aquifer_elasticity_calibration.md) — beta_0=-2.57e-5 ft/AF (t=-7.70), beta_1=0.025/mile (28mi half-life); used in CF aquifer-update
-- [Counterfactual results (B4)](counterfactual_results.md) — Headline: market-cap substitutability (CF1 alone delivers most GW abatement); sigma_calib=$51.85/AF-ft from CF2 welfare-neutrality
+- [Counterfactual results (CANONICAL 2026-07-28)](counterfactual_results.md) — option-B adoption: leakage 1.85 MAF/43%, cen_open +1.04 & -0.12B@1k, crossovers 870/876/887, cen_tax +2.96B ~ quarter of 11.8B FS; taxes 65/215/232
+- [CF decision price = blended AC (option B)](cf_decision_price_acpass.md) — ADOPTED: blend+shadow rule, GW roster (never cost>0), mean panel anchor, cycle-averaging, guardrails, CF_PRICING_RULE=marginal for rate-design CF; frozen-buyer bug history
 - [decision_id_v2 vs fine impact](decision_id_v2_vs_fine_impact.md) — SETTLED (do not revisit): v2 DROPPED & archived; production stays decision_id_fine; DO NOT propose promoting v2 again
 - [Ownership analysis DROPPED](ownership_analysis_dropped.md) — network reduced-form CUT long ago; never use owner_id/networks or mention ownership; crop source is owner-free crop_plot_WD
 - [Fallow handling settled](fallow_handling_settled.md) — Drop zero-acre/no-permit fallow pixel-years, NO inheritance (decision_id_fine); never re-ask

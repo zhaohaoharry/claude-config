@@ -76,3 +76,12 @@ Implementation anchor: `B4_counterfactuals.py` lines 519–546 (per-district MC_
 ## When changing rules
 
 If a new fix proposal would change one of R1–R8, EXPLICITLY flag it to the user before implementing. Don't bundle.
+
+## R6 SUPERSEDED (2026-07-28, user-approved option B)
+R6's decision-price rule (lam: c_gw for GW districts, p_trade for buyers) is
+replaced by average-cost pass-through: the Bellman decision price is the
+district's endogenous floored blended AC with ratchet shadows on top; district
+trade/pump margins stay marginal inside allocators. The old cgw>0 classification
+was a bug (froze buyers at ~$50). Marginal rule survives only as
+CF_PRICING_RULE=marginal (rate-design sensitivity CF). See
+[[cf-decision-price-acpass]]. R1 (endowment), R2-R5, R7 remain in force.
