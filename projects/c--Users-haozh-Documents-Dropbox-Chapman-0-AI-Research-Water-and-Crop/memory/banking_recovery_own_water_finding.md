@@ -5,6 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
+  modified: 2026-07-29T08:01:28.722Z
 ---
 
 INVESTIGATED 2026-07-02 (4-track: board-minutes PDFs, code, web, quant). The big "Recovery
@@ -22,5 +23,13 @@ deficit as contemporaneous seller pump-and-sell. The banking cycle (recharge wet
 B132 smear already embeds recovery county-wide). Sell-and-pump mechanism itself is documented
 and survives (pool/spot/banked-water sales at $600-$1,300/AF margins). Manuscript line ~305
 "no itemized public record" is factually wrong (265k AF recovery+pool itemized > 213k deficit).
-User decides among: prose reframe / robustness CF with banking share / structural banking state /
-margin-vs-base framing. See [[settled_cf_rules]], [[stage1p5_baseline_design]].
+RESOLVED 2026-07-29: prose path taken. (1) The old 3.25-MAF era is gone anyway (frozen-buyer bug
+fix -> 1.85 MAF). (2) Discussion carries the banking caveat (retiming identity + label-invariance
++ scarcity-value pricing + 189k AF board-filing bound via \NongwRecovTotalAF). (3) The sourcing
+appendix (app:nongw_sourcing) that TABULATED the recovery-dominated channel composition was
+DROPPED per user, because the model books only the residual deficit as trade and the channel
+table invited recovery-vs-bilateral confusion; conservativeness argument now lives in
+sec:data_sw (deliveries > contracts 24/25 yrs, +66% cum; entitlement-weighted split generous
+to buyers). build_nongw_sourcing.py + macros kept (SwpDeliv*, NongwRecovTotalAF still cited).
+Do NOT re-propose a banking state or the sourcing table. See [[settled_cf_rules]],
+[[stage1p5_baseline_design]].

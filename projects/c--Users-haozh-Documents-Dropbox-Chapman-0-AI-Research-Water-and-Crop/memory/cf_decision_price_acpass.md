@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
-  modified: 2026-07-28T03:38:53.077Z
+  modified: 2026-07-28T14:30:02.408Z
 ---
 
 Production CF pricing (counterfactual_engine.py, adopted 2026-07-28): the Bellman
@@ -25,6 +25,15 @@ bilateral trade collapses to 0.04 MAF, leakage migrates to the pool +2.93).
 Guardrails in run_scenario: no-GW pumps zero (hard), buyer price >= 0.8x blend
 while buying (blend rule only), freeze detector for no-GW. Standing audits in
 program/sandbox/leak_decomp/ (audit_marginal_prices.py, attribution_run.py).
+POOL SCARCITY CORNER (adopted 2026-07-28, same day, user-directed): the capped
+centralized pool rations by ONE county-wide scarcity price (CF_POOL_CORNER
+default "uniform"; equalized shadow prices, eq:cent_scarcity in appendix) --
+common-P state per year-omega, graduated bump (3/1.5/1 by aggregate ratio),
+HOLD constant (never decay: v2's 1%/iter decay reopened gaps and let best-gap
+restore grab a mid-cycle snapshot, the 107k-AF artifact). No per-district cap
+override for pool traders (blends govern outside the corner). "prorata" env
+value = retired closure, archive_prorata_20260728. Autarky/bilateral keep
+district-specific ratchet shadows BY INSTITUTION (dispersion = friction).
 Baseline-fit validation is tab:baseline_fit via build_baseline_fit.py — trade
 0.94 vs 0.89, buyer demand −0.4%, blended cost $173 vs $171, all untargeted.
 Related: [[settled-cf-rules]], [[counterfactual-results]].

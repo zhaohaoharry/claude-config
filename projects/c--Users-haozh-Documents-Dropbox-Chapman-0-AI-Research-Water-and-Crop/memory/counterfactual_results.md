@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
-  modified: 2026-07-28T03:39:45.255Z
+  modified: 2026-07-28T14:30:14.749Z
 ---
 
 Canonical 3×3 grid (run_counterfactuals.py on the option-B engine, adopted
@@ -22,7 +22,11 @@ Baseline GW 22.69 MAF; SGMA target −19% → 18.38.
 - Global max: centralized × tax, +$2.96B over bilateral ≈ a quarter of the
   $11.8B baseline FS. Taxes 65 (aut) / 215 (bil) / 232 (cen) $/AF — roughly
   double a marginal-cost benchmark because the blend dilutes the Pigouvian
-  signal (rate-design finding, in results prose). Caps 8.6 / 18.1 / 14.4%.
+  signal (rate-design finding, in results prose). Caps 8.6 / 18.1 / 16.0%.
+- UNIFORM POOL CLOSURE adopted 2026-07-28 (evening): cen_cap now clears at one
+  county-wide scarcity price; CfCenCapBn 2.79→2.76, cen cap 14.4→16.0%, IV
+  crossovers CfIvXoverAutBil/AutCen 420→542/522. All other cells byte-identical
+  (validated _unifp3). Pro-rata canonical archived archive_prorata_20260728.
 - Rate-design CF (CF_PRICING_RULE=marginal, _pricefix files): bilateral trade
   collapses 0.94→0.04 MAF, autarky leakage 0.57, pool becomes the leakage
   channel (+2.93, −0.54B@1k). Reported in sensitivity via Mc* macros.
