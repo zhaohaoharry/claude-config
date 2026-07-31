@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
-  modified: 2026-07-28T14:30:14.749Z
+  modified: 2026-07-30T08:49:28.383Z
 ---
 
 Canonical 3×3 grid (run_counterfactuals.py on the option-B engine, adopted
@@ -32,6 +32,12 @@ Baseline GW 22.69 MAF; SGMA target −19% → 18.38.
   channel (+2.93, −0.54B@1k). Reported in sensitivity via Mc* macros.
 
 Baseline fit (tab:baseline_fit, untargeted): trade 0.94 vs 0.89 obs; buyer
-demand −0.4%; fallow 9.5 vs 9.9%; blended cost $173 vs $171. STALE until the
-long chain finishes: Sens* macros, Boot* CI brackets, sens_*.pdf figures.
+demand −0.4%; fallow 9.5 vs 9.9%; blended cost $173 vs $171.
+- BOOTSTRAP COMPLETE 2026-07-30 (uniform engine, 200/200 draws converged):
+  ΔW@σ=1000 CIs — autarky_open median +218 [−192, +608] (spans zero),
+  centralized_open median −109 [−298, +34], centralized_tax +2,944
+  [+2,526, +3,278]. β_W CI [+0.001029, +0.001502]; β_R [+9.8e-7, +4.9e-6].
+  Centralization×regulation cross-partial positive in 200/200 draws.
+  Point estimates reproduced exactly on refresh; only brackets moved.
+  Nothing stale remains in the results pipeline.
 Related: [[cf-decision-price-acpass]], [[settled-cf-rules]].
