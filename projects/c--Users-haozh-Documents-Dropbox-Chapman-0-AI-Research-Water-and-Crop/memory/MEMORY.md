@@ -70,3 +70,4 @@
 - [Recovery rows = own banked water](banking_recovery_own_water_finding.md) — RESOLVED 2026-07-29 prose path: banking caveat in discussion (identity + 189k board-filing bound); sourcing appendix app:nongw_sourcing DROPPED (channel table invited confusion; conservativeness now in sec:data_sw); generator+macros kept; do NOT re-propose banking state or the table
 - [No gloss of implicit notation](feedback_no_gloss_of_implicit_notation.md) — Don't spell out what the equation already says; explain only critical/non-guessable points. All projects
 - [Two-pass LaTeX after label edits](feedback_two_pass_latex_after_label_edits.md) — Single pass leaves stale .aux → all \ref render "??"; compile twice + grep log for "undefined"=0 before calling it clean. All projects
+- [Passive voice for exhibit refs](feedback_passive_voice_exhibit_refs.md) — "As reported in Table 5, ..." not "As Table 5 reports, ..."; passive for results citations from tables/figures. All projects

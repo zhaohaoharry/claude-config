@@ -30,7 +30,7 @@ In manuscript prose:
 
 ## Object References
 
-`\ref{tab:X}`, `\ref{fig:Y}`, `\ref{eq:Z}` are subject to the same rule (clarified 2026-06-16). A bare parenthetical tag like `"(Figure~\ref{fig:X})"` or `"(Table~\ref{tab:Y})"` is **not** acceptable — the user finds it extremely unclear. Write the reference into the sentence: `"Figure~\ref{fig:X} shows..."`, and at the **first** reference to a figure or table prefer `"as Figure~\ref{fig:X} demonstrates/illustrates/shows"`. If a parenthetical pointer is genuinely needed, write `"(see Figure~\ref{fig:X})"`, never the bare `"(Figure~\ref{fig:X})"`. (Earlier versions of this rule exempted object refs; that exemption is withdrawn.)
+`\ref{tab:X}`, `\ref{fig:Y}`, `\ref{eq:Z}` are subject to the same rule (clarified 2026-06-16). A bare parenthetical tag like `"(Figure~\ref{fig:X})"` or `"(Table~\ref{tab:Y})"` is **not** acceptable — the user finds it extremely unclear. Write the reference into the sentence, and when citing **results** from an exhibit use the **passive** construction (added 2026-07-31): `"As reported in Table~\ref{tab:X}, ..."`, `"as shown/demonstrated in Figure~\ref{fig:Y}"` — NOT the active `"As Table~\ref{tab:X} reports, ..."`, which reads off-register in economics prose. Non-results statements where the exhibit is genuinely the subject remain fine (`"Table~\ref{tab:X} lists the districts"`). If a parenthetical pointer is genuinely needed, write `"(see Figure~\ref{fig:X})"`, never the bare `"(Figure~\ref{fig:X})"`. (Earlier versions of this rule exempted object refs; that exemption is withdrawn.)
 
 ## External Bibliographic References
 
