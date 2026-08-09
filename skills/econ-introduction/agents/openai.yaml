@@ -1,0 +1,4 @@
+interface:
+  display_name: "Economics Introduction"
+  short_description: "Build a sharp, general-interest economics introduction"
+  default_prompt: "Use $econ-introduction to diagnose and rewrite this economics-paper introduction around one consequential research question."

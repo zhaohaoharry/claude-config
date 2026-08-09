@@ -5,6 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
+  modified: 2026-08-09T03:14:37.809Z
 ---
 
 For any long-running background job (multi-hour reruns, bootstraps, parameter sweeps), attach a watchdog that emits a periodic heartbeat (~30 min) AND fires an immediate alert on completion, silent death, or stall. Silence must never be read as success.
@@ -14,3 +15,5 @@ For any long-running background job (multi-hour reruns, bootstraps, parameter sw
 **How to apply:** Use a persistent Monitor that checks **forward progress** — the active job's log mtime advancing / cells completing — NOT merely "is a python process alive" (a hung process is still alive). Fire on three conditions: (1) completion marker present; (2) DEATH = no relevant process running while the job's done-marker is absent; (3) STALL = active log idle beyond a threshold (e.g. 30 min).
 
 **Survival ladder (Windows), learned the hard way — each rung survives more:** (a) foreground tool call — dies at 10-min tool timeout; (b) detached `Popen`/`Start-Process` — reaped, unreliable (control-C / job-object kill); (c) `run_in_background` (Bash tool) — survives across TURNS but **dies on session teardown** with its children; (d) **Windows Scheduled Task (`schtasks /create ... /sc once /st <t> /f` then `schtasks /run`)** — process is parented to the Task Scheduler service, NOT Claude's job object, so it **survives session teardown**; this is the teardown-proof rung. Monitors themselves are only rung (c): they die with the session, so they are live-convenience only — never the sole guarantee. For a job that MUST finish regardless of the app being open, launch the compute via a scheduled task and have it write a completion marker + result to disk; then a later session just reads the files. Add a **freshness guard** (only run the downstream combine/merge if the recomputed point wrote a fresh output) so a crash can't bake a stale/partial result into the final artifact. See [[feedback-verify-canonical-data-before-use]].
+
+**Memory budget (this machine: 32 GB):** ONE `run_counterfactuals.py`-style job (main + 3 mp workers, each loading the full plot panel) fits; TWO concurrently do NOT — on 2026-08-09 two concurrent sandbox CF runs were both OOM-killed silently mid-run (exit 1, no traceback, no final JSON). Launch heavy CF/bootstrap jobs sequentially, and check `FreePhysicalMemory` before adding another.
