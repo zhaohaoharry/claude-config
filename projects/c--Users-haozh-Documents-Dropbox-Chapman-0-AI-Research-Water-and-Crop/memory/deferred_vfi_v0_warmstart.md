@@ -1,14 +1,16 @@
 ---
 name: deferred-vfi-v0-warmstart
-description: "DECIDED 2026-08-10: after bootstrap completes, add V0 warm start to solve_vfi + engine, run VFI to true 1e-4; NO re-run; expect benign ~0.01% diffs on next re-execution"
+description: "EXECUTED 2026-08-10: V0 warm start in solve_vfi + BOTH engine call sites, all solves run to stated tol; unit-tested (44 vs 95 iters, same fixed point); in production since the 17.3%-target rerun"
 metadata: 
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
-  modified: 2026-08-10T02:08:22.666Z
+  modified: 2026-08-10T05:13:43.137Z
 ---
 
-The engine's `V_warm` never reaches `solve_vfi` (no `V0` argument exists); it only cuts the iteration budget from 200 to 30, and those 30-iteration calls restart from V=0 and exit unconverged (successive diff ~9.5e-2 vs the stated 1e-4). Appendix E describes a true warm start.
+**EXECUTED 2026-08-10, folded into the 17.3%-target full rerun** (user's call, superseding the earlier defer-no-rerun plan). `solve_vfi` takes `V0`; BOTH engine call sites pass `V0=V` — the outer-loop site (tol=1e-4) and the final-consistent-pass site (tol=1e-5), which had also been budget-truncated at 50 cold iterations. Unit test: warm solve 44 iters vs 95 cold for a $2 price step, same fixed point (max|dCCP| 8e-6). Appendix E's warm-start sentences are now TRUE as written.
+
+Historical defect: the engine's `V_warm` never reached `solve_vfi` (no `V0` argument existed); it only cut the iteration budget from 200 to 30, and those 30-iteration calls restarted from V=0 and exited unconverged (successive diff ~9.5e-2 vs the stated 1e-4), while Appendix E described a true warm start.
 
 **Decision (user, 2026-08-10):** keep the Appendix E text as written, revise the code AFTER the bootstrap finishes (Windows spawn re-imports the engine per draw, so no edits mid-bootstrap), and do NOT re-run the grids.
 
