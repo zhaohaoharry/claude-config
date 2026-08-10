@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 77cdb1a4-fa85-47f0-bd23-b7e966521efe
-  modified: 2026-08-08T10:03:58.829Z
+  modified: 2026-08-09T09:18:24.076Z
 ---
 
 In `results/cf_district_year_outcomes.csv` the three price columns mean different things and I have twice mischaracterized the model by using the wrong one:
@@ -16,4 +16,6 @@ In `results/cf_district_year_outcomes.csv` the three price columns mean differen
 
 **Why:** Under the adopted uniform pool closure ([[counterfactual-results]], POOL_CORNER="uniform"), in rationed years (centralized × cap × drought) EVERY pool trader's decision price is floored at the ONE common scarcity price, including districts with cap headroom and cheap pumping (Devils Den 2013: LAM_raw=$7, MC_bellman=$207). Cap slack arises because demand at the common price falls below the cap, not because those districts are priced at c_g.
 
-**How to apply:** Never characterize what price "sets demand" or "prices a district" from LAM_raw. Use MC_bellman for decision-price claims, AC_welfare for welfare claims. The manuscript's Appendix C scarcity condition uses the common p* for every pool participant (eq:cent_scarcity, with supply bound min{D(p*), cap}); do not reintroduce a per-district decision-price case equation for the centralized pool.
+**How to apply:** Never characterize what price "sets demand" or "prices a district" from LAM_raw. Use MC_bellman for decision-price claims, AC_welfare for welfare claims.
+
+**Superseded 2026-08-09 (corner fix promoted):** the "do not reintroduce a per-district case equation" line above is withdrawn. A district with cheap pumping and a slack cap now gets a per-(district,omega) bisection price between its blend and the common P, and Appendix C carries `tab:cent_cap_positions` stating the three positions (no aquifer access, D(p*) >= cap, D(p*) < cap). The common p* still prices every rationed pool trader; the corner is the third row only.
