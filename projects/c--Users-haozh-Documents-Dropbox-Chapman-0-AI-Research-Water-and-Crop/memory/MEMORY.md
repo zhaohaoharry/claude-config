@@ -23,7 +23,7 @@
 - [v1 tracked = working draft](project_v1_tracked_working_draft.md) — Edit manuscript_v1.tex (colored tracks), v1_clean derived; never \cite inside \del (use \delx)
 - [Legacy water folder](reference_legacy_water_folder.md) — PhD-era data at E:\Dropbox (Chapman)\1. Research Projects\water\
 - [Sustainable yield (CF cap)](sustainable_yield_construction.md) — Pro-rata SY_k=(1-rho)*avg_pump, rho=16% from BPW2024+WEF2024; alternatives reported not binding
-- [Aquifer elasticity calibration](aquifer_elasticity_calibration.md) — beta_0=-2.57e-5 ft/AF (t=-7.70), beta_1=0.025/mile (28mi half-life); used in CF aquifer-update
+- [Aquifer elasticity calibration](aquifer_elasticity_calibration.md) — CANONICAL: beta_0=-2.64e-5 ft/AF, beta_1=0.013/mile (53mi half-life), joint-NLS cluster SEs; 0.025/28mi vintage superseded
 - [Counterfactual results (CANONICAL 2026-07-28)](counterfactual_results.md) — option-B + UNIFORM pool closure: leakage 1.85 MAF/43%, cen_open +1.04 & -0.12B@1k, crossovers 870/876/887, cen_tax +2.96B, cen_cap 2.76B/16.0%, IV xo 542/522; taxes 65/215/232
 - [CF decision price = blended AC (option B)](cf_decision_price_acpass.md) — ADOPTED: blend+shadow rule, GW roster, mean anchor, cycle-averaging, CF_PRICING_RULE=marginal rate-design CF; POOL_CORNER=uniform (capped pool clears at ONE county-wide scarcity price, hold-never-decay); frozen-buyer bug history
 - [decision_id_v2 vs fine impact](decision_id_v2_vs_fine_impact.md) — SETTLED (do not revisit): v2 DROPPED & archived; production stays decision_id_fine; DO NOT propose promoting v2 again
@@ -74,5 +74,4 @@
 - [CF price init + autarky override](cf_price_init_and_autarky_override.md) — zero init, ratchet floor only on no-GW/cap-binding; acceptance test price==blend on unrationed GW rows (0/425); fix moved leakage 2.07→1.28 MAF, xover 717→931
 - [Leakage accounting identity](cf_leakage_accounting_identity.md) — leakage = seller refill (ΔGW), NOT traded volume; bought==sold by construction (no out-of-county water); all cells share 33.5 MAF endowment; autarky strands 1.2 MAF
 - [Relational claims go stale](feedback_relational_claims_go_stale.md) — never assert "more than triples"/"far smaller than" between macros; print the figures. Broke twice; audit and compile can't catch it. All projects
-- [DEFERRED: VFI V0 warm start](deferred_vfi_v0_warmstart.md) — post-bootstrap: add V0 to solve_vfi, run to true 1e-4, NO rerun; ~0.01% re-execution wobble until next structural rerun is benign, not an integrity problem
 - [Passive voice for exhibit refs](feedback_passive_voice_exhibit_refs.md) — "As reported in Table 5, ..." not "As Table 5 reports, ..."; passive for results citations from tables/figures. All projects
