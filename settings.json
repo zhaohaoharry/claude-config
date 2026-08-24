@@ -158,5 +158,11 @@
   },
   "effortLevel": "high",
   "switchModelsOnFlag": true,
-  "model": "claude-opus-4-6"
+  "model": "opus[1m]",
+  "availableModels": [
+    "opus",
+    "sonnet",
+    "fable",
+    "haiku"
+  ]
 }
