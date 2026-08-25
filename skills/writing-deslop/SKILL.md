@@ -17,12 +17,15 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
 
 `AI_Writing_Guide_Academic.md` is authoritative on every surface rule. Where this file and the guide disagree, follow the guide and note the override in the report. The known cases:
 
-| Rule | This skill's older reading | Guide (authoritative) |
+**Precedence order:** the author's own recorded rules in `AI_Writing_Guide_Personal.md` outrank the academic guide, which outranks the craft guide, which outranks anything generic. A rule the author stated while looking at real output beats a rule stated in the abstract.
+
+| Rule | This skill's older reading | Authoritative reading |
 |---|---|---|
-| Em-dashes in prose | a density quota | **Zero.** Every em-dash in prose is a defect |
-| "Notably", "Importantly", "Crucially" as glue | fine in isolation | **Cut on sight** when used as glue |
-| Colons and semicolons in prose | unmentioned | **At most one per page; default zero** |
-| Passive voice | acceptable throughout methods | Acceptable only where the agent is genuinely unknown. Standard method formulas ("standard errors are clustered at the state level") stay; "it is shown that" does not |
+| Em-dashes, colons, semicolons in prose | an em-dash density quota; colons unmentioned | Flag all three for review. The default is to remove, but roughly 15–25% legitimately stay. Keep an em-dash when a parenthetical already contains commas, or for one strong rhetorical contrast. Keep a semicolon joining two short tightly coupled clauses. Keep a colon before a list or a defined term. **The fix is a rewrite, not a substitution** — see below |
+| "Notably", "Importantly", "Crucially", "Furthermore" | flagged on sight as glue | **Legitimate econ register. Do not flag in isolation.** Flag only when three or more land in one paragraph, or when the marker claims an emphasis the sentence does not earn. Flow markers like "I first look at", "I next examine", "Turning to" are *required* between topic shifts, not tolerated |
+| Passive voice | acceptable throughout methods | Acceptable where the agent is genuinely unknown. Standard method formulas ("standard errors are clustered at the state level") stay; "it is shown that" does not |
+
+**On punctuation, never substitute mechanically.** Replacing an em-dash with a comma at the same break point produces run-ons, duplicated appositives ("a feature — the appointment of leaders — provides X" becoming "a feature provides X. That feature is the appointment of leaders"), and bureaucratic padding from over-inserted "Specifically,". Restructure instead: fold the appositive into the main clause, convert it to a relative clause, or drop it when context already carries it. The goal is prose that reads as if it never had an em-dash, not prose that visibly used to have one. After any punctuation sweep, re-read the passage. If the replacement reads worse, restore it.
 
 ## Steps
 
@@ -31,7 +34,11 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
    - If `$ARGUMENTS` is a section name (e.g., "introduction"): find and read that section in `main.tex` or `paper_skeleton.tex`.
    - If no argument: ask the user which file or section to audit.
 
-2. **Load the writing guide as a FLAGGING SOURCE, not just a rewrite constraint.** Read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Two parts of it are audit input, and they carry priority over the generic list below:
+2. **Load the writing guides as FLAGGING SOURCES, not just rewrite constraints.**
+
+   First read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md`. It is authoritative and it reverses several defaults you would otherwise apply. In particular, **do not flag a 40-word cumulative sentence as a run-on** — that is the author's target register for body paragraphs, and short declaratives are the defect he actually complains about. Do not flag discourse or flow markers in isolation. Do not propose mechanical punctuation substitutions.
+
+   Then read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Two parts of it are audit input, and they carry priority over the generic list below:
    - **§0 Stop-sign list** (50 rows) — every match is a defect, by the guide's own words. This is the author's own documented register: "near-nominal", "headline result", "a 39% lift", "well within", "dislodge", "in the spirit of", "a soft signal that", "the honest reading is", "should be read as", manager-speak verbs, precision soup, author-decision meta-sentences.
    - **§12 Appendix: common AI phrases to avoid** (45 rows).
 
@@ -68,7 +75,7 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
   - *Tense drift.* A past-tense finding restated as a present-tense generic ("higher water prices reduce perennial acreage" for what was "acreage fell"). The paper's own mitigation is indirect past-tense reporting.
   - *Dropped qualifier.* A conditional estimate that loses its condition between the results section and the abstract or introduction. Diff the hedges: any hedge present on a claim in Results and absent on the same claim upstream is a flag, and the fix is to restore it, not to remove the Results hedge.
 - **Em-dashes in prose.** Flag **every** em-dash in running prose. The house default is zero (guide §0), not a density quota. Also flag colons and semicolons chaining clauses, which the guide caps at one per page and defaults to zero. Replace with a comma, parentheses, or two sentences.
-- **Metronomic rhythm — flag the VARIANCE, not the band.** The defect is uniformity: sentence lengths clustered tightly around one value, every paragraph the same shape, no long-setup-then-short-verdict cadence. Compute the spread before flagging. A 15–25 word sentence is not itself a defect — that band is the *center of mass* econ prose should sit on (EconCraft P6), so flagging the band would fight `econ-craft`. Flag when the standard deviation of sentence length is low across a passage, even if the vocabulary is clean. This is the tell a referee registers first.
+- **Choppy additive rhythm — the author's primary complaint, and the opposite of what you would guess.** In body paragraphs, flag runs of short declaratives where each fact takes its own sentence, and especially any sentence opening by restating the previous one ("This distortion...", "The same role..."). Fold qualifications, corroborations, and consequences into subordinate clauses. The measured target from paragraphs he accepted is four to five sentences per paragraph averaging **about 40 words**, one main clause plus a subordinate chain. A rejected draft of the same content ran seven sentences averaging 21 words, which he called "awful". **Never flag a long cumulative sentence as a run-on.** Separately, flag genuine uniformity, meaning sentence lengths clustered tightly with no long-setup-then-short-verdict cadence. Flag the pattern, never the length.
 - **Inflation and generic conclusions.** "a pivotal moment in the evolving landscape", "the future looks bright", "marks a turning point", significance puffery on routine results.
 - **Synonym cycling and false ranges.** Rotating "households / agents / individuals / consumers" to avoid repetition; "from X to Y" pairings that span nothing meaningful.
 - **Formatting tells.** Title-Case headings, bold-first bullets, "Despite these challenges..." formulas, em dashes in headings.
@@ -81,7 +88,7 @@ Economics has its own register. The following are correct academic writing, NOT 
 - **Standard hedges (keep one per claim).** "suggests", "is consistent with", "is associated with", "we interpret this as", "may reflect", "likely". Economics requires epistemic caution; do not strip a single appropriate hedge.
 - **Passive voice in methods/data.** "data were collected", "standard errors are clustered at the state level", "the sample is restricted to", "regressions are weighted by". Passive is correct and expected in methods.
 - **Causal and identification language.** "identifies the causal effect", "the exclusion restriction requires", "parallel trends", "exogenous variation", "the estimand", "intent-to-treat".
-- **Contrastive and specifying transitions.** "In contrast", "Conversely", "Specifically", "Moreover" — fine in isolation; flag only when three or more land in one paragraph. **Note the carve-out:** "Notably", "Importantly", and "Crucially" used as glue are on the guide's §0 stop-sign list ("Sportscaster glue. Delete; let the claim stand") and are flagged on sight, not tolerated in isolation. They survive only when the sentence genuinely marks a result as more important than its neighbours and says why.
+- **Transitions and flow markers — these are required, not tolerated.** "In contrast", "Conversely", "Specifically", "Moreover", "Notably", "Importantly", "Crucially", "Furthermore", and especially the econ flow markers "I first look at", "I begin with", "I next examine", "Consider first", "Turning to". Prose without them reads mechanical and abrupt, dropping the reader into each new topic with no warning, which is itself an AI tell. Flag only when three or more stack in one paragraph, or when a marker claims an emphasis the sentence does not deliver. Never strip a transition without supplying another. Colloquial openers ("So,", "Now,", "Well,") are wrong register and stay flagged.
 - **"Robust" in its technical sense.** "robust standard errors", "robust to alternative specifications", "the result is robust" are correct. Flag "robust" only as vague praise ("a robust framework").
 - **Domain terminology is precision, not jargon.** "instrumental variable", "fixed effects", "marginal effect", "general equilibrium" are exact terms — never flag them.
 

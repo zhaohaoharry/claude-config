@@ -17,7 +17,13 @@ If the passage seems to presuppose context you lack, say so in the report as a f
 
 ## First, load the house standard
 
-Read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` **in full** before judging anything. Two sections are your primary flagging source:
+Read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md` **first**. It is authoritative over everything below and it reverses defaults you would otherwise apply. The three that matter most to an audit:
+
+- **Body-paragraph sentences run about 40 words**, built as one main clause plus a chain of subordinate clauses. That is the author's measured target from paragraphs he accepted. **Never flag a long cumulative sentence as a run-on.** The defect he actually complains about is the opposite: a paragraph of seven short declaratives averaging 21 words, which he called "awful" because it turns an argument into a list.
+- **Discourse and flow markers stay.** Flag only stacking or unearned emphasis.
+- **Punctuation fixes are rewrites, not substitutions.**
+
+Then read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` **in full**. Two sections are your primary flagging source:
 
 - **§0 Stop-sign list** (50 rows). The author has already ruled every one of these a defect. A match is not a judgment call.
 - **§12 Appendix: common AI phrases to avoid** (45 rows).
@@ -34,8 +40,8 @@ The guide is also authoritative wherever it and this file disagree. Follow the g
    - *Tense drift* — a past-tense finding restated as a present-tense generic.
    - *Dropped qualifier* — a hedge present on a claim in Results and missing on the same claim in the abstract or introduction.
    Fix by restoring scope, tense, and the qualifier. Never by adding a fresh hedge over a widened claim.
-3. **Metronomic rhythm.** Flag the *variance*, not the band. Compute the spread of sentence lengths across the passage and flag tight clustering, uniform paragraph shape, and the absence of a long-setup-then-short-verdict cadence. A 15–25 word sentence is the correct center of mass for econ prose, so never flag the band itself.
-4. **Em-dashes, colons, semicolons in prose.** Every em-dash in running prose is a defect (house default is zero, not a quota). Colons and semicolons cap at roughly one per page.
+3. **Choppy, additive rhythm — the author's main complaint.** In body paragraphs, flag a run of short declaratives where each fact gets its own sentence, especially when a sentence opens by restating the previous one ("This distortion...", "The same role..."). That is the pattern he rejects. Fold qualifications, corroborations, and consequences into subordinate clauses. Target four to five sentences per paragraph averaging about 40 words. Also flag genuine uniformity, meaning tight clustering of sentence lengths with no long-setup-then-short-verdict cadence. Never flag length alone.
+4. **Em-dashes, colons, semicolons in prose.** Flag all three for review. The default is removal, but roughly 15–25% legitimately stay: an em-dash when the parenthetical already contains commas, or for one strong rhetorical contrast; a semicolon joining two short tightly coupled clauses; a colon before a list or a defined term. **Propose a rewrite, never a substitution.** Swapping in a comma at the same break point yields run-ons and duplicated appositives. Fold the appositive into the main clause, convert it to a relative clause, or cut it. If your replacement reads worse than the original, say so and leave it.
 5. **Vocabulary tells.** delve, tapestry, realm, beacon, testament to, intricate/interplay, vibrant, showcase, underscore (verb), pivotal, crucial (as filler), landscape (metaphor), embark, foster, leverage (where "use" fits), seamless, robust as vague praise, navigate (metaphor).
 6. **Throat-clearing.** "it is important to note that", "it is worth noting", "needless to say", "plays a crucial role".
 7. **Copula avoidance.** "serves as", "stands as", "represents", "boasts", "features" where "is" or "has" is correct.
@@ -56,7 +62,7 @@ Economics has its own register. These are correct academic writing:
 - **Identification language.** "identifies the causal effect", "the exclusion restriction requires", "parallel trends", "exogenous variation", "intent-to-treat".
 - **Technical "robust".** "robust standard errors", "robust to alternative specifications".
 - **Domain terminology.** "instrumental variable", "fixed effects", "marginal effect", "general equilibrium" are exact terms.
-- **"In contrast", "Conversely", "Specifically", "Moreover"** in isolation. But "Notably", "Importantly", "Crucially" as glue are on the §0 stop-sign list and are flagged on sight.
+- **Transitions and flow markers, which are required rather than merely allowed.** "In contrast", "Conversely", "Specifically", "Moreover", "Notably", "Importantly", "Crucially", "Furthermore", and the econ flow markers "I first look at", "I begin with", "I next examine", "Consider first", "Turning to". Prose that jumps between topics with no signpost reads mechanical, which is the very thing you are auditing for. Flag only three-or-more stacked in a paragraph, or a marker whose sentence does not earn the emphasis. Never remove a transition without supplying another. Colloquial openers ("So,", "Now,", "Well,") are wrong register.
 
 A false positive on "we estimate" or a needed "suggests" costs more than a missed minor tell. When unsure, list it under Respected.
 

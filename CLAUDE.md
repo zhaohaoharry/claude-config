@@ -11,6 +11,7 @@
 
 | File | Purpose |
 |------|---------|
+| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md` | **Highest-precedence writing rules.** Compiled from the project memories — rules you stated while looking at your own drafts. Overrides the other two guides on conflict. Load FIRST for any prose work |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` | Academic prose rules (the *surface* layer — removes AI tells) — load before editing any paper |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md` | Positive craft layer (flow, rhythm, voice, intuition-first, number-argument) — load alongside the academic guide when writing/refining/polishing prose |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md` | Verified real exemplar passages of good economics prose, organized by craft move |

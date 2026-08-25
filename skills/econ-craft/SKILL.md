@@ -34,6 +34,13 @@ Run those for their jobs; cross-reference, don't re-do them here.
    - If `--audit` appears in the arguments, run in report-only mode (see below).
 
 2. **Load the craft layer (always, before composing).**
+   - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md`
+     — **read this first and treat it as authoritative.** These are the rules the author
+     stated while looking at his own drafts, compiled from the project memories, and they
+     override both other guides where they disagree. Three that reverse the default advice:
+     body-paragraph sentences run **about 40 words** as cumulative constructions, not 15–25;
+     discourse markers ("Crucially,", "Furthermore,") and flow markers ("I first look at")
+     stay; and em-dash removal is a rewrite, never a substitution.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md`
      — the 18 craft principles, idiom bank, and per-paper-type cheat sheet.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md`
