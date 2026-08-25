@@ -11,6 +11,7 @@ Hook Event: Stop
 from __future__ import annotations
 
 import json
+import os
 import sys
 import hashlib
 from pathlib import Path
@@ -55,27 +56,44 @@ def save_state(state_path: Path, state: dict):
     state_path.write_text(json.dumps(state))
 
 
-def find_latest_log(project_dir: str) -> tuple[Path | None, float]:
-    d = Path(project_dir)
-    for base in [d, *d.parents]:
-        log_dir = base / "quality_reports" / "session_logs"
-        if log_dir.is_dir():
-            md_files = list(log_dir.glob("*.md"))
-            if md_files:
-                latest = max(md_files, key=lambda f: f.stat().st_mtime)
-                return latest, latest.stat().st_mtime
+def find_latest_log(*start_dirs: str) -> tuple[Path | None, float]:
+    """Walk up from each start dir looking for quality_reports/session_logs.
+
+    Takes several starting points because the shell's cwd drifts: a single
+    `cd ~/.claude` to run git leaves cwd outside the project, and walking up
+    from there finds nothing, which used to report "no session log exists"
+    and block the turn even when the log was sitting in the project root.
+    CLAUDE_PROJECT_DIR is checked first because it does not drift.
+    """
+    seen: set[Path] = set()
+    for start in start_dirs:
+        if not start:
+            continue
+        d = Path(start)
+        for base in [d, *d.parents]:
+            if base in seen:
+                continue
+            seen.add(base)
+            log_dir = base / "quality_reports" / "session_logs"
+            if log_dir.is_dir():
+                md_files = list(log_dir.glob("*.md"))
+                if md_files:
+                    latest = max(md_files, key=lambda f: f.stat().st_mtime)
+                    return latest, latest.stat().st_mtime
     return None, 0.0
 
 
 def main():
     project_dir, hook_input = get_project_dir()
-    if not project_dir:
+    env_project_dir = os.environ.get("CLAUDE_PROJECT_DIR", "")
+    if not project_dir and not env_project_dir:
         sys.exit(0)
 
     state_path = get_state_dir() / "log-reminder-state.json"
     state = load_state(state_path)
 
-    latest_log, current_mtime = find_latest_log(project_dir)
+    # Env var first: it points at the project root and does not follow the shell.
+    latest_log, current_mtime = find_latest_log(env_project_dir, project_dir)
     today = datetime.now().strftime("%Y-%m-%d")
 
     if latest_log is None:
