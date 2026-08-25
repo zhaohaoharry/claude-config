@@ -1,6 +1,6 @@
 ---
 name: aer-identification
-description: Use when selecting, implementing, or stress-testing the causal identification strategy for an empirical economics manuscript — difference-in-differences (including staggered designs), instrumental variables (including weak-IV-robust inference), regression discontinuity, synthetic control, or shift-share / Bartik. Apply before writing the introduction or results. For the estimator menu, diagnostics, and Stata/R/Python code, use econometrics-playbook; this skill decides whether the design is defensible, not how to code it.
+description: Use when selecting, implementing, or stress-testing the causal identification strategy for an empirical economics manuscript — difference-in-differences (including staggered designs), instrumental variables (including weak-IV-robust inference), regression discontinuity, synthetic control, or shift-share / Bartik. Apply before writing the introduction or results. Also covers how to WRITE the identification section itself — the assumption/threat/evidence structure, where the estimating equation and the estimand go, and the institutional narrative that earns the design. For the estimator menu, diagnostics, and Stata/R/Python code, use econometrics-playbook; this skill decides whether the design is defensible and how to present it, not how to code it.
 ---
 
 # AER Identification
@@ -156,6 +156,29 @@ A common confusion: **identification answers whether X causes Y; mechanism answe
 - Subgroup heterogeneity (does the effect concentrate where theory predicts?)
 - Mediation analysis only if the mediator is itself plausibly exogenous (rare)
 - Auxiliary outcomes consistent with the proposed channel
+
+## Writing the identification section
+
+A defensible design still fails if the section describing it reads as evasive. Referees form a view of your honesty here faster than anywhere else in the paper, and the tell is always the same: a section that lists what was done instead of naming what could go wrong.
+
+**The unit of the section is the threat, not the procedure.** Structure each subsection as *assumption → what would break it → what you show*, in that order:
+
+1. **State the assumption in one sentence, in words, before any notation.** "Absent the 2015 reform, treated and control counties would have followed the same acreage path." Not "we assume parallel trends," which names the assumption without stating it, and lets the reader supply a version more convenient than the one you need.
+2. **Name the specific violation that would matter here.** Not the textbook violation. The one a referee who knows this setting would raise. If treated counties were selected *because* their acreage was already falling, say that, then say why the institutional record rules it out.
+3. **Show the evidence, and say what it does not cover.** A pre-trends plot addresses differential trends before treatment. It does not address a shock coincident with treatment. State that boundary yourself. A referee who finds an unacknowledged gap treats every other claim as suspect; a referee who finds it acknowledged reads the paper as candid.
+
+**The estimating equation comes after the words, never before.** Introduce the comparison in prose, then write the equation, then say in one sentence what each term does and which coefficient is the estimand. The reader should already know what the regression is doing before meeting the notation. Define every symbol at first use and never redefine one.
+
+**Where the pieces go.**
+- The **one-sentence statement of the identifying assumption** belongs in the introduction, not only here, and never in a footnote. Footnoting the identifying assumption is a listed anti-pattern below.
+- The **institutional narrative** that makes the variation credible belongs in one tight paragraph, before the equation. This is where a paper earns its identification, and it is the part LLM-drafted prose most reliably omits, because it requires knowing the setting rather than the method.
+- The **estimand** ("we recover the ATT for counties treated in 2015, not an average across cohorts") belongs immediately after the equation. Vagueness about the estimand reads as not knowing.
+
+**Register.** Write in first-person active ("I compare", "I show"), not "it is shown that". Use one name per concept throughout — if the running variable is "distance to the boundary" in §3, it is not "the forcing variable" in §5. Hedge the assumption honestly and once: "requires", "would be violated if", "I cannot rule out". Do not stack cushions, and do not assert an assumption holds when what you mean is that you tested an implication of it.
+
+**Anti-patterns specific to this section:** describing the estimator instead of the identification; listing controls as though they substitute for a design; a pre-trends plot presented without saying what it does and does not rule out; the phrase "we exploit" attached to variation that was not in fact plausibly exogenous; and the passive "identification comes from" with no agent, which conceals whether the variation is institutional or assumed.
+
+Hand the drafted section to `econ-craft` for rhythm and flow, and to `writing-deslop` before submission. This section only specifies what the prose must accomplish.
 
 ## Red Flags for Referees
 

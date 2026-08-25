@@ -23,12 +23,17 @@ Produce a thorough referee report for an economics manuscript — the kind a top
    - `literature/LiteratureIndex.json` — if it exists, use it to verify citation accuracy
    - Any appendix `.tex` files
 
-3. **Launch the econ-reviewer agent** to evaluate across 5 dimensions:
+3. **Launch the econ-reviewer agent** to evaluate across 6 dimensions:
    - Identification strategy
    - Econometric specification
    - Theory (if applicable)
    - Citation fidelity
    - Internal consistency
+   - Provenance
+
+   **Pass the referee the artifact, not the history.** The agent prompt carries the manuscript path, the target journal, and the one-sentence paper contract if one exists. It does **not** carry the drafting conversation, your summary of what the author was attempting, or any defence of a choice the paper makes. If a design decision is not defended in the manuscript itself, that silence is the finding — supplying the missing justification from conversation is how a real defect gets talked past.
+
+   This is measured, not stylistic. A review session with no production history beats same-session self-review (F1 28.6% vs 24.6%, p=0.008) and also beats a *context-aware* subagent review (23.8%, p=0.004), while reviewing twice in the same session does not help at all (p=0.11). The losing condition is a subagent that inherited the author's framing (Song 2026, arXiv 2603.12123).
 
 4. **Generate 3-5 simulated referee questions** — the tough questions a top referee would ask.
 

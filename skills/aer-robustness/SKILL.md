@@ -35,6 +35,21 @@ Every empirical AER paper should report, at minimum:
 5. **Alternative estimators** — if main is OLS, show IV; if main is TWFE, show Callaway-Sant'Anna; if main is RD, show donut and bandwidth grid
 6. **Outlier diagnostics** — Cook's distance, leverage; rerun excluding top-1% influential observations
 
+### Machine-coded variables — required whenever an LLM produced a variable
+
+Applies whenever a model read documents (policy texts, permits, filings, court records, gazetteers, historical sources) and emitted a variable that enters a regression. Skip this block only if no variable in the paper was produced that way.
+
+The governing result: an LLM-coded variable is a **measurement**, not data, and it carries classification error of unknown size and unknown correlation with treatment. Ludwig, Mullainathan and Rambachan put the requirement plainly — absent a validation sample, researchers cannot assess errors in LLM outputs, and "seemingly innocuous choices (which model, which prompt) can produce dramatically different parameter estimates." A referee who spots an uncalibrated machine-coded regressor is entitled to reject the estimate outright, because nothing in the paper bounds the bias.
+
+1. **Validation subsample against human coding (non-negotiable).** Hand-code a random subsample, report its size, and report agreement with the machine labels. Without this, no other check in this block means anything. Report agreement as a rate *and* a confusion matrix, since false positives and false negatives bias in opposite directions.
+2. **Inter-rater agreement among humans.** Establish the human ceiling before judging the machine. A model at 85% agreement is doing well if two humans agree 87% of the time and badly if they agree 99%.
+3. **Prompt sensitivity.** Re-code with two or three materially different prompts, not paraphrases, and re-run the main specification on each. Report the spread of the point estimate, not just the coding agreement.
+4. **Model and version sensitivity.** Re-code with a different model, and record the exact model ID and date. Model versions are deprecated and replaced, which makes an unrecorded version a reproducibility failure independent of any bias.
+5. **Attenuation and correction.** Classification noise in a regressor attenuates toward zero, so the naive estimate is a lower bound in magnitude only under strong assumptions. Either bound the bias using the validation sample or state the assumption you are relying on. Do not report the naive estimate as if it were clean.
+6. **Leakage check for anything predictive.** If the model may have seen the outcome during training (a published finding, a well-known historical episode), say how you ruled that out.
+
+**Provenance consequence.** The prompt string and the model ID are pipeline *inputs* with the same status as a raw data vintage. Record them in `PIPELINE.md` alongside the source data, and treat a prompt edit as a data revision that invalidates downstream results. A coded variable whose prompt is not recorded has no provenance, which puts it in violation of the project's first non-negotiable.
+
 ### Heterogeneity
 
 Report heterogeneity that the **theory predicts**, not heterogeneity discovered by mining:

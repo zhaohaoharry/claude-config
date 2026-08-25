@@ -62,7 +62,7 @@ Often the *single most important paragraph for surviving referee review*. Two ha
 
 **Antecedents (1-2 paragraphs).** Position the paper relative to its 3-6 closest published predecessors. Be specific: cite by author-year, identify what each did, and what each missed.
 
-**Value-added (1 paragraph or 3 bullet points).** State approximately **three** contributions relative to the antecedents. These are the sentences the referee will quote in their report. Each contribution should make sense only in light of the prior work — otherwise it belongs in the Question paragraph.
+**Value-added (one paragraph — never bullet points).** State approximately **three** contributions relative to the antecedents. Write them as connected prose, not a list: the house guide bans bullets in the main text body, and `econ-craft`'s "argue, don't enumerate" rule says to reason through the point rather than announce a count and itemize. Three contributions is a target for *substance*, not a rhetorical structure to display, so do not open with "This paper makes three contributions" if the paragraph can carry them without the announcement. These are the sentences the referee will quote in their report. Each contribution should make sense only in light of the prior work — otherwise it belongs in the Question paragraph.
 
 Avoid:
 
@@ -103,7 +103,7 @@ AER abstracts are **100 words maximum**, including all numbers. The high-impact 
 If the draft is over 100 words:
 
 1. Delete every adjective that does not change the result
-2. Replace clauses with semicolons
+2. Split long clauses into separate sentences. **Do not compress with semicolons or em-dashes** — the house guide bans both in prose (`AI_Writing_Guide_Academic.md` §0, default zero), and an abstract is the most-read prose in the paper
 3. Drop the implication sentence — the introduction handles it
 4. Replace "we find that ... " with active "X raises Y by Z%"
 5. Numbers count as one word each; don't burn budget on "approximately"
@@ -124,6 +124,12 @@ If the draft is over 100 words:
 - Hook paragraph that pitches a methods contribution when the paper is empirical (or vice versa)
 - Burying the magnitude of the main result until section 4
 - Lit review that runs for 2 pages and does not say what *this* paper adds
+
+## Prose rules — load before drafting
+
+This skill supplies AER *structure*. It does not supply prose rules, and it must not contradict them. Before drafting or rewriting any sentence, read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` — authoritative on every surface rule, including the §0 stop-sign list, the ban on em-dashes, colons, and semicolons in prose, first-person active voice, and the rule that the introduction carries no math notation and no forward references.
+
+For the positive craft layer (rhythm, intuition-first exposition, welding magnitudes to benchmarks), hand off to `econ-craft` rather than duplicating it here. For the intellectual architecture of the introduction — the research question, the framing, the general-interest claim — `econ-introduction` establishes the contract first, and this skill formats it to AER conventions.
 
 ## Repository Resources
 

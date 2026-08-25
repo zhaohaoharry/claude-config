@@ -71,13 +71,33 @@ Run those for their jobs; cross-reference, don't re-do them here.
    - **Argue, don't enumerate.** Reason through the point in prose instead of
      announcing "three reasons" and listing them.
 
-5. **Edit in place (default).** Rewrite the passage applying the moves above,
+5. **Triage before polishing: revise, or redraft?** Judge the incoming passage
+   first, because polishing a weak draft launders its content forward. In a
+   controlled decomposition of two-stage pipelines (COLM 2026), weak draft
+   *content* actively hurt the second pass, while the draft's *structure* still
+   helped — so the scaffold is worth keeping even when the sentences are not.
+   - **Strong draft** (the author wrote it by hand, the argument is already
+     there): revise in place. A critique pass on strong prose adds real value.
+   - **Weak draft** (a machine first pass, a placeholder, an argument that does
+     not yet land): keep the paragraph's *role* in the section and redraft the
+     prose from the `econ-introduction` contract and the results. Do not sand
+     down the existing sentences — that carries the weak content forward under
+     better rhythm, which is harder to spot later, not easier.
+   Say which path you took in one line before the rewrite, so the author can
+   disagree. When genuinely unsure, revise: it is the reversible choice.
+
+6. **Edit in place (default).** Rewrite the passage applying the moves above,
    preserving every claim, number, citation, and one appropriate hedge. Do not
    flatten the author's voice into a template, and do not over-edit strong prose
    into the very uniformity the rhythm rule removes. Before changing a word,
    read the previous, current, and next paragraph so edits don't break flow.
 
-6. **Self-check before saving** (the craft guide's after-writing checklist):
+   Never judge the result by asking whether it "sounds like the author." That
+   assessment correlates at |r| < 0.07 with independent stylometric measures, so
+   it returns confident noise. Judge against the craft moves and the exemplars,
+   which are checkable.
+
+7. **Self-check before saving** (the craft guide's after-writing checklist):
    intuition precedes formalism; subjects act; sentence length varies and at
    least one short verdict lands after a long setup; every magnitude has a
    benchmark; one name per concept; zero em-dashes/colons/semicolons in prose;

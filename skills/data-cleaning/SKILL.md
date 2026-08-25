@@ -44,6 +44,12 @@ Build a reproducible data-PREP pipeline that turns raw inputs into a tidy, analy
 
 12. **Save and snapshot.** `compress` (Stata), order variables logically, save the tidy analysis file to the clean-data location, and export a final CSV snapshot to `log\`. Write a short codebook of the final file.
 
+13. **Run it, then READ THE LOG.** Running is not verifying. Stata's `-e` flag exits silently on failure, so a script that "finished" may have died at line 40 and left a stale analysis file behind, which is worse than an obvious crash because the next step will happily estimate on it.
+    - Open the `.log` and search for `r(` return codes, `no observations`, `variable ... not found`, `merge` results you did not expect, and any assertion that fired.
+    - Check the final file actually changed: compare its timestamp and row count against what the script claims to have written.
+    - Fix and re-run until the log is clean. Report the number of iterations it took, since a script that needed four passes is a script worth re-reading.
+    - If it cannot be made to run, say so plainly and report which step blocks it. Never describe a pipeline as built when its last successful run was an earlier version.
+
 ## Output Format
 
 Deliver a single runnable script. Structure it as:

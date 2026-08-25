@@ -2,7 +2,7 @@
 name: econometrics-playbook
 description: Use when choosing a causal-inference design or writing the estimation code for it — difference-in-differences (including staggered: Callaway-Sant'Anna, Sun-Abraham, de Chaisemartin-D'Haultfoeuille), event studies, RDD (sharp/fuzzy), IV/2SLS with weak-IV-robust inference, synthetic control / SDID, panel fixed effects, DML / causal forests, or quantile / distributional methods. This is the method how-to lane: it names the modern estimator, the identifying assumptions, the must-run diagnostics, the common pitfalls, and the recommended Stata, R, and Python commands for each design.
 argument-hint: "[design, e.g. 'staggered DiD' or 'fuzzy RDD']"
-allowed-tools: ["Read", "Grep", "Glob", "Write"]
+allowed-tools: ["Read", "Grep", "Glob", "Write", "Bash"]
 ---
 
 # Econometrics Playbook
@@ -11,7 +11,24 @@ allowed-tools: ["Read", "Grep", "Glob", "Write"]
 
 A single lookup for *how to estimate* a causal design once it has been chosen. For each common design it gives five things: the **modern recommended estimator**, the **key identifying assumptions**, the **must-run diagnostics**, the **common pitfalls**, and the **Stata / R / Python packages and commands**.
 
-This is the **method how-to lane**. It is advisory — it helps pick a design and write the code; it does not run anything. Route to it from `aer-identification` (which decides *whether* the design is defensible for an AER-track paper) and pair its output with `aer-robustness` (the referee-anticipating check battery). For a critique of an already-estimated specification, hand off to the `econ-reviewer` agent.
+This is the **method how-to lane**. It picks the design, writes the code, **and runs it**. Route to it from `aer-identification` (which decides *whether* the design is defensible for an AER-track paper) and pair its output with `aer-robustness` (the referee-anticipating check battery). For a critique of an already-estimated specification, hand off to the `econ-reviewer` agent.
+
+## Write, run, revise — do not hand back unexecuted code
+
+Recommending a command is not the deliverable. Running it is. Moving from an advisory chatbot to a constrained agent that executes and revises raises econometric task success from **74% to 96%**, for roughly eight cents more per run (Galiani, López & Sosa, NBER w35588, August 2026). The same paper reports two findings that shape how this skill should be written:
+
+- **Prompting and agency are substitutes.** Few-shot examples improve a non-executing chatbot far more than they improve an executing agent. So do not grow this file with more worked examples. Spend the effort on making the run-and-revise loop tight.
+- **The Stata-versus-R-versus-Python gap largely disappears once the agent executes.** Language differences are sizeable in the advisory mode and shrink to little under execution, so write in whichever language the project already uses. Stata-first costs nothing in accuracy.
+
+The loop:
+
+1. **Write** the script to `program/sandbox/` (never a production path unless the user asks).
+2. **Run** it. Stata batch uses the `-e` flag, never `/e`.
+3. **Read the log or stderr.** Stata's `-e` exits silently on failure, so a run that "finished" is not evidence it worked. Open the log and look for `r(...)` return codes, `no observations`, `variable not found`, and convergence warnings.
+4. **Revise and re-run** until it executes clean or you can state precisely what is blocking it (missing package, missing variable, data not where expected).
+5. **Report the estimate**, not just the code — coefficient, standard error, N, and the diagnostics for the design.
+
+If you cannot run it (no data, no Stata on PATH, package missing), say so explicitly and report `RAN: no` with the reason. Never present unexecuted code as though it produced a result, and never state a coefficient you did not see the software print.
 
 ## When to Use
 
@@ -149,8 +166,12 @@ MUST-RUN DIAGNOSTICS: <list>
 INFERENCE: <cluster-robust | AR set | wild bootstrap | permutation>
 LANGUAGE + PACKAGES: <Stata: ... | R: ... | Python: ...>
 PITFALLS AVOIDED: <list or "none flagged">
+RAN: <yes — path to script and log | no — reason>
+RESULT: <coefficient, SE, N, and the design's key diagnostic — or "not estimated">
 HANDOFF: aer-identification (defensibility) | aer-robustness (check battery) | econ-reviewer (critique)
 ```
+
+`RAN` and `RESULT` are not optional. `RAN: no` is an acceptable answer; omitting the fields is not, because it lets unexecuted code read as a finding.
 
 ## Important
 
@@ -159,4 +180,7 @@ HANDOFF: aer-identification (defensibility) | aer-robustness (check battery) | e
 3. The first-stage F > 10 rule and the TWFE-on-staggered-data default are obsolete — flag them as red flags, never recommend them.
 4. ML methods (DML, causal forests) are estimation strategies under unconfoundedness, not identification strategies — say so.
 5. List the must-run diagnostics for the chosen design; an estimator without its diagnostics is incomplete.
-6. This skill writes code and recommends designs — it does not execute, and it does not decide whether the design clears the journal bar. Defer defensibility to `aer-identification`, the referee-anticipating battery to `aer-robustness`, and substantive critique to the `econ-reviewer` agent.
+6. This skill writes code, runs it, and reports what came out. It does **not** decide whether the design clears the journal bar. Defer defensibility to `aer-identification`, the referee-anticipating battery to `aer-robustness`, and substantive critique to the `econ-reviewer` agent.
+7. Run in `program/sandbox/` unless the user explicitly asks for a production run, and report where the script and log live.
+8. A number you did not watch the software print is not a result. If the run failed, say so and report `RAN: no` — never fill the gap with a plausible estimate.
+9. Do not expand this file with more few-shot examples. Prompting and agency are substitutes, and the agency half is already here.
