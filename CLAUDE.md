@@ -15,6 +15,7 @@
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` | Academic prose rules (the *surface* layer — removes AI tells) — load before editing any paper |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md` | Positive craft layer (flow, rhythm, voice, intuition-first, number-argument) — load alongside the academic guide when writing/refining/polishing prose |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md` | Verified real exemplar passages of good economics prose, organized by craft move |
+| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_exemplars_modern\README.md` | 34 passages from 21 top-5 **applied** papers (2018–2025), organized **by section** (abstract, intro hook, contribution, identification, results, mechanism, conclusion). Read the matching section BEFORE composing it. Local only — verbatim published prose, never push to a public repo |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Email.md` | Email style guide |
 | `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\master_catalogue.md` | Cross-project session log |
 

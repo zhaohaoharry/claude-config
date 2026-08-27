@@ -38,13 +38,24 @@ Run those for their jobs; cross-reference, don't re-do them here.
      — **read this first and treat it as authoritative.** These are the rules the author
      stated while looking at his own drafts, compiled from the project memories, and they
      override both other guides where they disagree. Three that reverse the default advice:
-     body-paragraph sentences run **about 40 words** as cumulative constructions, not 15–25;
-     discourse markers ("Crucially,", "Furthermore,") and flow markers ("I first look at")
-     stay; and em-dash removal is a rewrite, never a substitution.
+     body-paragraph sentences are **cumulative constructions**, one main clause carrying
+     subordinate chains, not a run of short declaratives (§1.2 sets the target at about
+     40 words, measured on his accepted paragraphs, and flags that 50 top-5 applied papers
+     measure 24.9 — build cumulatively, do not pad to a count, and see §1.2 for the
+     unresolved part); discourse markers ("Crucially,", "Furthermore,") and flow markers
+     ("I first look at") stay; and em-dash removal is a rewrite, never a substitution.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md`
      — the 18 craft principles, idiom bank, and per-paper-type cheat sheet.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md`
      — verified real passages; pull the one or two that match the move you need.
+     Indexed by *craft move*, and weighted toward landmark and essayistic work
+     (Coase, Friedman, Akerlof, Leamer, Deaton). Excellent, but those authors had
+     a freedom an ordinary submission does not.
+   - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_exemplars_modern\README.md`
+     — 34 passages from 21 top-5 **applied** papers, 2018–2025, indexed by
+     **section**: abstract, intro hook, contribution, identification, results,
+     mechanism, conclusion. This is the register a current submission is read
+     against. See step 3b, which is not optional.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md`
      — still authoritative on every surface rule (no em-dash/colon/semicolon,
      active voice, numbers not adjectives, no math/forward-refs in the intro).
@@ -57,6 +68,21 @@ Run those for their jobs; cross-reference, don't re-do them here.
    leans on the picturable puzzle and the magnitude; a model section leans on
    intuition-before-notation and the worked example).
 
+3b. **Read the exemplars for *this* section before writing a word of it.**
+   Open `econ_exemplars_modern/README.md`, go to the section you are about to
+   write, and read its brief plus every exemplar under it. There are three to six
+   per section; read them all, not a sample.
+
+   This step exists because every other writing tool in this setup runs *after*
+   the text exists — `writing-deslop`, `proofread`, `econ-craft --audit` all
+   filter finished prose, and filtering machine prose yields de-slopped machine
+   prose. Conditioning generation on real models is the only part of the pipeline
+   that changes what gets written in the first place. Skipping it and polishing
+   afterwards is the failure mode this bank was built to fix.
+
+   Take the **move order**, never the phrasing. If a sentence you write could be
+   found in an exemplar, rewrite it.
+
 4. **Apply the top craft moves** (the full set is in the guide):
    - **Intuition first.** Mechanism or a concrete example before the estimate,
      the notation, or the formal result. The "Intuitively, ..." gloss earns its
@@ -68,10 +94,14 @@ Run those for their jobs; cross-reference, don't re-do them here.
      already has; end on the new payload. This is the main flow engine.
    - **Coherence by repetition.** One name per concept. Repeat the keyword;
      do not cycle synonyms (households/agents/individuals) to sound varied.
-   - **Rhythm by ear.** 15–25 words is a *center of mass*, not a target. Vary
-     length deliberately; land a long setup with a short verdict sentence.
-     Read it aloud. All rhythm comes from periods and parentheses — never an
-     em-dash, colon, or semicolon.
+   - **Rhythm by ear, calibrated against the corpus.** Build cumulatively, as the
+     personal guide requires: one main clause carrying subordinate chains, never a
+     run of short declaratives each restating the last. But do not pad to hit a
+     word count. The 34 curated top-5 applied passages measure **24.9 words per
+     sentence in paragraphs of about 6.5 sentences**, and abstracts run shorter
+     still, near 22 and as low as 12. Vary length deliberately; land a long setup
+     with a short verdict sentence. Read it aloud. All rhythm comes from periods
+     and parentheses — never an em-dash, colon, or semicolon.
    - **Argue with numbers.** Weld every magnitude to a benchmark (vs. OLS, vs.
      the sample mean, vs. a familiar quantity). Economic magnitude over
      statistical significance. The number, not the adjective, carries the claim.
@@ -93,6 +123,15 @@ Run those for their jobs; cross-reference, don't re-do them here.
    Say which path you took in one line before the rewrite, so the author can
    disagree. When genuinely unsure, revise: it is the reversible choice.
 
+5b. **Generate and choose for the sentences that carry voice.** A handful of
+   sentences do most of the work: the opening sentence of the introduction, the
+   sentence that states the mechanism, the topic sentence of each results
+   paragraph, and the first sentence of the conclusion. For each of those, write
+   **three** genuinely different versions before picking one — different in what
+   they lead with, not in word choice. Taking the first draft of these sentences
+   is how a section ends up sounding generic even when every rule was followed.
+   Show the chosen version only; do not clutter the reply with the discards.
+
 6. **Edit in place (default).** Rewrite the passage applying the moves above,
    preserving every claim, number, citation, and one appropriate hedge. Do not
    flatten the author's voice into a template, and do not over-edit strong prose
@@ -108,7 +147,9 @@ Run those for their jobs; cross-reference, don't re-do them here.
    intuition precedes formalism; subjects act; sentence length varies and at
    least one short verdict lands after a long setup; every magnitude has a
    benchmark; one name per concept; zero em-dashes/colons/semicolons in prose;
-   the academic-guide stop-sign list still passes.
+   the academic-guide stop-sign list still passes. Then one more: put the new
+   paragraph next to the exemplars you read in step 3b and name the move each of
+   your sentences is making. If a sentence is making no move, cut it.
 
 ## `--audit` mode (report only)
 

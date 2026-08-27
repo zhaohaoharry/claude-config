@@ -75,6 +75,8 @@ Do not force a paragraph count when the paper type requires a different order. T
 
 ### 6. Draft for cumulative meaning
 
+Before drafting, read the `Intro Hook` and `Contribution` sections of `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_exemplars_modern\README.md`. Nine of those hooks come from top-5 applied papers published since 2018, and they show what the first paragraph of paragraph 1 actually does: a budget number, a startling ratio, a quoted statute, or a mechanism walked through one concrete shock. None of them opens on a literature gap. Read the models before composing rather than polishing afterwards. Take the move order and never the phrasing.
+
 Every paragraph should change one reader belief. Every sentence should add one necessary layer, such as a premise, contrast, causal link, implication, piece of evidence, or transition from the general question to the empirical leverage.
 
 Use medium-length, cumulative economics prose. Avoid both clause-stacked sentences and strings of short aphorisms. Do not write slogan-like fragments such as "Information travels upward. Influence does too." A short verdict is useful only when it completes a developed argument.

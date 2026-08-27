@@ -14,3 +14,4 @@
 - [Claude Config Sync Repo](claude_config_sync_repo.md) — Private GitHub repo (zhaohaoharry/claude-config) mirrors ~/.claude config; git repo lives at ~/.claude with allowlist .gitignore; how to update and set up new machine
 - [Cumulative Sentences and Verb Energy](feedback_cumulative_sentences_and_verbs.md) — Fold restating short sentences into subordinate clauses (overrides the 30-word rule); signed physical verbs are how the user judges human vs AI prose
 - [Regression Table Conventions](feedback_regression_table_conventions.md) — One regression design per panel; explicit FE/Controls indicator rows in every panel; DDD must control all double interactions (explicitly or via FE)
+- [Exemplar Bank 2026-08](exemplar_bank_2026_08.md) — Zotero (1,122 articles) is the real corpus; section-indexed top-5 bank now loads BEFORE composing; measured 24.9 words/sentence vs the 40-word rule (unresolved)
