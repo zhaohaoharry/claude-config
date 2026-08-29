@@ -75,3 +75,4 @@
 - [Leakage accounting identity](cf_leakage_accounting_identity.md) — leakage = seller refill (ΔGW), NOT traded volume; bought==sold by construction (no out-of-county water); all cells share 33.5 MAF endowment; autarky strands 1.2 MAF
 - [Relational claims go stale](feedback_relational_claims_go_stale.md) — never assert "more than triples"/"far smaller than" between macros; print the figures. Broke twice; audit and compile can't catch it. All projects
 - [Passive voice for exhibit refs](feedback_passive_voice_exhibit_refs.md) — "As reported in Table 5, ..." not "As Table 5 reports, ..."; passive for results citations from tables/figures. All projects
+- [Cumulative sentences, no short bridge sentences](feedback_cumulative_sentences_and_verbs.md) — never open with a short sentence that restates or carries no transition; fold bridges into the next sentence; neat, precise, shorter than before. All projects
