@@ -20,7 +20,7 @@
 - [2017-fill robustness: welfare invariant](robustness_2017fill_welfare_invariant.md) — isolated re-run; 3x3 welfare matrix unchanged except AC_mean of 3 trade cells; B4 anchors on 1998. Runners in program/sandbox/robustness_2017fill/
 - [Verify canonical data before use](feedback_verify_canonical_data_before_use.md) — check HANDOFF.json data.clean / grep pipeline before using a file; never trust _v2/_final suffix or newest mtime as canonical. All projects
 - [Work in latex/](feedback_latex_working_dir.md) — All working tex + compilation in latex/, repo folder is Overleaf-sync only
-- [v1 tracked = working draft](project_v1_tracked_working_draft.md) — Edit manuscript_v1.tex (colored tracks), v1_clean derived; never \cite inside \del (use \delx)
+- [v4 = working draft; manuscript.tex = flattened v4; AER baseline in Submissions/AER](project_manuscript_versions_v4_working_draft.md) — edit manuscript_v4.tex (tracked); manuscript.tex = flattened current v4 since 2026-08-30; compare/review ONLY against latex/manuscript_AER_submitted_20260818.tex; v1/v2/v3 never a baseline; v4_clean/manuscript/RES package re-synced only on request
 - [Legacy water folder](reference_legacy_water_folder.md) — PhD-era data at E:\Dropbox (Chapman)\1. Research Projects\water\
 - [Sustainable yield (CF cap)](sustainable_yield_construction.md) — Pro-rata SY_k=(1-rho)*avg_pump, rho=16% from BPW2024+WEF2024; alternatives reported not binding
 - [Aquifer elasticity calibration](aquifer_elasticity_calibration.md) — CANONICAL: beta_0=-2.64e-5 ft/AF, beta_1=0.013/mile (53mi half-life), joint-NLS cluster SEs; 0.025/28mi vintage superseded
@@ -76,3 +76,4 @@
 - [Relational claims go stale](feedback_relational_claims_go_stale.md) — never assert "more than triples"/"far smaller than" between macros; print the figures. Broke twice; audit and compile can't catch it. All projects
 - [Passive voice for exhibit refs](feedback_passive_voice_exhibit_refs.md) — "As reported in Table 5, ..." not "As Table 5 reports, ..."; passive for results citations from tables/figures. All projects
 - [Cumulative sentences, no short bridge sentences](feedback_cumulative_sentences_and_verbs.md) — never open with a short sentence that restates or carries no transition; fold bridges into the next sentence; neat, precise, shorter than before. All projects
+- [RES submission package + rules](res_submission_package.md) — 2026-08-30: Submissions/RES built from v4 via flatten_manuscript_res (12pt/1.5/1in, single-spaced refs, header-labelled Online Appendix); RES caps main <45 pp / appendix <=30, fee $250 ($150 if all authors qualify); package is 49/29 pp in Times + indent-only paragraphs + 8pt tables (margins/spacing/appendix font fixed by rule) -> ~5 pp main-text cut is the author's call
