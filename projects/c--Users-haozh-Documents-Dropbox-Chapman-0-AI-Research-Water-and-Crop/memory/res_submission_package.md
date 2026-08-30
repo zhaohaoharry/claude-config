@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 317e2324-b164-41c6-a9c1-b53f11154e36
-  modified: 2026-08-30T11:14:12.767Z
+  modified: 2026-08-30T11:38:04.719Z
 ---
 
 RES submission package built 2026-08-30 in `Submissions/RES/` (target after the AER desk reject
@@ -33,10 +33,14 @@ RES rules (restud.com/submissions, verbatim copy saved in
 
 **Why:** at 12pt the v4 draft runs 55 pp main + 32 pp appendix in Source Serif with parskip;
 the RES build uses Times (tgtermes via derived paper_res.sty), indent-only paragraphs, and 8pt
-tables (published RES tables are 8pt vs 10pt body; the 12pt rule covers text only), giving 49 + 29:
-appendix passes, main 5 over. Margins (1in), spacing (18pt = 1.5 x 12pt), and the appendix font
-("12pt applies to the entire manuscript, including appendices") are fixed by rule, so the rest is
-content; the decision (cut ~5 pp of main text vs. exception request) is the author's.
+exhibits in the APPENDIX ONLY (published RES tables are 8pt vs 10pt body; the 12pt rule covers text
+only). A blanket 8pt hook on every tabular also shrank the title-page author block and the main-text
+tables; the user rejected that ("too small"), so main-text tables stay at the generators' 10pt. v4 moved
+Figure 1 (district map) and Table 1 (crop categories) into Appendix A with tracked "Appendix" pointers.
+Result 50 + 30: appendix at cap, main 6 over. Margins (1in), spacing (18pt = 1.5 x 12pt), and the
+appendix text font ("12pt applies to the entire manuscript, including appendices") are fixed by rule,
+so the rest is content; the decision (cut 6 pp of main text vs. exception request) is the author's.
+Measured: moving the crop-share fit table saves 1 main page but costs 2 appendix pages by reflow.
 
 **How to apply:** rerun flatten -> compile (pdflatex x3 + bibtex in latex/) -> split before any
 RES upload; never edit the PDFs; recheck the README checklist in `Submissions/RES/`.
