@@ -40,7 +40,7 @@ Figure 1 (district map) and Table 1 (crop categories) into Appendix A with track
 Table 11 (welfare) was moved after the paragraph that introduces it (barrier kept, mechanism figure
 still first) so p.37 fills: 49 + 30 within the rules. The author then CHOSE sub-1in margins although
 RES asks for >=1in on all sides (flagged in the README; --margin1in restores): 0.8in gave 46 + 29 but
-was judged "too obvious", 0.9in gave 47 + 30, then settled at 0.95in L/R (widened from 0.9 on 08-31),
+was judged "too obvious", 0.9in gave 47 + 30, then settled at 1in L/R on 08-31 (0.9 and 0.95 were interim steps; L/R now compliant),
 0.85in top, 0.8in bottom;
 accepted headings ending a page with one line under them (--keep-heading-rule restores), \flushbottom,
 \predisplaypenalty=300 (a display may open a page), and all figures at 85% width (--figscale): 46 + 29;
@@ -59,7 +59,10 @@ The AI-use acknowledgement was removed from manuscript and cover letter on the a
 --ai-statement restores). Spacing (18pt = 1.5 x 12pt) and the appendix text font are fixed by rule.
 On 08-31 the appendix exhibits were raised 8pt -> 10pt to match the main tables and the appendix set
 raggedbottom (the wide inter-exhibit gaps were flushbottom glue on float-only [H] pages): package now
-45 + 29 (74 pp). The gkt-validation figure was the one non-[H] float in v4 Appendix A and printed A8
+45 + 29 (74 pp), then the length route: L/R margins back to 1in and the crop-share fit table (old
+Table 9) moved to Appendix A as Table A7 with the moments table (now Table 9) promoted into the 7.1
+text (approved paragraph; footnote keeps the Buena Vista check): FINAL 45 + 30 (75 pp), main at the
+author-accepted 45 vs the literal under-45, appendix exactly at cap. The gkt-validation figure was the one non-[H] float in v4 Appendix A and printed A8
 before A7; pinned [H] in v4. Float-distance lesson: v4 preamble float fractions (0.92/0.85/0.05/0.90,
 counters 3/3/5) override the flatten block, [!htbp] ignores fractions, and a float only takes space
 not yet filled at its env - to pull an exhibit onto the page of its reference, move its env BEFORE the
