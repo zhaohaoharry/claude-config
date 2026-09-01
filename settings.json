@@ -158,5 +158,6 @@
   },
   "effortLevel": "high",
   "switchModelsOnFlag": true,
-  "model": "claude-fable-5[1m]"
+  "model": "claude-fable-5[1m]",
+  "outputStyle": "Concise"
 }
