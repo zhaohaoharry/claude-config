@@ -25,6 +25,14 @@ If a manuscript does not already define them, add this block to the preamble. Th
 - **Spacing gotcha.** A leading space *inside* `\add{ X}` is swallowed at render, so `word.\add{ Next}` prints as `word.Next`. Put inter-word spaces **outside** the macro: `word. \add{Next}`. Trailing spaces inside are preserved. Do **not** add a space between a `\del{old}\add{new}` replacement pair.
 - **What is tracked vs silent.** Prose and content (sentences, numbers, claims, captions) are always tracked. Pure mechanical apparatus is silent (no marks): symbol/equation refactors, notation swaps, label/`\ref` renames, whitespace, and anything inside math where `\sout` would break or obscure rather than clarify. When a silent apparatus change is non-trivial, note it in the chat reply rather than the source.
 
+## Minimal-span rule (PRIORITY — added 2026-09-01)
+
+**Track the smallest span that actually changed — never repeat the whole sentence.** If only a number changes, mark only the number: `$\sigma = {}$\del{2.763}\add{2.90}` — NOT `\delx{The elasticity ... $\sigma = 2.763$, implying}\add{The elasticity ... $\sigma = 2.90$, implying}`. Duplicated unchanged text makes the markup unreadable and hides what actually changed. Full-sentence `\del{...}\add{...}` pairs are reserved for sentences whose *claim* changed, not their numbers.
+
+- For a number inside inline math, close the math before the number and track it as text: `$\gamma_{Z\tau} = {}$\del{1.051}\add{0.153}` (the `{}` keeps the binary spacing of `=`). Signed numbers keep the math wrapper on just the number: `\del{$-1.411$}\add{$-3.03$}`.
+- Same for words: change one word, track one word (`the \del{prefecture}\add{firm}-level emission cost`).
+- Several small edits inside one sentence are fine — many tiny del/add pairs beat one giant pair.
+
 ## "clean" — accept deletions, keep additions green
 
 When the author says **"clean"** or **"clean up"** a section or the draft:

@@ -15,3 +15,6 @@
 - [Cumulative Sentences and Verb Energy](feedback_cumulative_sentences_and_verbs.md) — Fold restating short sentences into subordinate clauses (overrides the 30-word rule); signed physical verbs are how the user judges human vs AI prose
 - [Regression Table Conventions](feedback_regression_table_conventions.md) — One regression design per panel; explicit FE/Controls indicator rows in every panel; DDD must control all double interactions (explicitly or via FE)
 - [Exemplar Bank 2026-08](exemplar_bank_2026_08.md) — Zotero (1,122 articles) is the real corpus; section-indexed top-5 bank now loads BEFORE composing; measured 24.9 words/sentence vs the 40-word rule (unresolved)
+- [Minimal track changes](feedback_minimal_track_changes.md) — mark only the changed token, never repeat the sentence
+- [No process narration in manuscripts](feedback_no_process_narration.md) — never "We spell out...", "it is worth stating..."; state the economics directly
+- [No cross-document mentions in manuscripts](feedback_no_cross_document_mentions.md) — never cite the project's other notes/drafts in a manuscript unless asked
