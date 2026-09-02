@@ -1,4 +1,8 @@
 {
+  "env": {
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(git status*)",
@@ -67,10 +71,7 @@
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
     ]
   },
-  "env": {
-    "PYTHONIOENCODING": "utf-8",
-    "PYTHONUTF8": "1"
-  },
+  "model": "fable[1m]",
   "hooks": {
     "PreCompact": [
       {
@@ -156,8 +157,7 @@
     "type": "command",
     "command": "python \"C:/Users/haozh/.claude/statusline.py\""
   },
+  "outputStyle": "Concise",
   "effortLevel": "high",
-  "switchModelsOnFlag": true,
-  "model": "claude-fable-5[1m]",
-  "outputStyle": "Concise"
+  "switchModelsOnFlag": true
 }
