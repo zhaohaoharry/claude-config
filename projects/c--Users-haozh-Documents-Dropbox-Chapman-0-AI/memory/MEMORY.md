@@ -18,3 +18,5 @@
 - [Minimal track changes](feedback_minimal_track_changes.md) — mark only the changed token, never repeat the sentence
 - [No process narration in manuscripts](feedback_no_process_narration.md) — never "We spell out...", "it is worth stating..."; state the economics directly
 - [No cross-document mentions in manuscripts](feedback_no_cross_document_mentions.md) — never cite the project's other notes/drafts in a manuscript unless asked
+- [Introduce symbols at first use](feedback_introduce_symbols_at_first_use.md) — define a parameter only in the paragraph of the equation that first uses it; audit definition-vs-use and letter collisions after drafting a model
+- [Equation is not an agent](feedback_equation_is_not_an_agent.md) — causal sentences take the economic cause as subject; equations are only where the effect appears
