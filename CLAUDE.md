@@ -102,6 +102,33 @@ When a response contains `$` or `$$` math AND the project has a `latex\` folder:
 - A PDF in `literature\` does not mean it should be cited.
 - When characterizing a cited paper: verify what it actually says before writing the description.
 
+### Prose anti-pattern: mannered writing (all models, all projects)
+
+Applies to every kind of prose — manuscripts, chat replies, email, reports. Anthropic's own
+prompting guidance defines the anti-pattern; the definition is reproduced verbatim because the
+wording is what does the work:
+
+> Mannered prose substitutes metaphor and flourish for direct statement. Instead of "a parameter
+> worth varying," the mannered writer produces "a dial worth turning." Instead of "this point
+> still matters," they write "this point earns its keep." The phrases exist to display the writer,
+> not to convey the idea, and readers can tell. That is why mannered prose irritates: it makes the
+> reader work harder so the writer can perform. It is also imprecise. Metaphors drag in
+> connotations the writer did not choose and cannot control. The fix is to say what you mean. When
+> a literal phrase is available, use it.
+
+Shorthand when correcting a draft: **"remove all mannered prose."**
+
+This sits *alongside* the §0 stop-sign list in `AI_Writing_Guide_Academic.md`, not inside it. A
+word list cannot catch "a dial worth turning"; only the definition can.
+
+**Length calibration for written deliverables.** Match the length of written documents to what the
+task needs: cover the substance, but do not pad with filler sections, redundant summaries, or
+boilerplate.
+
+Source: Anthropic, [Prompting Claude Fable 5.1](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-1)
+(writing density) and [Prompting Claude Opus 5](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5)
+(written deliverable length), checked 2026-09-03.
+
 ### Academic writing
 Load `AI_Writing_Guide_Academic.md` before making any substantive edits to paper prose.
 Key rules from that guide (do not wait to load the file for these):

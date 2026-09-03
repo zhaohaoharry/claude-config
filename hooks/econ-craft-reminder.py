@@ -2,18 +2,22 @@
 """
 Econ-Craft Reminder Hook
 
-UserPromptSubmit hook. When the user asks Claude to WRITE / DRAFT / REVISE /
-POLISH manuscript PROSE inside the 0.AI workspace, this injects a compact
-reminder to load the positive craft layer (AI_Writing_Guide_EconCraft.md +
-econ_prose_exemplars.md) and apply it directly, plus a one-screen cheat of the
-top craft moves. This closes the gap where the craft guidance exists but is
-not loaded before Claude composes.
+UserPromptSubmit hook. Fires on prose-writing intent and injects two payloads:
+
+  * MANNERED_PROSE -- Anthropic's anti-pattern definition, in EVERY project and
+    on every model. Their guidance is to deliver this in a user message rather
+    than the system prompt, which is exactly what this hook does.
+  * REMINDER -- the econ craft layer (personal guide, craft guide, modern
+    exemplar bank, academic guide) plus a one-screen cheat of the top craft
+    moves. Gated to the 0.AI workspace, because it points at files that live
+    there.
 
 Design: biased toward firing. A missed fire means mechanical prose (the whole
 problem we are fixing); a false fire is one short paragraph Claude can ignore.
-Filtering is by (write-verb) AND (prose-target OR intent-phrase) AND
-(0.AI context), because UserPromptSubmit has no matcher and runs on every
-prompt. Tune sensitivity by editing the keyword lists below.
+Filtering is by (write-verb AND prose-target) OR intent-phrase, because
+UserPromptSubmit has no matcher and runs on every prompt. Tune sensitivity by
+editing the keyword lists below. Note there is no model field in the hook input
+and no $CLAUDE_MODEL, so nothing here can branch on Fable vs Opus.
 
 Contract (Claude Code, confirmed 2026-06): exit 0 and print JSON with
 hookSpecificOutput.additionalContext to inject context discreetly. Fail-safe:
@@ -98,30 +102,32 @@ def has_phrase(text: str, phrases: list[str]) -> bool:
     return any(p in text for p in phrases)
 
 
-def should_fire(prompt: str, cwd: str) -> bool:
+def writing_intent(prompt: str) -> bool:
+    """Prose-writing intent, independent of which project we are in.
+
+    Deliberately not gated on the workspace: mannered prose is a defect in any
+    project and on any model, so the anti-pattern block below travels everywhere.
+    Only the econ-specific payload is workspace-gated.
+    """
     p = prompt.lower()
-    c = (cwd or "").lower()
 
-    in_workspace = any(m in c for m in WORKSPACE_MARKERS)
-    if not in_workspace:
-        return False
-
-    intent = has_phrase(p, INTENT_PHRASES)
-    write_verb = has_word(p, WRITE_VERBS)
-    prose_noun = has_phrase(p, PROSE_NOUNS)
-    code_signal = has_phrase(p, CODE_SIGNALS)
-
-    if intent:
+    if has_phrase(p, INTENT_PHRASES):
         return True
 
+    write_verb = has_word(p, WRITE_VERBS)
+    prose_noun = has_phrase(p, PROSE_NOUNS)
     if write_verb and prose_noun:
         return True
 
     # write-verb alone, with a code signal and no prose target -> stay silent.
-    if write_verb and not prose_noun and code_signal:
+    if write_verb and not prose_noun and has_phrase(p, CODE_SIGNALS):
         return False
 
     return False
+
+
+def in_econ_workspace(cwd: str) -> bool:
+    return any(m in (cwd or "").lower() for m in WORKSPACE_MARKERS)
 
 
 REMINDER = (
@@ -161,6 +167,28 @@ REMINDER = (
 )
 
 
+# Anthropic's own anti-pattern definition, reproduced verbatim -- the exact wording
+# is what does the work, so do not paraphrase it. Their guidance is to deliver this
+# in a user message rather than the system prompt, which is what a UserPromptSubmit
+# hook does. Documented for Fable 5.1 (whose prose runs dense); the definition is
+# model-agnostic and is harmless on Opus 5, which cannot be detected here anyway --
+# UserPromptSubmit hooks receive no model field.
+# Source: platform.claude.com .../prompting-claude-fable-5-1 (writing density),
+#         platform.claude.com .../prompting-claude-opus-5 (deliverable length).
+MANNERED_PROSE = (
+    "[prose] Mannered prose substitutes metaphor and flourish for direct statement. "
+    "Instead of \"a parameter worth varying,\" the mannered writer produces \"a dial worth "
+    "turning.\" Instead of \"this point still matters,\" they write \"this point earns its "
+    "keep.\" The phrases exist to display the writer, not to convey the idea, and readers can "
+    "tell. That is why mannered prose irritates: it makes the reader work harder so the writer "
+    "can perform. It is also imprecise. Metaphors drag in connotations the writer did not "
+    "choose and cannot control. The fix is to say what you mean. When a literal phrase is "
+    "available, use it.\n"
+    "Match the length of written documents to what the task needs: cover the substance, but do "
+    "not pad with filler sections, redundant summaries, or boilerplate."
+)
+
+
 def main() -> int:
     try:
         data = json.loads(sys.stdin.read() or "{}")
@@ -170,13 +198,19 @@ def main() -> int:
     prompt = data.get("prompt", "") or ""
     cwd = data.get("cwd", "") or ""
 
-    if not should_fire(prompt, cwd):
+    if not writing_intent(prompt):
         return 0
+
+    # The econ craft layer only makes sense inside the 0.AI workspace, since it
+    # points at guides and an exemplar bank that live there. The mannered-prose
+    # definition applies to any prose in any project, so it always ships.
+    context = (REMINDER + "\n\n" + MANNERED_PROSE
+               if in_econ_workspace(cwd) else MANNERED_PROSE)
 
     output = {
         "hookSpecificOutput": {
             "hookEventName": "UserPromptSubmit",
-            "additionalContext": REMINDER,
+            "additionalContext": context,
         }
     }
     json.dump(output, sys.stdout)
