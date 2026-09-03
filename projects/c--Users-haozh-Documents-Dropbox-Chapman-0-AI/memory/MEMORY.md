@@ -20,3 +20,4 @@
 - [No cross-document mentions in manuscripts](feedback_no_cross_document_mentions.md) — never cite the project's other notes/drafts in a manuscript unless asked
 - [Introduce symbols at first use](feedback_introduce_symbols_at_first_use.md) — define a parameter only in the paragraph of the equation that first uses it; audit definition-vs-use and letter collisions after drafting a model
 - [Equation is not an agent](feedback_equation_is_not_an_agent.md) — causal sentences take the economic cause as subject; equations are only where the effect appears
+- [Permission prompts](feedback_permission_prompts.md) — user never reads Bash prompts; use allow-listed prefixes (cd/sed/grep/cat/head/tail added 2026-09-03), no rm

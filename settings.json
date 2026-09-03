@@ -46,7 +46,18 @@
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/state capacity under fire/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/SNWTP and Health/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/0. Research Data/7. Health/nanyang/2014-2023birth/**)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(cd*)",
+      "Bash(sed*)",
+      "Bash(grep*)",
+      "Bash(cat*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(echo*)",
+      "Bash(tasklist*)",
+      "Bash(diff*)",
+      "Bash(dir*)",
+      "Bash(tree*)"
     ],
     "deny": [
       "Edit(**/data/raw/**)",
@@ -158,6 +169,6 @@
     "command": "python \"C:/Users/haozh/.claude/statusline.py\""
   },
   "outputStyle": "Concise",
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "switchModelsOnFlag": true
 }
