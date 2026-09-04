@@ -57,7 +57,12 @@
       "Bash(tasklist*)",
       "Bash(diff*)",
       "Bash(dir*)",
-      "Bash(tree*)"
+      "Bash(tree*)",
+      "Bash(\"C:/Program Files/Stata18/StataMP-64.exe\"*)",
+      "Bash(unix2dos*)",
+      "Bash(py *)",
+      "WebFetch",
+      "Bash(pdftotext*)"
     ],
     "deny": [
       "Edit(**/data/raw/**)",
@@ -80,7 +85,8 @@
       "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
       "C:\\Users\\haozh\\.claude\\plans",
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   },
   "model": "claude-fable-5-1[1m]",
   "hooks": {
