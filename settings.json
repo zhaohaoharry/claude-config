@@ -175,6 +175,6 @@
     "command": "python \"C:/Users/haozh/.claude/statusline.py\""
   },
   "outputStyle": "Concise",
-  "effortLevel": "medium",
+  "effortLevel": "xhigh",
   "switchModelsOnFlag": true
 }
