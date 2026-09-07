@@ -24,3 +24,4 @@
 - [Term consistency with baseline](feedback_term_consistency_with_baseline.md) — grep the unchanged manuscript for existing renderings before introducing a term in new text; unify with tracked marks
 - [Edit only what needs change](feedback_edit_only_what_needs_change.md) — keep the author's wording; change only tokens with a nameable defect; no wholesale stylistic rewrites
 - [Fast country-level batteries](feedback_fast_country_level_batteries.md) — small-panel DiD batteries: five estimators by default (no untrended dCDH, no detrended CS), one Stata instance per window in parallel
+- [Footnote placement](feedback_footnote_placement.md) — footnote markers only after a period or comma, never mid-clause
