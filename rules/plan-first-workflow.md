@@ -1,57 +1,13 @@
-# Plan-First Workflow
+# Planning and execution
 
-For any non-trivial task, enter plan mode before writing or editing files.
+Use a concise plan for work with meaningful dependencies, uncertain scope, or multiple stages. File count and duration alone do not require approval. Skip formal planning for clear micro edits and routine commands.
 
-## When to Plan
+1. Inspect the request and relevant live state. Resolve routine choices from context.
+2. Ask only about a material unresolved decision; do not impose a question quota. Continue work independent of the answer.
+3. State the intended result, steps, and necessary verification, then execute within existing authorization. Do not enter an approval-gated UI mode solely because a task is complex.
+4. Save a plan under `quality_reports/plans/YYYY-MM-DD_description.md` only for a substantial multi-stage task needing durable continuity, a project requirement, or a user request. Saving a draft does not need approval.
+5. Verify the result and finish the authorized task. Request additional authorization only for the specific dependent action when needed, after independent preparation is complete.
 
-**Always plan when:**
-- Task touches more than 1 file
-- Scope is ambiguous or high-level ("improve the paper", "analyze the data")
-- Estimated time > 30 minutes
-- Multiple valid interpretations exist
+Plan fields: Goal; Steps; Affected files; Verification; Remaining decisions; Status (`IN_PROGRESS`, `COMPLETE`, or `BLOCKED` with the actual reason). Do not label a plan user-approved unless that approval actually occurred.
 
-**Skip planning for:**
-- Clear single-file edits ("fix typo on page 3")
-- Running a specific command the user specified
-- Compiling LaTeX
-
-## The Protocol
-
-1. **Enter Plan Mode** — use `EnterPlanMode`
-2. **Clarify if needed** — for ambiguous/complex tasks, ask 3-5 focused questions before planning (use `AskUserQuestion`)
-3. **Draft the plan** — what changes, which files, in what order, verification steps
-4. **Save to disk** — write to `quality_reports\plans\YYYY-MM-DD_short-description.md`
-5. **Present to user** — wait for approval
-6. **Exit plan mode** — only after approval
-7. **Execute** — implement, then verify output
-
-## Plan File Format
-
-```markdown
-# Plan: [Short Description]
-**Date:** YYYY-MM-DD
-**Status:** DRAFT | APPROVED | COMPLETED
-
-## Goal
-[What we're trying to achieve]
-
-## Steps
-- [ ] Step 1
-- [ ] Step 2
-- [ ] Step 3
-
-## Files to Modify
-- `path/to/file` — what changes
-
-## Verification
-- [ ] How to confirm the task succeeded
-```
-
-## Context Survival
-
-Plans saved to disk survive context compression. Before compression:
-1. Ensure the active plan is saved to `quality_reports\plans\`
-2. Ensure the session log is current
-3. Ensure MEMORY.md has any `[LEARN]` entries from this session
-
-After compression, first message: "Resuming after compression. Reading most recent plan and git log."
+At meaningful milestones, update the existing plan or primary session record. After context compression, read only the relevant state and continue; do not restart approvals or narrate routine recovery. Do not automatically update agent-global memory. Apply the current runtime's memory rules and explicit user requests separately from project continuity records.

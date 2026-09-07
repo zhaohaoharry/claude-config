@@ -9,7 +9,7 @@ description: Use when deciding which AER-skills sub-skill to use next, or when s
 
 This is the router. It does not replace any specialized skill. It tells you which one to use next, and in what order.
 
-Default assumption: unless the user names a different venue, the manuscript targets **AER**, **AER: Insights**, or an **AEJ** journal — not a finance journal, not a generic economics field journal, and not a working-paper repository.
+Use this router for an AEA-family target established by the request or project state. Do not infer a target merely because this skill exists. For an unspecified target, continue general economics work and ask only if venue-specific requirements materially affect the requested result.
 
 If the target is **outside** the AEA family, hand off rather than route internally: `journal-fit` for house-style fit (incl. Chinese top journals), `research-ideation` for idea generation, `review-paper` / `econ-reviewer` for refereeing, `econometrics-playbook` for method how-to. This router governs only the AER/AEJ pipeline.
 
@@ -35,12 +35,12 @@ Use:
 
 ## Default Sequence
 
-For most empirical AER-track manuscripts, prefer this order:
+For development from scratch, prefer this order. It is not a prerequisite chain for local edits. Reuse established decisions and results; do not repeat completed stages or launch new analyses outside the requested scope:
 
 1. `aer-topic-selection` — fix the contribution sentence and the target venue *before* anything else
 2. `aer-identification` — stress-test the design; if it fails here, no later skill saves the paper
 3. `aer-robustness` — anticipate the three robustness checks the median referee will demand
-4. `aer-introduction` — only now write the five-paragraph intro and the 100-word abstract
+4. `aer-introduction` — draft an evidence-bounded introduction and the required abstract; use `econ-introduction` for argument architecture rather than forcing a fixed paragraph count
 5. `aer-tables-figures` — finalize the main exhibits in AER house style
 6. `aer-replication` — assemble the deposit package while results are still fresh in code
 7. `aer-submission` — final preflight: length, format, cover letter, COI
@@ -77,7 +77,7 @@ If the user says...
 
 ## Handoff Contract
 
-Whenever this skill is invoked, end with:
+For a routing-only question, report the next step below. For an execution request, use this as an internal handoff and continue authorized downstream work instead of ending the task:
 
 ```text
 NEXT SKILL: <aer-skill-name>

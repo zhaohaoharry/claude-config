@@ -25,3 +25,4 @@
 - [Edit only what needs change](feedback_edit_only_what_needs_change.md) — keep the author's wording; change only tokens with a nameable defect; no wholesale stylistic rewrites
 - [Fast country-level batteries](feedback_fast_country_level_batteries.md) — small-panel DiD batteries: five estimators by default (no untrended dCDH, no detrended CS), one Stata instance per window in parallel
 - [Footnote placement](feedback_footnote_placement.md) — footnote markers only after a period or comma, never mid-clause
+- [Author lines with full names](feedback_author_lines_full_names.md) — all coauthors, full names, taken from the latest draft not the config; CPP has four authors incl. Haoning Sun

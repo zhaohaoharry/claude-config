@@ -3,7 +3,7 @@
 Session Log Reminder Hook
 
 Stop hook: after THRESHOLD responses without a session log update,
-blocks Claude and prompts it to update the log.
+offers a nonblocking reminder to update the primary record at a meaningful milestone.
 
 Hook Event: Stop
 """
@@ -74,12 +74,13 @@ def find_latest_log(*start_dirs: str) -> tuple[Path | None, float]:
             if base in seen:
                 continue
             seen.add(base)
-            log_dir = base / "quality_reports" / "session_logs"
-            if log_dir.is_dir():
-                md_files = list(log_dir.glob("*.md"))
-                if md_files:
-                    latest = max(md_files, key=lambda f: f.stat().st_mtime)
-                    return latest, latest.stat().st_mtime
+            candidates = []
+            for log_dir in [base / "session_notes", base / "quality_reports" / "session_logs"]:
+                if log_dir.is_dir():
+                    candidates.extend(f for f in log_dir.glob("*.md") if f.name != "catalogue.md")
+            if candidates:
+                latest = max(candidates, key=lambda f: f.stat().st_mtime)
+                return latest, latest.stat().st_mtime
     return None, 0.0
 
 
@@ -101,11 +102,10 @@ def main():
             state["no_log_reminded"] = True
             save_state(state_path, state)
             output = {
-                "decision": "block",
-                "reason": (
-                    f"No session log exists yet. Create one at "
+                "systemMessage": (
+                    f"For substantial work, maintain one primary record such as "
                     f"quality_reports/session_logs/{today}_description.md "
-                    f"before continuing. Include the current goal and key context."
+                    f"at the next meaningful milestone. Skip routine micro tasks; do not delay delivery for logging."
                 ),
             }
             json.dump(output, sys.stdout)
@@ -122,11 +122,10 @@ def main():
         state["reminded"] = True
         save_state(state_path, state)
         output = {
-            "decision": "block",
-            "reason": (
+            "systemMessage": (
                 f"SESSION LOG REMINDER: {state['counter']} responses without "
-                f"updating the session log. Append your recent progress to "
-                f"{latest_log.name}."
+                f"updating the primary record. At the next meaningful milestone, record material progress in "
+                f"{latest_log.name}; this reminder does not block completion."
             ),
         }
         json.dump(output, sys.stdout)

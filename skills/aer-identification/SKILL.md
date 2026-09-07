@@ -9,7 +9,7 @@ description: Use when selecting, implementing, or stress-testing the causal iden
 
 In modern AER-track empirical economics, **identification is the paper**. A weak design cannot be rescued by clever writing, more controls, or a larger sample. This skill walks through the five canonical design-based strategies, the modern defaults that have replaced naive textbook implementations, and the referee-anticipating tests each demands.
 
-If the identification strategy is fragile, return to `aer-topic-selection`. There is no point polishing an indefensible empirical strategy.
+If the identification strategy is fragile, identify the precise limitation and narrow unsupported claims. Consult topic selection only for a requested topic decision; do not route cyclically or block an evidence-bounded rewrite that can proceed.
 
 ## When to Use
 

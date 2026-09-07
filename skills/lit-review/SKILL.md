@@ -45,7 +45,7 @@ Conduct a structured literature search and synthesis on the given topic.
    | 7-8 | Relevant | Read full text, extract finding/method, include |
    | 9-10 | Seminal / core | Read, extract, and traverse its citations (Step 4) |
 
-   For ambiguous topics, calibrate first: score 5-10 candidate abstracts, show the user the predicted vs. expected calls, and adjust weights/exclusion terms before bulk screening. Report progress as you go — never screen silently.
+   For ambiguous topics, calibrate first: score 5-10 candidate abstracts, use the request and examples to adjust weights/exclusion terms, and report the calibration. Ask only if the relevance criterion remains materially ambiguous; otherwise continue screening. Report progress as you go — never screen silently.
 
 4. **Traverse citations from seed papers** (every paper scoring ≥7, especially ≥9):
    - **Backward (references):** what the seed cites — anchors the seminal/foundational work.
@@ -53,7 +53,7 @@ Conduct a structured literature search and synthesis on the given topic.
    - **Forward (citing works):** newer papers that build on, replicate, or challenge the seed — catches the recent frontier OpenAlex/Scholar keyword search may miss.
      `WebFetch` `https://api.semanticscholar.org/graph/v1/paper/DOI:{doi}/citations?fields=title,year,abstract,externalIds&limit=100`
    - Re-score each discovered paper with the Step 3 rubric; only queue those scoring ≥5. Use citation `contexts`/`intents` (methodology vs. background) as a relevance signal.
-   - **Limit the blast radius:** traverse only from ≥7 seeds, follow at most 2 levels deep, dedupe against everything already seen, and pause to confirm with the user past ~50 papers. Forward-from a recent, highly cited paper is usually the highest-yield single move.
+   - **Limit the blast radius:** traverse only from seeds scoring ≥7, follow at most 2 levels deep, dedupe against everything already seen, and use ~50 papers as a batching/progress threshold, not an approval gate. Expand only while relevant evidence gaps justify it; ask only about a material scope or cost increase. Forward-from a recent, highly cited paper is usually the highest-yield single move.
 
 5. **Organize and synthesize.** Sort surviving papers by relevance, then group into:
    - **Theoretical contributions** — models, mechanisms, frameworks.
@@ -73,7 +73,7 @@ Conduct a structured literature search and synthesis on the given topic.
 
 8. **Save report** to `quality_reports/lit_review_[sanitized_topic]_YYYY-MM-DD.md`.
 
-9. **Validate the BibTeX.** Recommend the user run `/bib-validate` on the extracted entries (or the project `.bib` after they paste them in) to catch hallucinated DOIs, wrong years, mismatched author lists, and malformed entries before anything is cited. State this explicitly in the closing summary.
+9. **Validate the included BibTeX before delivery.** Apply `bib-validate` directly or reuse equivalent verification already performed. Record unresolved metadata accurately. Do not make the user start another validation task, and do not insert new entries into the project bibliography without authorization.
 
 ## Output Format
 

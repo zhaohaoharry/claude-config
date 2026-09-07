@@ -1,6 +1,6 @@
 ---
 name: aer-topic-selection
-description: Use when evaluating whether a research idea clears the AER top-5 bar, when routing between AER, AER:Insights, and the AEJ family, or when sharpening a fuzzy contribution sentence into one publishable claim. Apply before any writing begins.
+description: Use when evaluating whether a research idea clears the AER top-5 bar, when routing between AER, AER:Insights, and the AEJ family, or when sharpening a fuzzy contribution sentence into one publishable claim. Use for topic-level decisions, not as a prerequisite for every local writing edit.
 ---
 
 # AER Topic Selection
@@ -55,7 +55,7 @@ which changes the way economists think about Q.
 If any blank cannot be filled in:
 
 - **X / Y unclear** → the research question is not yet a question
-- **Z weak** → return to `aer-identification` before doing anything else
+- **Z weak** → assess the specific identification gap once, using `aer-identification` if needed; record the claim limitation and continue authorized work. Do not cycle between routing skills or invent a new design.
 - **D thin** → small-sample, unreplicable, or off-the-shelf data is desk-reject bait
 - **M unknown** → results don't exist yet; this is not a topic-selection problem
 - **Q absent** → this is an AEJ paper, not an AER paper

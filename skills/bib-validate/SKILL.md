@@ -9,7 +9,7 @@ allowed-tools: ["Read", "Grep", "Glob", "Write", "WebSearch", "WebFetch"]
 
 Verify that every reference in a `.bib` file (or a pasted reference list) corresponds to a real publication, and check its metadata against authoritative scholarly databases. Produce a status table and offer corrected BibTeX. **Does NOT edit the source `.bib` file unless the user explicitly asks.**
 
-**Input:** `$ARGUMENTS` — a path to a `.bib` file. If a `.tex` file is given, read it and follow `\bibliography{}` / `\addbibresource{}` to the `.bib`. If no argument, ask the user for the file (or accept a pasted reference list).
+**Input:** `$ARGUMENTS` — a path to a `.bib` file. If a `.tex` file is given, read it and follow `\bibliography{}` / `\addbibresource{}` to the `.bib`. Resolve the file or section from the current request, selection, conversation, and live project state; ask only if the target remains materially ambiguous. A pasted reference list is also acceptable.
 
 ## Steps
 
@@ -47,7 +47,7 @@ Verify that every reference in a `.bib` file (or a pasted reference list) corres
 
 5. **Surface the headline.** If a large share of entries (>10%) flag as HALLUCINATED or CHIMERIC, lead the report with a one-line warning (e.g., "7 of 51 entries are hallucinated or chimeric — review before submission").
 
-6. **Offer corrected BibTeX (optional).** For INCORRECT and CHIMERIC entries where a confident match was found, prepare a corrected entry — **keep the user's original cite key**, fix only the metadata around it. Present these for confirmation; do not write to the `.bib` unless the user says so.
+6. **Offer corrected BibTeX (optional).** For INCORRECT and CHIMERIC entries where a confident match was found, prepare a corrected entry — **keep the user's original cite key**, fix only the metadata around it. For validation-only requests, present corrections without editing. If the user already requested corrections, apply verified metadata repairs directly, preserving cite keys. Ask only before changing the identity of a cited work or adding an unauthorized citation.
 
 ## Output Format
 
@@ -89,4 +89,4 @@ For each non-verified entry: the claimed metadata, the best database match (with
 - Distinguish off-by-one years (preprint vs. published) from genuinely wrong years — the former is at most a MISMATCH note.
 - `@misc`, `@unpublished`, theses, and working papers often have no database coverage. Mark these UNVERIFIABLE rather than HALLUCINATED unless a positive red flag is present.
 - Process API/web fetches in small batches to avoid rate limiting.
-- Do not edit the `.bib` file or add corrections without explicit user confirmation.
+- A request to correct the bibliography is sufficient authorization for verified existing-entry repairs; do not ask again. New cited works still require explicit authorization.

@@ -18,9 +18,9 @@ for grammar/style and to `~/.claude/rules/table-figure-format.md` for tables/fig
 ## 1. Detect the target journal — in this priority order
 1. **Explicit** — the user named one (`/journal-fit QJE`, "make this fit 经济研究",
    "target the AER"). Use it.
-2. **Project file** — read the current project's `CLAUDE.md` for a line like
+2. **Project file** — read the conversation and current project's `AGENTS.md`, `HANDOFF.json`, or `CLAUDE.md` for a line like
    `Target journal: <name>`. If present, use it.
-3. **Ask** — if neither, ask which journal (AskUserQuestion). Never guess.
+3. **Ask only when necessary** — if the user requested journal-specific adaptation and the target remains unknown, ask which journal while continuing journal-independent work. For ordinary editing without a target, apply general economics prose guidance and do not invent a target.
 
 Resolve the name to a reference file via the alias table below.
 
@@ -54,7 +54,7 @@ Resolve the name to a reference file via the alias table below.
   in Chinese, using the real section terms (引言, 理论分析与研究假设, 边际贡献,
   机制检验, 稳健性检验, 政策启示).
 - **Currency.** Each guide is date-stamped (§1). If it is stale (older than ~1 year),
-  say so and offer to refresh it from recent issues.
+  verify the relevant current requirements directly from authoritative sources. Refresh only the needed guidance; do not defer necessary verification to a new user request.
 
 ## Alias table
 | Aliases | File | Status |

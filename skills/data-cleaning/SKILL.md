@@ -102,7 +102,7 @@ After producing the script, report: language chosen, where it was written/run, t
   - Export **CSV snapshots to `log\`** at every key data step so failures are debuggable.
   - Validate with `if <fail> { di as err "..."; error 9 }` — **never** `assert ..., msg()`.
   - Always `tab _merge` before asserting on a merge; guard every `>`/`>=` with `& !missing(x)`.
-- **No estimation.** Stop at the saved analysis file. Regressions, fixed effects, and results tables belong to `econometrics-playbook`.
+- **Preparation boundary.** This skill ends at the verified analysis file. If the user also requested estimation, continue immediately with `econometrics-playbook` and complete that authorized work; do not require another prompt.
 - **Never overwrite or hand-edit raw data.** Raw inputs are read-only; all changes happen in the script.
 - **Document drops.** Every dropped row and every winsorized value is logged with a count and a reason.
 - **Determinism.** Set a seed for any random step; sort before order-dependent operations; avoid machine-specific absolute paths.

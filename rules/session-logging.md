@@ -1,61 +1,10 @@
-# Session Logging
+# Proportional session continuity
 
-Track work across sessions so context is never lost.
+Record meaningful decisions, verified results, unresolved blockers, and the next required action so work can resume. Logging is not an approval gate or a prerequisite for implementation.
 
-## Three Logging Triggers
-
-### 1. Post-Plan Log
-After a plan is approved: immediately write a session log capturing goal, approach, and key context.
-
-### 2. Incremental Logging
-Append 1-3 lines whenever:
-- A design or methodological decision is made
-- A problem is solved
-- The user corrects something or changes direction
-- An approach fails (record what was tried)
-Do not batch — log as it happens.
-
-### 3. End-of-Session Log
-When wrapping up: write a full session summary covering what changed, why, open questions, and next steps.
-
-## Log File Location
-
-```
-quality_reports\session_logs\YYYY-MM-DD_description.md
-```
-
-Use the template at `ClaudeFiles\Research Project Template\templates\session-log.md`.
-
-## Session Note (human-readable summary)
-
-Also write a human-readable summary to:
-```
-session_notes\session_YYYYMMDD_HHMM_xxx.md
-```
-where `xxx` is a random 3-letter id (e.g., xkr, mtz).
-
-Frontmatter:
-```
----
-date: YYYY-MM-DD
-title: <one-line title>
-tags: [TAG1, TAG2]
-project: <project name>
----
-```
-
-Sections: Context / What changed / Why / Open questions / Next steps
-
-## Project Catalogue
-
-Append one row to `session_notes\catalogue.md` after each session:
-```
-| YYYY-MM-DD | filename | one-line title | tags |
-```
-
-## Master Catalogue
-
-Append one row to `Claude Master\master_catalogue.md` after each session:
-```
-| YYYY-MM-DD | project name | filename | one-line title | tags |
-```
+- For substantial work, maintain one primary human-readable record in the project's established `session_notes/` or `quality_reports/session_logs/` location. Reuse an existing record; do not duplicate the same narrative in both.
+- Update at meaningful milestones, before a handoff, or when a material correction would otherwise be lost. Batch routine updates. Skip new logs for micro edits, simple questions, or routine compilation.
+- Update HANDOFF or the paper skeleton only when its state or content actually changes; do not rebuild unchanged artifacts to satisfy bookkeeping.
+- If the project maintains a catalogue, append a short index entry pointing to the primary record. Batch the project and cross-project catalogue updates at handoff. Label the agent (`Codex` or `Claude`).
+- A primary record can contain Context, Changes, Verification, Remaining work, and Next action. No mandatory duplicate report or fixed closing tokens are required.
+- Project continuity files are distinct from agent-global memory. Do not automatically write global memory; follow its applicable authorization rules.

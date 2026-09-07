@@ -1,21 +1,21 @@
 ---
 name: writing-deslop
-description: Pre-submission audit of an English economics manuscript or section for prose a referee would register as machine-written. Flags house stop-sign terms, AI-tell prose (delve, "it is important to note", uniform tricolons, hedging clusters, metronomic rhythm, em-dashes), and overclaiming (scope widening, tense drift, dropped qualifiers), while respecting standard economics phrasing. Scores the draft and gives hand-rewrites. Use before submitting a draft or when a section reads machine-generated. Produces a report without editing files.
+description: Pre-submission audit of an English economics manuscript or section for prose a referee would register as machine-written. Flags house stop-sign terms, AI-tell prose (delve, "it is important to note", uniform tricolons, hedging clusters, metronomic rhythm, em-dashes), and overclaiming (scope widening, tense drift, dropped qualifiers), while respecting standard economics phrasing. Scores the draft and gives hand-rewrites. Use before submitting a draft or when a section reads machine-generated. Reports findings for review-only requests; supports applying corrections when the user requests repair.
 argument-hint: "[filename or section, e.g. 'main.tex' or 'introduction']"
 allowed-tools: ["Read", "Grep", "Glob", "Write", "Task"]
 ---
 
 # writing-deslop — audit economics prose for machine-written register
 
-Audit an English economics manuscript or section for prose that reads as machine-written, score it, and hand back concrete rewrites. **English only. Does NOT edit any source files — it produces a report.**
+Audit an English economics manuscript or section for prose that reads as machine-written, score it, and hand back concrete rewrites. **This diagnostic specializes in English prose. Review-only requests produce a report; repair requests continue through scoped corrections and verification.**
 
 This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `journal-fit` (framing and house style). Defer grammar/notation issues to `proofread` and house-style/abstract conventions to `journal-fit`; do not duplicate their findings here.
 
 **The target is a human referee, not a detector.** AI-text detectors key on dataset-specific artifacts, degrade sharply out of domain, and systematically over-flag polished formal academic prose and non-native English writers — which is to say they over-flag exactly what a good economics manuscript looks like. Optimizing toward a lower detector score pushes prose *away* from proper register. Audit for what a referee would notice, and never treat a detector score as evidence.
 
-## Precedence — the academic guide wins
+## Precedence — user request, Personal, Academic, then Craft
 
-`AI_Writing_Guide_Academic.md` is authoritative on every surface rule. Where this file and the guide disagree, follow the guide and note the override in the report. The known cases:
+`AI_Writing_Guide_Academic.md` governs surface rules except where the Personal guide or current user request overrides it. Where this file and the guide disagree, follow the guide and note the override in the report. The known cases:
 
 **Precedence order:** the author's own recorded rules in `AI_Writing_Guide_Personal.md` outrank the academic guide, which outranks the craft guide, which outranks anything generic. A rule the author stated while looking at real output beats a rule stated in the abstract.
 
@@ -32,7 +32,7 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
 1. **Identify what to review:**
    - If `$ARGUMENTS` is a filename: read that file.
    - If `$ARGUMENTS` is a section name (e.g., "introduction"): find and read that section in `main.tex` or `paper_skeleton.tex`.
-   - If no argument: ask the user which file or section to audit.
+   - Resolve the file or section from the current request, selection, conversation, and live project state; ask only if the target remains materially ambiguous.
 
 2. **Load the writing guides as FLAGGING SOURCES, not just rewrite constraints.**
 
@@ -52,7 +52,7 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
 
    The agent flags across the categories below, scores six dimensions, and writes hand-rewrites — while respecting the economics allow-list so legitimate academic phrasing is not flagged.
 
-4. **Save the report** to:
+4. **For a requested audit or substantial review, save the report** to:
    `quality_reports/[filename_without_ext]_deslop_YYYY-MM-DD.md`
 
 5. **Present summary** to the user:
@@ -153,8 +153,8 @@ Note any constructions that look AI-ish but are legitimate economics phrasing he
 
 ## Important
 
-1. **Never edit source files.** Produce the report only.
-2. **English only.** If the text is not English, say so and stop.
+1. **Honor the requested mode.** Do not edit for review-only requests. For requested repairs, apply supported corrections with project revision marks, then verify; keep delegated diagnostic agents read-only.
+2. **English diagnostic only.** For non-English text, explain the scope and continue the user's task with an appropriate language-specific workflow; do not apply the English phrase list.
 3. **Respect the economics allow-list.** A false positive on "we estimate" or a needed "suggests" is worse than a missed minor tell. When unsure, list it under "Respected", not "Flags".
 4. **Preserve meaning and hedging.** Every rewrite keeps the economic claim, the numbers, and one appropriate hedge intact. Do not over-edit strong prose into the very uniformity you are removing.
 5. **Rhythm over vocabulary.** Uniform sentence and paragraph length is what a referee registers first — weight low variance heavily even when the word choice is clean. Flag the uniformity, never the 15–25 word band itself.
@@ -163,3 +163,5 @@ Note any constructions that look AI-ish but are legitimate economics phrasing he
 6. **Quote specifics.** Every flag cites the offending text and a location by section + opening words (never line numbers).
 7. **Recommend rewrite-from-scratch** when a passage trips 3+ categories and has uniform rhythm — patching individual words will not fix AI-generated structure.
 8. **Do not duplicate `proofread` or `journal-fit`.** Stay in the AI-tell lane; cross-reference them for everything else.
+
+For a repair request, the main agent applies supported findings and performs project verification before delivery; delegated reviewers remain read-only. Routine micro repairs need no separate report or repeated audit. If a requested independent reviewer is unavailable, perform a clearly labeled self-review and continue unless independence itself is a required deliverable.

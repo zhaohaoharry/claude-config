@@ -1,5 +1,27 @@
 # Global Configuration — Chapman University Economist
 
+## Autonomy, clarification, and completion
+
+- An execution request authorizes necessary inspection, reversible local implementation, and proportionate verification within its scope. Continue until the requested deliverable is complete; a plan, report, or skill handoff is not completion when implementation was requested.
+- Reuse explicit authorization already given for the same task, target, operation, and access scope. Do not ask again because a turn ended or a skill changed. New external recipients, broader visibility, destructive changes, or additional charges require authorization if not already covered. Never treat silence as authorization.
+- Resolve the target and requirements from the request, selection, conversation, and live project state first. Ask only about missing information that cannot reasonably be inferred and materially affects correctness, scope, or authorization. Continue independent authorized work while awaiting a necessary answer.
+- Complexity, multiple files, planning, progress updates, and showing a checklist do not create approval gates. Make routine implementation and presentation choices directly. Prepare and verify the concrete result before requesting any still-needed authorization for the dependent action.
+- User intent controls output mode: review-only means do not edit; repair or rewrite means perform the authorized changes. Natural-language instructions have the same effect as skill flags. A skill's limited specialty does not end a larger task; continue its authorized downstream steps.
+- Fix ordinary failures caused by the work and use a supported equivalent fallback when it preserves the requested target, functionality, privacy, and cost. Do not silently switch a specified live workbook, account, browser, or product. Report actual blockers precisely and distinguish partial completion from verified completion.
+- Finish when the requested content and functionality are present and necessary checks pass. Fix material errors, missing content, clipping, overlap, and unreadable output. Minor aesthetic preferences do not justify endless refinement. Never claim checks that were not performed.
+- These defaults do not override higher-priority runtime instructions or explicit safeguards: protect raw data and credentials, preserve unrelated changes, and obtain authorization for external actions when it is missing. Use only currently available tools and permission channels; planning tools are not automatically approval tools.
+
+## Local workflow preferences for bundled skills
+
+These user preferences also apply when a bundled skill is selected. Do not edit or reinstall a bundled package merely to apply them.
+
+- New documents, presentations, and spreadsheets do not require an interview when the topic, audience, and purpose are already clear. Ask zero questions in that case; distinguish optional preferences from required facts and authorization.
+- For ordinary standalone spreadsheet files, if the preferred artifact runtime is unavailable, use an installed equivalent such as openpyxl or XlsxWriter when it preserves required functionality. Verify the delivered formulas and layout, and disclose any recalculation or rendering limitation. This fallback does not apply to a specifically selected live Excel session.
+- Repair generated previews before reporting a rendering blocker. Keep visual QA proportional to material defects and state uncompleted checks accurately.
+- For local configuration audits or edits, inspect the live files first. Consult current official documentation for product behavior or compatibility claims; network unavailability does not block conclusions supported entirely by local text.
+- Preserve existing task authorization for publishing to the same target and access scope. If authorization is missing, prepare the validated result first, explain the intended access, and use the currently supported permission channel. Never infer publication authorization merely from a request to build locally.
+
+
 ## User Profile
 
 - **Institution:** Chapman University
@@ -46,7 +68,7 @@ Every research project has **two** LaTeX locations:
    - `paper_skeleton.tex` ← **skeleton-driven development file (load full rules: `~/.claude/rules/paper-skeleton.md`)**
    - `figures\` ← programs save figure outputs here
    - `tables\` ← programs save table outputs here
-   - `ClaudeAnswer.tex` ← AI equation scratch pad (always overwrite, never push)
+   - `answers/` ← separately saved compiled mathematical answers (never push by default)
 
 2. **`[project-name-repo]\`** — GitHub/Overleaf folder (pushed to GitHub → Overleaf sync)
    - `main.tex`, `reference.bib`, style files, `figures\`, `tables\`
@@ -78,9 +100,9 @@ Applies to every research project. Three non-negotiables:
 - Never reference content by line number — use section name + paragraph opening words.
 - To locate text: give PDF page number, section, and opening words of paragraph.
 - Before answering about page/equation/figure/table numbers: check the compiled PDF first. Never guess from source.
-- Compile LaTeX immediately after every edit. Do not wait to be asked.
-- Close PDFs before recompiling — MiKTeX cannot overwrite locked files.
-- Default compiler: `pdflatex`. Three-pass compile + bibtex when bibliography present.
+- Compile after each coherent set of LaTeX edits. For a micro prose edit, run one pass and inspect the log; rerun only for changed references, bibliography, counters, or actual build requests. Fix errors caused by the edit.
+- Attempt the build normally. Handle an actual PDF lock using a separate build location or the specific affected preview; do not close unrelated user windows or ask preemptively.
+- Use the project compiler and edited document entry point. Run BibTeX or Biber only when needed; use the project bibliography backend and enough passes to resolve changed references.
 - Compile order when appendix is a separate file: appendix first, then main, then main again.
 - **Never end a heading argument with a period** — applies to `\section{}`, `\subsection{}`, `\subsubsection{}`, `\paragraph{}`, `\subparagraph{}`, and `\caption{}`. House styles (including the `paper.sty` used across these research projects) auto-append a period to run-in `\paragraph` headings via `\titleformat{\paragraph}[runin]{...}[.]`; a manual trailing period then renders as a doubled `..`. Write `\paragraph{The setting}`, never `\paragraph{The setting.}`. (Italic run-in leads typed by hand as `\emph{Worked example.}` are not headings and keep their period.)
 
@@ -92,10 +114,7 @@ Applies to every research project. Three non-negotiables:
 - See `~/.claude/rules/table-figure-format.md` for the full pattern and rationale. This applies to every research project under `Research\`.
 
 ### Math in chat responses
-When a response contains `$` or `$$` math AND the project has a `latex\` folder:
-→ Compile the full answer in `latex\ClaudeAnswer.tex`, render to PDF, tell user the PDF is ready.
-→ Always overwrite previous ClaudeAnswer.tex (each answer is self-contained).
-→ Use minimal `\documentclass{article}` with the answer text and equations.
+Follow `~/.claude/rules/math-compilation.md`. Save each compiled answer separately under `latex/answers/`; preserve earlier answers and use a descriptive numeric suffix on a filename collision.
 
 ### Bibliography
 - NEVER add papers to a `.bib` file unless the user explicitly says to cite them.
@@ -138,7 +157,7 @@ Key rules from that guide (do not wait to load the file for these):
 - No bullet points in main text body.
 - "et al." for 3+ authors in running text.
 
-When **writing, drafting, refining, or polishing** prose (not just removing tells), also load the *positive* craft layer `AI_Writing_Guide_EconCraft.md` and the `econ_prose_exemplars.md` library, and apply them — or run the `econ-craft` skill, which loads both guides plus the exemplars and applies the craft in place. The `econ-craft-reminder` UserPromptSubmit hook auto-injects this guidance when it detects a writing intent inside the 0.AI workspace. The academic guide stays authoritative on every surface conflict; the craft guide only adds the positive layer.
+When **writing, drafting, refining, or polishing** prose (not just removing tells), also load the *positive* craft layer `AI_Writing_Guide_EconCraft.md` and the `econ_prose_exemplars.md` library, and apply them — or run the `econ-craft` skill, which loads both guides plus the exemplars and applies the craft in place. The `econ-craft-reminder` UserPromptSubmit hook auto-injects this guidance when it detects a writing intent inside the 0.AI workspace. The Personal guide takes precedence, followed by the Academic and Craft guides; the craft guide only adds the positive layer.
 
 For any substantive economics-paper writing task, run the `econ-introduction` skill first when the work affects the research question, opening motivation, framing, main claim, mechanism, results interpretation, or contribution. Treat its one-sentence paper contract as the argument constraint for later sections, then run `econ-craft` for prose and `journal-fit` or a journal-specific skill for house style. Purely local exposition that does not change the contract may use `econ-craft` directly.
 
@@ -160,9 +179,8 @@ Every substantive manuscript edit is a **visible revision**: deletions struck th
 - Default: `python` command. Use Python 3.12 for tasks requiring PyMuPDF (fitz).
 - To read PDF highlights/annotations: use PyMuPDF via Python 3.12.
 
-### Plan-first
-For any non-trivial task (touches >1 file, unclear scope, or estimated >30 min):
-1. Enter plan mode before writing anything.
-2. Save plan to `quality_reports\plans\YYYY-MM-DD_description.md`.
-3. Present to user and wait for approval.
-4. Only execute after approval.
+### Planning and continuity
+Follow `~/.claude/rules/plan-first-workflow.md` and `session-logging.md`. Plan substantial work and execute within existing authorization; neither complexity nor file count requires approval.
+
+### Safeguards and specific-rule precedence
+Never read or expose `.env` files or credentials. Never modify `data/raw/` or canonical raw inputs. Preserve unrelated changes; do not force-push or discard work without explicit authorization. Existing bibliography metadata may be corrected when requested, preserving cite keys; adding a cited work still requires an explicit request. A named topical rule replaces older summaries on the same subject. Personal writing instructions override Academic guidance, which overrides Craft guidance; all remain subordinate to the current user request and higher-priority runtime rules.

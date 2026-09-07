@@ -42,7 +42,7 @@ The dominant failure mode of model-building with an LLM is a plausible-sounding,
 
 - **Prefer the canonical model.** If a standard framework in the field already generates your comparative static (Hotelling for extraction, Roy for selection, a two-sector allocation model, a simple principal-agent setup), use it and cite it. "This is the standard X model with Y added" is a strength, not a weakness. Novelty in the *model* is not the contribution of an empirical paper.
 - **Do not invent a new mechanism.** If the mechanism is not already in the literature or in the institutional record, the model is speculating, not disciplining.
-- **Every proof sketch needs the author's own check.** Treat the steps in this skill as prompts for judgment, never as verification. Do not assert that a result "follows" without the author confirming the algebra. Sign errors in comparative statics are easy to produce and expensive to publish.
+- **Verify the algebra directly.** Work through the proof and assumptions, use symbolic or numerical checks when useful, and distinguish a proved result from a conjecture or unchecked step. Do not require author confirmation for algebra you can verify; escalate only an unresolved substantive assumption or evidence gap. Independent author review remains valuable before publication.
 - **If the model requires an assumption the setting contradicts, stop.** Report the conflict rather than assuming it away. An institutional fact that breaks the model is a finding about the model.
 
 ## Output
@@ -57,7 +57,7 @@ KEY ASSUMPTIONS AND THEIR PRICE: <list, each with what it buys and what it costs
 THE RESULT: <FOC, sign, and the intuition in one sentence>
 WHAT THE MODEL ADDS: <what a reader learns that the reduced form alone does not>
 AUXILIARY TESTABLE PREDICTION: <one, or "none — model is interpretive only">
-UNVERIFIED STEPS: <every step the author must check by hand>
+UNVERIFIED STEPS: <remaining unverified steps and the evidence or decision needed>
 HANDOFF: aer-robustness (test the auxiliary prediction) | econ-introduction (fold the mechanism into the contract) | econ-craft (write the intuition before the notation)
 ```
 

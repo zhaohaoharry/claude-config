@@ -1,42 +1,15 @@
 ---
 name: compile-latex
-description: Compile a LaTeX paper with pdflatex (3 passes + bibtex). Use when compiling the paper after edits.
+description: Compile and verify the edited LaTeX document using the project compiler and proportionate incremental passes; repair introduced errors.
 argument-hint: "[filename without extension, defaults to main]"
 allowed-tools: ["Bash", "Read", "Glob"]
 ---
 
-# Compile LaTeX
+# Compile the edited LaTeX document
 
-Compile a LaTeX document with pdflatex using 3 passes + bibtex.
-
-## Steps
-
-1. **Identify the file:**
-   - If `$ARGUMENTS` given: use that filename (without .tex extension)
-   - Default: `main`
-
-2. **Warn about PDF lock:**
-   Tell the user: "Make sure the PDF is closed before I compile — MiKTeX cannot overwrite a locked file."
-   Then proceed.
-
-3. **Find the file location:**
-   - Look for `[filename].tex` in the current project
-   - Likely in the GitHub repo subfolder (e.g., `Double-Clinching-Auction/`)
-
-4. **Run 3-pass compile:**
-   ```bash
-   cd [directory containing the .tex file]
-   pdflatex -interaction=nonstopmode [filename].tex
-   bibtex [filename]
-   pdflatex -interaction=nonstopmode [filename].tex
-   pdflatex -interaction=nonstopmode [filename].tex
-   ```
-
-5. **Check the log:**
-   - Read `[filename].log` for errors and overfull hbox warnings
-   - Report: success or list errors with line context
-
-6. **Report to user:**
-   - Compiled successfully: confirm PDF created
-   - Errors: show error messages with suggested fixes
-   - Overfull hbox: list the worst offenders (>10pt)
+1. Resolve the actual edited document from the request and current project state. Use its root document, then `latex/paper_skeleton.tex` when it is the development source; do not default to an unrelated `main.tex`. Ask only if the target remains materially ambiguous.
+2. Use the project compiler and bibliography backend. For a micro prose edit with unchanged citations, references, counters, and structure, run one LaTeX pass and inspect the log. Run BibTeX/Biber only when required and additional passes until changed references resolve. Build an external appendix first when the main document depends on it.
+3. Do not ask preemptively about PDF locks. Attempt compilation and, on an actual lock, use a separate output location or handle the affected preview without closing unrelated user windows.
+4. Fix ordinary errors introduced by the current edits and rebuild. Preserve unrelated content. If correction needs missing source material or a substantive user decision, explain that exact blocker while finishing independent checks.
+5. Verify the fresh output, fatal errors, undefined references, and material layout warnings. Inspect rendered pages when substantive layout changed or final visual QA is required. Existing PDF presence alone is not build success.
+6. Deliver the compiled artifact and actual validation status. Distinguish pre-existing warnings and incomplete verification; do not stop at suggested fixes for a routine error you can repair.

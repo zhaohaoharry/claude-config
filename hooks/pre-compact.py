@@ -46,15 +46,11 @@ def find_active_plan(project_dir: str) -> dict | None:
     plan_files = sorted(plans_dir.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
 
     for plan_file in plan_files[:3]:
-        content = plan_file.read_text()
-        if "COMPLETED" in content.upper():
+        content = plan_file.read_text(encoding="utf-8-sig")
+        status_match = re.search(r"(?im)^\s*(?:\*\*)?Status\s*:\s*(?:\*\*)?\s*(IN_PROGRESS|COMPLETED|COMPLETE|BLOCKED|APPROVED|DRAFT)\b", content)
+        status = status_match.group(1).lower() if status_match else "in_progress"
+        if status in {"complete", "completed"}:
             continue
-
-        status = "in_progress"
-        if "APPROVED" in content.upper():
-            status = "approved"
-        elif "DRAFT" in content.upper():
-            status = "draft"
 
         current_task = None
         for line in content.split("\n"):

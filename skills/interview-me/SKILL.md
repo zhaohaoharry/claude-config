@@ -13,9 +13,9 @@ Conduct an interactive interview to formalize a research idea into a structured 
 
 ## Protocol
 
-1. **Start by listening.** Ask the user to describe the idea in their own words. Do not interrupt or offer suggestions yet.
+1. **Start by listening.** Use the idea already supplied. Ask for a description only when missing. Use this interactive workflow when the user requests an interview; do not turn a well-specified execution task into an interview.
 
-2. **Ask clarifying questions** one at a time (not a list — conversation style):
+2. **Ask only unresolved material questions** one at a time in the requested interview; skip questions already answered:
    - What is the key phenomenon or puzzle you're trying to explain?
    - What is the ideal experiment that would answer this?
    - What real-world variation could serve as a natural experiment?
@@ -58,6 +58,6 @@ Conduct an interactive interview to formalize a research idea into a structured 
    2. [Second concrete action]
    ```
 
-6. **Ask user to approve** the specification before saving.
+6. **Save a DRAFT specification** with unresolved research decisions clearly marked. Draft saving is reversible and requires no approval. Invite correction without blocking independent authorized work; mark decisions confirmed only when the user has confirmed them.
 
 7. **Save** to `quality_reports/specs/YYYY-MM-DD_[working-title].md`

@@ -31,14 +31,10 @@ def active_plan(project_dir: Path) -> str | None:
             text = f.read_text(encoding="utf-8", errors="ignore")
         except OSError:
             continue
-        if "COMPLETED" in text.upper():
+        status_match = re.search(r"(?im)^\s*(?:\*\*)?Status\s*:\s*(?:\*\*)?\s*(IN_PROGRESS|COMPLETED|COMPLETE|BLOCKED|APPROVED|DRAFT)\b", text)
+        status = status_match.group(1).lower() if status_match else "in_progress"
+        if status in {"complete", "completed"}:
             continue
-        status = "in progress"
-        up = text.upper()
-        if "APPROVED" in up:
-            status = "approved"
-        elif "DRAFT" in up:
-            status = "draft"
         next_task = None
         for line in text.splitlines():
             if "- [ ]" in line:

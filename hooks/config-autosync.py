@@ -61,7 +61,16 @@ def main() -> None:
         log(f"status failed: {status.stderr.strip()}")
         return
     if not status.stdout.strip():
-        return  # no tracked-config changes; stay silent
+        # A previous push may have failed after committing. Check ahead state.
+        pending = git(["rev-list", "--count", "@{upstream}..HEAD"])
+        if pending.returncode != 0 or not pending.stdout.strip().isdigit():
+            return
+        if int(pending.stdout.strip()) == 0:
+            return
+        push = git(["push", "origin", "HEAD"], timeout=30)
+        log("pushed previously committed config" if push.returncode == 0
+            else "retry push failed; local commits retained")
+        return
 
     changed = len(status.stdout.strip().splitlines())
 

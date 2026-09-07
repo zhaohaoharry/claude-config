@@ -5,123 +5,29 @@ argument-hint: "[optional commit message]"
 allowed-tools: ["Bash", "Glob", "Read", "Write"]
 ---
 
-# Sync to GitHub/Overleaf — Smart Pipeline
+# Sync referenced manuscript assets to GitHub/Overleaf
 
-Copy only the figures and tables **actually referenced** in your tex files into the repo folder, then commit and push to GitHub.
+## Resolve the authorized target
 
-## Background
+Use the requested project, live project metadata, repository root, and remote to identify the target. Support `.git` directories and worktree `.git` files. Ask only if multiple targets remain plausible after inspection. An explicit sync-and-push request authorizes that operation for the resolved repository; a local-only request does not. Do not add a second approval for unchanged authorization.
 
-Tex files (main.tex, appendix.tex, beamer slides, response letters, cover letters) live directly in the repo folder and are already tracked by git — no copying needed for them.
+## Prepare and validate
 
-Programs produce many figures and tables locally in `latex\figures\` and `latex\tables\`, but only a subset are used in the paper. This skill scans your tex files and copies only the referenced ones.
+1. Inspect the worktree, staged changes, branch, and existing local commits. Preserve unrelated user work and record the intended file set.
+2. Identify the requested document entry points and recursively resolve `\input`, `\include`, `\includegraphics`, graphics paths, and relevant bibliography dependencies. Do not treat obsolete drafts or unrelated cover letters as entry points merely because they are `.tex` files. Show the resolved list as progress, not an approval gate.
+3. Copy only referenced generated assets from `latex/figures/` and `latex/tables/` to the corresponding repository paths, retaining directory structure. Do not copy raw data, secrets, or unrelated programs. Do not overwrite differing destination edits without reconciling their provenance.
+4. Resolve missing references by checking source paths, valid existing repository assets, and authorized generators. Run the required project provenance checks. Continue independent preparation when one dependency is blocked. Do not hand-edit generated results or run prohibited production/MATLAB jobs.
+5. Compile and inspect the target as required by the project. Fix introduced failures. Do not publish a newly broken manuscript by default; if missing evidence prevents completion, state the exact remaining issue and keep the prepared work.
 
----
+## Commit and push
 
-## Steps
+- Inspect `git diff` and `git diff --check`. Stage only task-related paths, never `git add .`. Preserve unrelated staged changes and exclude them from the task commit; use an isolated worktree or a carefully scoped commit where needed.
+- Use the requested commit message or generate an accurate one. Showing it is informational, not another approval gate.
+- A clean worktree does not imply nothing to push. Fetch the authorized remote and inspect ahead/behind state against the resolved upstream. If local commits are ahead, inspect their scope and push those covered by the request even if no new commit is needed. Ask only if existing commits introduce an unresolved scope issue.
+- If behind or diverged, inspect and integrate remote changes without discarding user work, rewriting published history, or force-pushing. Resolve routine conflicts within scope and verify again. Do not blindly `git pull` and restart the whole skill.
+- Use the exact target remote and branch. Reuse normal credential handling; never print or copy tokens. User login is needed only when actual authentication is missing.
+- Verify the remote branch points to the intended commit after pushing. Do not claim the remote is current when it was not checked.
 
-### 1. Find the GitHub repo folder
-Look for a subfolder containing a `.git` directory. If multiple exist, ask user which one.
+## Completion
 
-### 2. Identify tex files to scan
-List all `.tex` files in the repo folder (main.tex, appendix.tex, beamer files, response letters, cover letters, etc.). Show the list to the user and confirm before proceeding.
-
-### 3. Parse all tex files for figure and table references
-
-**Figures** — scan for:
-```
-\includegraphics[...]{filename}
-\includegraphics{filename}
-```
-Extract `filename` from each. If no extension given, try `.pdf`, `.png`, `.eps`, `.jpg` in that order.
-
-**Tables** — scan for:
-```
-\input{tables/filename}
-\input{filename}
-\include{filename}
-```
-Extract filenames that resolve to files in `latex\tables\`.
-
-Collect the full deduplicated list of referenced figure and table files.
-
-### 4. Report what was found
-```
-Figures referenced in tex files (N total):
-  - fig1.pdf
-  - fig2.pdf
-  ...
-
-Tables referenced in tex files (M total):
-  - table1.tex
-  - table2.tex
-  ...
-```
-
-### 5. Copy only referenced files
-
-For each referenced figure:
-```bash
-cp "latex/figures/[filename]" "[repo-folder]/figures/[filename]"
-```
-If a referenced file is NOT found in `latex/figures/`: flag it as missing (do not stop — continue with the others).
-
-For each referenced table:
-```bash
-cp "latex/tables/[filename]" "[repo-folder]/tables/[filename]"
-```
-Same: flag missing files but continue.
-
-### 6. Check for changes
-```bash
-cd "[repo-folder]"
-git status
-```
-If nothing to commit: report "Nothing to push — repo is already up to date." and stop.
-
-### 7. Determine commit message
-- If `$ARGUMENTS` provided: use it
-- Otherwise: auto-generate (e.g., "Update figures and tables" or list changed files)
-- Show message to user before committing
-
-### 8. Commit and push
-```bash
-cd "[repo-folder]"
-git add .
-git commit -m "[commit message]"
-git push
-```
-
-### 9. Final report
-```
-✓ Pushed to GitHub
-  Figures synced:  N
-  Tables synced:   M
-  Files changed:   K (in git)
-  ⚠ Missing locally (referenced but not in latex/): [list if any]
-
-  Overleaf: Menu → GitHub → Pull from GitHub
-```
-
----
-
-## What this skill does NOT touch
-- Files already in the repo folder (`main.tex`, `appendix.tex`, etc.) — git handles those
-- Anything in `data\`, `program\`, `literature\` — stays local forever
-- Figures/tables in `latex\` that are not referenced by any tex file — stays local
-
----
-
-## Troubleshooting
-
-### Push rejected (remote has changes)
-```bash
-cd "[repo-folder]"
-git pull
-```
-Then retry `/sync-to-github`.
-
-### Referenced figure not found locally
-The tex file references a figure that doesn't exist yet in `latex\figures\`. Either the program hasn't generated it yet, or the filename in the tex file doesn't match. The skill will flag it — fix the mismatch or generate the figure first.
-
-### First push from this machine (credentials)
-Windows Credential Manager handles this. On first push, a browser window will ask you to log in to GitHub once. After that it's stored permanently. If using a token: GitHub → Settings → Developer Settings → Personal Access Tokens.
+Report separately: assets synchronized, manuscript validation, commit/push outcome, and any unresolved dependency. Say 'already synchronized' only after both relevant content and local/remote commit state have been verified. Transport success is not proof of manuscript completeness. Do not claim Overleaf has pulled a GitHub update unless that was actually verified.

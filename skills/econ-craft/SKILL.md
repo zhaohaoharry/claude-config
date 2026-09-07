@@ -1,6 +1,6 @@
 ---
 name: econ-craft
-description: Apply the positive craft layer to economics manuscript prose so it reads like a specific economist, not an LLM. Use when asked to write, draft, rewrite, revise, refine, polish, tighten, sharpen, or improve the prose of a paper, section, abstract, introduction, or paragraph. Installs flow, rhythm, voice, intuition-first exposition, and number-anchored argument — then applies them in place. Default mode EDITS the file; pass --audit for a report-only pass. Complements writing-deslop (removes AI tells), journal-fit (house style), and proofread (correctness).
+description: Apply the positive craft layer to economics manuscript prose so it reads like a specific economist, not an LLM. Use when asked to write, draft, rewrite, revise, refine, polish, tighten, sharpen, or improve the prose of a paper, section, abstract, introduction, or paragraph. Installs flow, rhythm, voice, intuition-first exposition, and number-anchored argument — then applies them in place. Edit when drafting or revision is requested; --audit or a natural-language review-only request produces a report. Complements writing-deslop (removes AI tells), journal-fit (house style), and proofread (correctness).
 argument-hint: "[filename or section, e.g. 'main.tex', 'introduction', or '--audit introduction']"
 allowed-tools: ["Read", "Grep", "Glob", "Edit", "Write"]
 ---
@@ -14,11 +14,11 @@ flow, rhythm, voice, intuition-first exposition, and argument carried by
 numbers. The aim is the ceiling, not just the floor: clarity is the floor;
 sounding like a specific economist is the ceiling.
 
-**Default behavior: apply the craft in place** (edit the `.tex`/section).
-Pass `--audit` to produce a report without editing.
+**Requested mode controls behavior:** apply craft in place for revision requests; do not edit for review-only requests.
+Use `--audit` or a natural-language review-only request to produce a report without editing.
 
 This skill stays in the *craft* lane. It does not duplicate:
-- `writing-deslop` — flags/scores AI tells (report only).
+- `writing-deslop` — diagnoses AI tells; keep diagnostics read-only and apply findings when repair is requested.
 - `journal-fit` — framing and target-journal house style.
 - `proofread` — grammar, typos, notation, LaTeX correctness.
 Run those for their jobs; cross-reference, don't re-do them here.
@@ -30,7 +30,7 @@ Run those for their jobs; cross-reference, don't re-do them here.
    - `$ARGUMENTS` is a section name (e.g. "introduction") → find and read that
      section in `main.tex` or `paper_skeleton.tex`.
    - Editor selection present and no argument → use the selection.
-   - Nothing specified → ask which file or section.
+   - Resolve the file or section from the current request, selection, conversation, and live project state; ask only if the target remains materially ambiguous.
    - If `--audit` appears in the arguments, run in report-only mode (see below).
 
 2. **Load the craft layer (always, before composing).**
@@ -59,7 +59,7 @@ Run those for their jobs; cross-reference, don't re-do them here.
    - `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md`
      — still authoritative on every surface rule (no em-dash/colon/semicolon,
      active voice, numbers not adjectives, no math/forward-refs in the intro).
-     On any conflict, the academic guide wins; the craft guide never overrides it.
+     The Personal guide overrides the Academic guide, which overrides the Craft guide; apply the user request first.
 
 3. **Tag the subfield and the section type.** Each craft principle is tagged
    `[applied-micro] [structural/macro] [theory] [finance]`. Read the project
@@ -164,8 +164,8 @@ Save to `quality_reports/[name]_econcraft_YYYY-MM-DD.md` if a project
 
 ## Guardrails
 
-1. **Apply by default; report only with `--audit`.**
-2. **The academic guide wins every surface conflict.** The craft guide adds the
+1. **Apply by default; report for `--audit` or a natural-language review-only request.**
+2. **Precedence: user request, Personal guide, Academic guide, then Craft guide.** The craft guide adds the
    positive layer; it never relaxes a stop-sign rule.
 3. **Preserve substance.** Every rewrite keeps the claim, the numbers, the
    citations, and one appropriate hedge. Craft is not a license to change results.
