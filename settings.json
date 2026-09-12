@@ -73,6 +73,7 @@
       "Bash(git push --force*)",
       "Bash(git clean -f*)"
     ],
+    "defaultMode": "bypassPermissions",
     "additionalDirectories": [
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\ESG Green Premium",
       "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Work",
@@ -85,8 +86,7 @@
       "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
       "C:\\Users\\haozh\\.claude\\plans",
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
-    ],
-    "defaultMode": "bypassPermissions"
+    ]
   },
   "model": "claude-fable-5-1[1m]",
   "hooks": {
@@ -176,5 +176,6 @@
   },
   "outputStyle": "Concise",
   "effortLevel": "medium",
-  "switchModelsOnFlag": true
+  "switchModelsOnFlag": true,
+  "agentPushNotifEnabled": true
 }
