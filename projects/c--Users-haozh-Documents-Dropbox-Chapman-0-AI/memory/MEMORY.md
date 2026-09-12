@@ -26,3 +26,4 @@
 - [Fast country-level batteries](feedback_fast_country_level_batteries.md) — small-panel DiD batteries: five estimators by default (no untrended dCDH, no detrended CS), one Stata instance per window in parallel
 - [Footnote placement](feedback_footnote_placement.md) — footnote markers only after a period or comma, never mid-clause
 - [Author lines with full names](feedback_author_lines_full_names.md) — all coauthors, full names, taken from the latest draft not the config; CPP has four authors incl. Haoning Sun
+- [Link counts, not log](feedback_link_counts_not_log.md) — link outcomes are actual counts (OLS or PPML), never log(1+link); product-level PPML too slow in ppmlhdfe
