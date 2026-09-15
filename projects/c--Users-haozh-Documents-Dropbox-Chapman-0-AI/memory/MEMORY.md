@@ -27,3 +27,4 @@
 - [Footnote placement](feedback_footnote_placement.md) — footnote markers only after a period or comma, never mid-clause
 - [Author lines with full names](feedback_author_lines_full_names.md) — all coauthors, full names, taken from the latest draft not the config; CPP has four authors incl. Haoning Sun
 - [Link counts, not log](feedback_link_counts_not_log.md) — link outcomes are actual counts (OLS or PPML), never log(1+link); product-level PPML too slow in ppmlhdfe
+- [No loose sentences](feedback_no_loose_sentences.md) — manuscript prose in the plain register of published papers: no conversational/clipped/figurative sentences, no mechanical agent phrasing ("pins", "lets it move"), no rare words ("dearer"); data sections never mention the model
