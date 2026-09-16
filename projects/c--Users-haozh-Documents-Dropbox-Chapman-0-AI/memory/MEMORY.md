@@ -28,3 +28,5 @@
 - [Author lines with full names](feedback_author_lines_full_names.md) — all coauthors, full names, taken from the latest draft not the config; CPP has four authors incl. Haoning Sun
 - [Link counts, not log](feedback_link_counts_not_log.md) — link outcomes are actual counts (OLS or PPML), never log(1+link); product-level PPML too slow in ppmlhdfe
 - [No loose sentences](feedback_no_loose_sentences.md) — manuscript prose in the plain register of published papers: no conversational/clipped/figurative sentences, no mechanical agent phrasing ("pins", "lets it move"), no rare words ("dearer"); data sections never mention the model
+- [Write for human readers](feedback_write_for_human_readers.md) — manuscript prose in full paper sentences; no note-like compressed/pointer writing that assumes the reader has the project in mind (global)
+- [No super long paragraphs](feedback_no_super_long_paragraphs.md) — split manuscript paragraphs by topic; a half-page block is acceptable only when one argument cannot be split (global)
