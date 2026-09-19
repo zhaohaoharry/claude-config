@@ -30,3 +30,4 @@
 - [No loose sentences](feedback_no_loose_sentences.md) — manuscript prose in the plain register of published papers: no conversational/clipped/figurative sentences, no mechanical agent phrasing ("pins", "lets it move"), no rare words ("dearer"); data sections never mention the model
 - [Write for human readers](feedback_write_for_human_readers.md) — manuscript prose in full paper sentences; no note-like compressed/pointer writing that assumes the reader has the project in mind (global)
 - [No super long paragraphs](feedback_no_super_long_paragraphs.md) — split manuscript paragraphs by topic; a half-page block is acceptable only when one argument cannot be split (global)
+- [No footprints of abandoned designs](feedback_no_footprints_of_abandoned_designs.md) — after dropping a design/result, delete every trace (no "rather than X" contrasts with results the paper no longer presents or models)

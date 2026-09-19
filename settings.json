@@ -88,7 +88,7 @@
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
     ]
   },
-  "model": "claude-fable-5-1[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "PreCompact": [
       {
@@ -175,7 +175,7 @@
     "command": "python \"C:/Users/haozh/.claude/statusline.py\""
   },
   "outputStyle": "Concise",
-  "effortLevel": "medium",
-  "switchModelsOnFlag": true,
+  "effortLevel": "xhigh",
+  "switchModelsOnFlag": false,
   "agentPushNotifEnabled": true
 }
