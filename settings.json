@@ -176,6 +176,6 @@
   },
   "outputStyle": "Concise",
   "effortLevel": "xhigh",
-  "switchModelsOnFlag": false,
+  "switchModelsOnFlag": true,
   "agentPushNotifEnabled": true
 }
