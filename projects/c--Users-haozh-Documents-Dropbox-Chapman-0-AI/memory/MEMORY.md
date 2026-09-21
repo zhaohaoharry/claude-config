@@ -31,3 +31,4 @@
 - [Write for human readers](feedback_write_for_human_readers.md) — manuscript prose in full paper sentences; no note-like compressed/pointer writing that assumes the reader has the project in mind (global)
 - [No super long paragraphs](feedback_no_super_long_paragraphs.md) — split manuscript paragraphs by topic; a half-page block is acceptable only when one argument cannot be split (global)
 - [No footprints of abandoned designs](feedback_no_footprints_of_abandoned_designs.md) — after dropping a design/result, delete every trace (no "rather than X" contrasts with results the paper no longer presents or models)
+- [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
