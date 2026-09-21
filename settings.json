@@ -177,5 +177,10 @@
   "outputStyle": "Concise",
   "effortLevel": "low",
   "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    }
+  }
 }
