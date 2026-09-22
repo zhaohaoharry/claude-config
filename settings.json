@@ -88,7 +88,7 @@
       "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
     ]
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5-1[1m]",
   "hooks": {
     "PreCompact": [
       {
@@ -176,11 +176,14 @@
   },
   "outputStyle": "Concise",
   "effortLevel": "low",
-  "switchModelsOnFlag": true,
-  "agentPushNotifEnabled": true,
   "modelSettings": {
     "claude-opus-5": {
       "effortLevel": "high"
+    },
+    "claude-fable-5-1": {
+      "effortLevel": "medium"
     }
-  }
+  },
+  "switchModelsOnFlag": false,
+  "agentPushNotifEnabled": true
 }
