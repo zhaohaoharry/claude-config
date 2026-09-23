@@ -184,6 +184,6 @@
       "effortLevel": "medium"
     }
   },
-  "switchModelsOnFlag": false,
+  "switchModelsOnFlag": true,
   "agentPushNotifEnabled": true
 }
