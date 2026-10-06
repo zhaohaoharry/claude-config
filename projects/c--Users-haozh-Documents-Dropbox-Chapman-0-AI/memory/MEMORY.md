@@ -33,3 +33,4 @@
 - [No footprints of abandoned designs](feedback_no_footprints_of_abandoned_designs.md) — after dropping a design/result, delete every trace (no "rather than X" contrasts with results the paper no longer presents or models)
 - [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
 - [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
+- [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online

@@ -5,6 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: a119ebe3-f902-46f6-b1f7-a331217e0849
+  modified: 2026-10-06T02:43:37.788Z
 ---
 
 All shared raw research datasets live in **`D:\0. Research Data\`** (~137 GB), reorganized 2026-06-18 from 66 messy folders into **13 clean-English numbered categories**: 1. Firm · 2. Survey & Household · 3. Environment & Climate · 4. Innovation & Patents · 5. Administration & Public Finance · 6. Government Behavior · 7. Health & Medical · 8. GIS, Maps & Land · 9. Macro & Regional Statistics · 10. Agriculture & Rural · 11. History & Culture · 12. Text & NLP · 13. Transport & Infrastructure.
@@ -13,6 +14,7 @@ All shared raw research datasets live in **`D:\0. Research Data\`** (~137 GB), r
 
 **Conventions** (also in global `~/.claude/CLAUDE.md` → "Central Research Data Repository"):
 - Reference data **in place** by absolute path; never copy raw datasets into a project folder (that bloats the drive). Save only derived extracts in the project and record the source path.
+- **Newly downloaded raw data also goes here** (right numbered category, clean English folder name, + a catalogue row and topic-index entry), never into a project's `data/raw/` or `data/external/` (user reaffirmed 2026-10-06; project `data/raw/` is also blocked by a deny rule). Project scripts point to the D:\ path.
 - Folders are clean-English-named; original Chinese names + old→new crosswalk are in the catalogue and `_ORGANIZATION\rename_log.csv`. Audit trail: `_ORGANIZATION\PLAN_2026-06-18_reorganization.md`.
 
 **Housekeeping (done 2026-06-18):** deleted Adobe installer (1.86 GB) + 215 pipixia (皮皮侠) promo files (~131 MB, stripped from every dataset folder) + stray/empty folders → reclaimed ~2 GB. Grant-proposal reference material moved to `…\0.AI\Work\基金申请\参考标书与范本\`. **Deletion gotcha:** the harness blocks ALL deletion (Remove-Item AND .NET Directory.Delete) under `D:\0. Research Data` because the space in the path mis-parses as a protected drive root — to delete here, first `Move-Item` the target to a no-space path at `D:\` root, then delete it there. (One file, a textbook PDF, was briefly caught as collateral and restored from the Recycle Bin — verification by file-count is worth doing after bulk moves.)
