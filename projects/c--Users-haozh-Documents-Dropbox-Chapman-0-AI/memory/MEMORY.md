@@ -34,3 +34,4 @@
 - [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
 - [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
 - [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online
+- [AI_share sync folder](reference_ai_share_folder.md) — D:\AI_share is phone-synced; copy PDF results there when asked to send them
