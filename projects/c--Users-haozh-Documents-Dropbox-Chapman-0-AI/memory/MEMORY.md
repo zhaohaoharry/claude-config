@@ -35,3 +35,4 @@
 - [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
 - [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online
 - [AI_share sync folder](reference_ai_share_folder.md) — D:\AI_share is phone-synced; copy PDF results there when asked to send them
+- [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
