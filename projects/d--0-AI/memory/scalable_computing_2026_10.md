@@ -1,19 +1,21 @@
 ---
 name: scalable-computing-2026-10
-description: "ScalableComputing multi-PC compute framework (from Ohyun) installed 2026-10-15; file locations, host readiness, and what still blocks the laptop"
+description: "ScalableComputing multi-PC compute framework (from Ohyun) installed 2026-10-15; file locations, host readiness, and the macOS port"
 metadata:
   node_type: memory
   type: project
   originSessionId: 0a73e471-ad5d-46a8-9221-27dd2d33c900
-  modified: 2026-10-15T03:57:05.821Z
+  modified: 2026-10-15T13:19:13.374Z
 ---
 
-Ohyun's `**ScalableComputing` framework was installed on 2026-10-15 so long computations (Monte Carlo, bootstraps, batch estimation) can be split across the user's PCs.
+Ohyun's `**ScalableComputing` framework was installed on 2026-10-15 so long computations (Monte Carlo, bootstraps, batch estimation, specification grids) can be split across the user's machines.
 
-Locations: rule doc at `~/.claude/rules/scalable-computing.md`; trigger + worker clause added to `~/.claude/CLAUDE.md` (section "Scalable computing across PCs"); shared folder with `tools\`, `jobs\`, `machines\`, `WORKER_PROMPT.md` at `D:\Dropbox\AI\ScalableComputing` (inside the live Dropbox account, so it actually syncs). The 8 tools are Ohyun's verbatim; only the docs were repathed. Runs compute in `C:\SC_local\<job_id>` and send sealed batches through Dropbox.
+Locations: rule doc at `~/.claude/rules/scalable-computing.md`; trigger and worker clause in `~/.claude/CLAUDE.md`; shared folder at `D:\Dropbox\AI\ScalableComputing` (`tools\`, `jobs\`, `machines\`, `WORKER_PROMPT.md`), inside the live Dropbox account so it actually syncs. Runs compute on local disk (`C:\SC_local\<job_id>` on Windows, `~/SC_local/<job_id>` on macOS) and send sealed batches through Dropbox.
 
-Host state as of 2026-10-15: desktop **LAOZHAO** (i7-12700H, 14 physical cores) passed the full local self-test — bench, detached launch via scheduled task, pause (frozen units verified at 0 CPU), resume, 24/24 units, `merge --verify`. Python 3.12.10 is present but **numpy/scipy/pandas are not installed for it**, so only numpy-free jobs run today. Laptop **LAPTOP-BIS2QGG1** (4 physical cores, Windows profile `Hao Zhao`, Dropbox root `D:\Dropbox (Chapman)`) got Python 3.12.10 with numpy 2.5.4, scipy 1.18.1 and pandas 3.0.6 on 2026-10-15 (winget, user-approved at that keyboard). Its one remaining blocker is Dropbox: the client is signed out and that tree is stale since June 2023, so job transport cannot reach it until someone signs in at its GUI.
+**Host readiness as of 2026-10-15.** LaoZhao passed the full local self-test (bench, detached launch, pause with frozen units at 0 CPU, resume, 24/24 units, `merge --verify`) and now has numpy 2.5.4, scipy 1.18.1 and pandas 3.0.6 for Python 3.12. H2 is fully preflighted: Dropbox selective-syncs only `ScalableComputing`, all 8 tools arrived, same three package versions, VBS off, 4 physical cores. HMac is ported but untested — see below.
 
-Package versions will differ between the two PCs, so the per-job `validate` step matters: state a tolerance and compare before dispatching.
+**The macOS port (2026-10-15, written here, not Ohyun's).** `sc_runner.py` was made cross-platform rather than forked: freeze uses SIGSTOP/SIGCONT on each unit's process group, idle detection reads `HIDIdleTime` from `ioreg`, local compute goes to `~/SC_local`. Added `sc.sh`, `launch.sh` and `machine_card.sh`; `launch.sh` detaches with nohup and wraps the runner in `caffeinate -s`. A `{python}` manifest placeholder lets one manifest run on both platforms. Ohyun's Windows originals are preserved in `tools\_original_windows\`. **Never run on macOS yet** — HMac needs its machine card and a self-test first.
 
-Cross-session messaging between the two PCs works (Remote Control, both in bypass mode) — tested with a `[ScalableComputing]` preflight that the laptop answered. Remote Control gives no read receipt, so a worker's reply is the only confirmation. See [[user_profile]] and [[research_data_repository]] (raw data stays in `D:\0. Research Data\`, never inside the ScalableComputing folder).
+**Job design constraint learned from the ETFP work:** a single 40–80 minute uncheckpointed GMM estimation does not fit the unit contract (units should be 1–5 minutes and resumable), so iterated GMM screens stay on LaoZhao. Specification grids and bootstraps are the right shape for distribution.
+
+Cross-session messaging works between all three machines over Remote Control in bypass mode; there is no read receipt, so a worker's reply is the only confirmation. See [[machine_names]], [[stata_per_machine]] (compute layer is Python because Stata needs licence seats) and [[research_data_repository]].

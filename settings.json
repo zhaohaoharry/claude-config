@@ -41,8 +41,8 @@
       "Read(~/.claude/agents/**)",
       "Read(~/.claude/hooks/**)",
       "Read(~/.claude/skills/__TRACKED_VAR__/**)",
-      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/**)",
-      "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/Claude Master/**)",
+      "Read(//d/0.AI/**)",
+      "Read(//d/0.AI/Claude Master/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/state capacity under fire/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/SNWTP and Health/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/0. Research Data/7. Health/nanyang/2014-2023birth/**)",
@@ -75,17 +75,17 @@
     ],
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
-      "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\ESG Green Premium",
-      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Work",
-      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research",
+      "D:\\0.AI\\Research\\ESG Green Premium",
+      "D:\\0.AI\\Work",
+      "D:\\0.AI\\Research",
       "C:\\Users\\haozh\\.claude\\skills\\__TRACKED_VAR__",
       "c:\\Users\\haozh\\.claude\\projects\\c--Users-haozh-Documents-Dropbox-Chapman-0-AI-Research-Water-and-Crop",
       "C:\\Users\\haozh\\.claude\\projects\\c--Users-haozh-Documents-Dropbox-Chapman-0-AI-Research-Social-Capital",
       "C:\\Users\\haozh\\.claude\\rules",
       "C:\\Users\\haozh\\.claude",
-      "c:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
+      "D:\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
       "C:\\Users\\haozh\\.claude\\plans",
-      "C:\\Users\\haozh\\Documents\\Dropbox_Chapman\\0.AI\\Claude Master"
+      "D:\\0.AI\\Claude Master"
     ]
   },
   "model": "opus",

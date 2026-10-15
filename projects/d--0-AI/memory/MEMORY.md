@@ -37,7 +37,8 @@
 - [AI_share sync folder](reference_ai_share_folder.md) — D:\AI_share is phone-synced; copy PDF results there when asked to send them
 - [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
 - [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
-- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC compute framework installed; rule + CLAUDE.md trigger + Dropbox_Chapman\ScalableComputing; LAOZHAO passed self-test, laptop has Python 3.12 but Dropbox is signed out
+- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC framework at D:\Dropbox\AI\ScalableComputing; LaoZhao + H2 preflighted and ready, HMac ported to macOS but untested; GMM screens don't fit the unit contract
 - [Dropbox shared folders are off-limits](feedback_dropbox_shared_folders.md) — never delete/alter anything already in D:\Dropbox; shared with collaborators, per-machine sync is the user's own setting
 - [Machine names](machine_names.md) — LaoZhao (main, LAOZHAO), H2 (LAPTOP-BIS2QGG1), HMac (MacBook Air M3); hostnames unchanged, map when reporting
 - [Travel sync modes](travel_sync_modes.md) — build Travel\<project> on request per trip: presentation (LaTeX+results) vs working (plus program and current data vintage)
+- [Stata per machine](stata_per_machine.md) — only LaoZhao (MP 18) is usable; H2 has 13.1, no HDFE packages, institutional licence not in user's name; compute layer = Python
