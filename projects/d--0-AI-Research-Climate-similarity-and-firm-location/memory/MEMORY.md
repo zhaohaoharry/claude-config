@@ -1,0 +1,6 @@
+- [Climate Similarity and Supplier Choice — project status](climate-similarity-supplier-choice-project.md) — TOP-5 push; P0 CLEARED (prefer-similar, p=0.036 at N=2,371, STRENGTHENS under country FE, ~5% of distance/second-order); warming counterfactual revived
+- [Avoid redundant work](no-redundant-work.md) — reuse existing outputs; don't recompute numbers already in hand; do other work while jobs run
+- [FactSet NAICS vintage](factset-naics-vintage.md) — supplier_naics_4 is NAICS 2017 (180 codes, 87 tradable); concordances must match this vintage
+- [Run programs in background via Bash](run-programs-background-bash.md) — launch long runs (Stata, downloads, builds) via the Bash tool (run_in_background), NOT PowerShell (pops a window); one heavy job at a time
+- [Estimation speed: use Julia](estimation-speed-julia.md) — HDFE Poisson/conditional-logit: Julia GLFixedEffectModels ~17x faster than 2-core Stata (full-sample 171s vs ~50min, exact match); pyfixest fallback; McFadden-sample + Arrow. Julia 1.12.6 + @bench env installed.
+- [Climate's three margins](climate-three-margins.md) — own-suitability vs distance vs similarity; design absorbs suitability (GAEZ dead); warming counterfactual runs through SIMILARITY via DIFFERENTIAL re-ordering (P0.4 lever live), not uniform shift

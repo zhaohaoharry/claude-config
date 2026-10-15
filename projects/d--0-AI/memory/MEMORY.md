@@ -1,0 +1,43 @@
+# Memory Index
+
+- [User Profile](user_profile.md) — Economist at Chapman, tools (LaTeX/Stata/R/Python/MATLAB/Julia), new to Claude Code
+- [Claude Setup Architecture](project_setup.md) — Full setup built 2026-04-05, file locations and design rationale
+- [Skills Upgrade 2026-05](skills_upgrade_2026_05.md) — Expanded 8→21 skills: AER pipeline, enhanced review/lit, new method/citation/writing skills (backup in _backup_2026-05-31)
+- [Econ Craft System](econ_craft_system.md) — Positive prose-craft layer (2026-06-06): EconCraft guide + 16 verified exemplars + econ-craft skill + UserPromptSubmit hook
+- [Settings Enhancements 2026-06](settings_enhancements_2026_06.md) — deny rules (rm -rf, data/raw read-only), utf-8 env, status line, bib-guard/latex-autocheck/session-start hooks, Zotero MCP (pending activation)
+- [Portable Setup 2026-06](portable_setup_2026_06.md) — Transfer package in ClaudeFiles\Portable Setup (claude-home + workspace + setup prompts); rebuild before re-installing; Email guide restored to Claude Master
+- [Two-Folder LaTeX Workflow](two_folder_workflow.md) — latex/ (local) vs [repo]/ (GitHub) separation for research projects
+- [Copy repo to latex/ on setup](feedback_project_setup_copy_to_latex.md) — Always copy all repo files into latex/ when setting up a project from GitHub
+- [sandbox/ under program/](feedback_sandbox_under_program.md) — Experimental code in program/sandbox/, not top-level
+- [Follow template strictly](feedback_follow_template_strictly.md) — Always use exact Research Project Template structure, no improvising
+- [Research Data Repository](research_data_repository.md) — D:\0. Research Data reorganized into 13 categories (2026-06-18); read DATA_CATALOGUE.md before finding data, reference in place
+- [Claude Config Sync Repo](claude_config_sync_repo.md) — Private GitHub repo (zhaohaoharry/claude-config) mirrors ~/.claude config; git repo lives at ~/.claude with allowlist .gitignore; how to update and set up new machine
+- [Cumulative Sentences and Verb Energy](feedback_cumulative_sentences_and_verbs.md) — Fold restating short sentences into subordinate clauses (overrides the 30-word rule); signed physical verbs are how the user judges human vs AI prose
+- [Regression Table Conventions](feedback_regression_table_conventions.md) — One regression design per panel; explicit FE/Controls indicator rows in every panel; DDD must control all double interactions (explicitly or via FE)
+- [Exemplar Bank 2026-08](exemplar_bank_2026_08.md) — Zotero (1,122 articles) is the real corpus; section-indexed top-5 bank now loads BEFORE composing; measured 24.9 words/sentence vs the 40-word rule (unresolved)
+- [Minimal track changes](feedback_minimal_track_changes.md) — mark only the changed token, never repeat the sentence
+- [No process narration in manuscripts](feedback_no_process_narration.md) — never "We spell out...", "it is worth stating..."; state the economics directly
+- [No cross-document mentions in manuscripts](feedback_no_cross_document_mentions.md) — never cite the project's other notes/drafts in a manuscript unless asked
+- [Introduce symbols at first use](feedback_introduce_symbols_at_first_use.md) — define a parameter only in the paragraph of the equation that first uses it; audit definition-vs-use and letter collisions after drafting a model
+- [Equation is not an agent](feedback_equation_is_not_an_agent.md) — causal sentences take the economic cause as subject; equations are only where the effect appears
+- [Permission prompts](feedback_permission_prompts.md) — user never reads Bash prompts; use allow-listed prefixes (cd/sed/grep/cat/head/tail added 2026-09-03), no rm
+- [Term consistency with baseline](feedback_term_consistency_with_baseline.md) — grep the unchanged manuscript for existing renderings before introducing a term in new text; unify with tracked marks
+- [Edit only what needs change](feedback_edit_only_what_needs_change.md) — keep the author's wording; change only tokens with a nameable defect; no wholesale stylistic rewrites
+- [Fast country-level batteries](feedback_fast_country_level_batteries.md) — small-panel DiD batteries: five estimators by default (no untrended dCDH, no detrended CS), one Stata instance per window in parallel
+- [Footnote placement](feedback_footnote_placement.md) — footnote markers only after a period or comma, never mid-clause
+- [Author lines with full names](feedback_author_lines_full_names.md) — all coauthors, full names, taken from the latest draft not the config; CPP has four authors incl. Haoning Sun
+- [Link counts, not log](feedback_link_counts_not_log.md) — link outcomes are actual counts (OLS or PPML), never log(1+link); product-level PPML too slow in ppmlhdfe
+- [No loose sentences](feedback_no_loose_sentences.md) — manuscript prose in the plain register of published papers: no conversational/clipped/figurative sentences, no mechanical agent phrasing ("pins", "lets it move"), no rare words ("dearer"); data sections never mention the model
+- [Write for human readers](feedback_write_for_human_readers.md) — manuscript prose in full paper sentences; no note-like compressed/pointer writing that assumes the reader has the project in mind (global)
+- [No super long paragraphs](feedback_no_super_long_paragraphs.md) — split manuscript paragraphs by topic; a half-page block is acceptable only when one argument cannot be split (global)
+- [No footprints of abandoned designs](feedback_no_footprints_of_abandoned_designs.md) — after dropping a design/result, delete every trace (no "rather than X" contrasts with results the paper no longer presents or models)
+- [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
+- [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
+- [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online
+- [AI_share sync folder](reference_ai_share_folder.md) — D:\AI_share is phone-synced; copy PDF results there when asked to send them
+- [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
+- [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
+- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC compute framework installed; rule + CLAUDE.md trigger + Dropbox_Chapman\ScalableComputing; LAOZHAO passed self-test, laptop has Python 3.12 but Dropbox is signed out
+- [Dropbox shared folders are off-limits](feedback_dropbox_shared_folders.md) — never delete/alter anything already in D:\Dropbox; shared with collaborators, per-machine sync is the user's own setting
+- [Machine names](machine_names.md) — LaoZhao (main, LAOZHAO), H2 (LAPTOP-BIS2QGG1), HMac (MacBook Air M3); hostnames unchanged, map when reporting
+- [Travel sync modes](travel_sync_modes.md) — build Travel\<project> on request per trip: presentation (LaTeX+results) vs working (plus program and current data vintage)

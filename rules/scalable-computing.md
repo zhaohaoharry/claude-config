@@ -6,7 +6,11 @@ user has open, the coordinator's own PC included.
 
 Machines (names set by the user 2026-10-15): **LaoZhao** = `LAOZHAO`, the main machine and always the
 coordinator; **H2** = `LAPTOP-BIS2QGG1`, a Windows assistant that takes a share of the work; **HMac** =
-Hao's MacBook Air M3, which cannot run these tools (Windows-only) and is not a compute worker. Use the
+Hao's MacBook Air M3, which can now run jobs through the macOS port of the tools (`sc.sh`, `launch.sh`,
+`machine_card.sh`, and `sc_runner.py` made cross-platform on 2026-10-15; the Windows originals are kept
+in `tools\_original_windows\`). Treat HMac as opportunistic capacity only: it is the travel machine, it
+is fanless and throttles under sustained all-core load, and a run there dies if the lid closes or it
+sleeps. Never let a batch depend on it. Use the
 friendly names when reporting; `%COMPUTERNAME%` still returns the hostnames, and `D:\Dropbox\AI\MACHINES.md`
 holds the full register.
 
