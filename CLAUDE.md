@@ -182,6 +182,9 @@ Every substantive manuscript edit is a **visible revision**: deletions struck th
 ### Planning and continuity
 Follow `~/.claude/rules/plan-first-workflow.md` and `session-logging.md`. Plan substantial work and execute within existing authorization; neither complexity nor file count requires approval.
 
+### Machines and what syncs between them
+Three machines: **LaoZhao** (`LAOZHAO`, main, canonical work, always the compute coordinator), **H2** (`LAPTOP-BIS2QGG1`, compute assistant only) and **HMac** (MacBook Air M3, travel/writing, not a compute worker). Read `~/.claude/rules/machines-and-sync.md` before changing anything about sync, Dropbox layout, or what a machine is given. Config travels by the private `claude-config` repo; credentials and data never sync; `D:\Dropbox\AI\` is the only shared folder and holds no project data.
+
 ### Scalable computing across PCs — `**ScalableComputing`
 Method by Ohyun, installed 2026-10-15. Spread long computation (Monte Carlo, bootstraps, batch estimation) over all of the user's PCs, this session's PC included. Before anything, read `~/.claude/rules/scalable-computing.md` (roles, preflight, packaging, pause, Dropbox discipline, merge) and use the tools in `D:\Dropbox\AI\ScalableComputing\tools`. Forms: `**ScalableComputing` (preflight + plan for the task at hand), `**ScalableComputing status`, `**ScalableComputing pause|resume|drain|stop [HOST|all]`, `**ScalableComputing merge`.
 
