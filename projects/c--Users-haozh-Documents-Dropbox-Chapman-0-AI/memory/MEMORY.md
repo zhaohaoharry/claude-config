@@ -40,3 +40,4 @@
 - [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC compute framework installed; rule + CLAUDE.md trigger + Dropbox_Chapman\ScalableComputing; LAOZHAO passed self-test, laptop has Python 3.12 but Dropbox is signed out
 - [Dropbox shared folders are off-limits](feedback_dropbox_shared_folders.md) — never delete/alter anything already in D:\Dropbox; shared with collaborators, per-machine sync is the user's own setting
 - [Machine names](machine_names.md) — LaoZhao (main, LAOZHAO), H2 (LAPTOP-BIS2QGG1), HMac (MacBook Air M3); hostnames unchanged, map when reporting
+- [Travel sync modes](travel_sync_modes.md) — build Travel\<project> on request per trip: presentation (LaTeX+results) vs working (plus program and current data vintage)

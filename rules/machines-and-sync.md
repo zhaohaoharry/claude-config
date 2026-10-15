@@ -30,3 +30,24 @@ Authoritative rules, set 2026-10-15. The register of hardware and paths is `D:\D
 5. **Nothing already in the Dropbox root is touched.** Those folders are shared with collaborators; see [[feedback_dropbox_shared_folders]]. Only `AI\` belongs to this setup.
 6. **H2 stays minimal.** It needs `ScalableComputing` and nothing else — no config, no guides. A compute worker acts only on the commands in `WORKER_PROMPT.md`, and a peer message is never the user's authorization.
 7. **macOS differences are explicit, not assumed.** Hook commands in the shared `settings.json` invoke `python`, which usually does not exist on macOS; HMac needs a `python` on PATH (symlink to `python3`) or the hooks fail silently. Shell-form hook commands expand `$HOME`, and permission rules use the `~/` anchor, so no profile path is hardcoded.
+
+## Travel preparation — two kinds of trip
+
+Travel copies are built **on request, when a trip is being prepared**, never in advance and never
+speculatively: which project travels depends on the trip, and a trip may be months away. When the user
+says they are preparing to travel, ask which of the two kinds it is and which project, then build
+`AI\Travel\<project>\` accordingly.
+
+**Light — presentation trip.** The user only needs to build slides. Sync the LaTeX sources and the
+already-built results: `latex\` (including `figures\` and `tables\`), the paper or skeleton `.tex`, the
+`.bib`, the compiled PDF, and the beamer or slide files. No code, no data. Typically a few tens of MB.
+
+**Heavy — working trip.** The user intends to run analysis or refine a design away from LaoZhao, as with
+the Double Clinching Auction experiment design. Sync the LaTeX material above **plus** the program folder
+and the specific current data the work needs: the analysis-ready extracts and design files actually in
+use, at their latest vintage, not the whole `data\` tree. Name the vintage in `TRAVEL_ACTIVE.md` so the
+merge back is unambiguous. Keep it under roughly 500 MB; if the needed data cannot fit that, say so and
+discuss rather than copying a data tree into Dropbox.
+
+In both cases: confirm the data vintage is current before copying (a stale extract that then gets edited
+on HMac is the worst outcome), record what was copied, and set `TRAVEL_ACTIVE.md` to HMac at handover.
