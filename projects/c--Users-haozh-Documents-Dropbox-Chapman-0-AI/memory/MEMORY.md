@@ -37,3 +37,4 @@
 - [AI_share sync folder](reference_ai_share_folder.md) — D:\AI_share is phone-synced; copy PDF results there when asked to send them
 - [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
 - [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
+- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC compute framework installed; rule + CLAUDE.md trigger + Dropbox_Chapman\ScalableComputing; LAOZHAO passed self-test, laptop has Python 3.12 but Dropbox is signed out
