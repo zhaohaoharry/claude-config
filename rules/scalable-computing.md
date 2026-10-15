@@ -4,7 +4,7 @@ Method and tooling by Ohyun (2026-10-12), installed here 2026-10-15. Spread long
 (Monte Carlo, bootstraps, batch estimation — anything that would run for hours) over every PC the
 user has open, the coordinator's own PC included.
 
-Shared folder (live Dropbox account): `C:\Users\haozh\Dropbox\AI\ScalableComputing`
+Shared folder (live Dropbox account): `D:\Dropbox\AI\ScalableComputing`
 (`tools\`, `jobs\`, `machines\`, `WORKER_PROMPT.md`). A worker PC whose Dropbox sits at a different
 local path uses its own path to the same synced folder; each host's path is recorded in
 `machines\<HOST>.json` at preflight. This desktop is `LAOZHAO`.

@@ -37,10 +37,10 @@
       "Skill(compile-latex)",
       "Skill(compile-latex:*)",
       "WebSearch",
-      "Read(//c/Users/haozh/.claude/rules/**)",
-      "Read(//c/Users/haozh/.claude/agents/**)",
-      "Read(//c/Users/haozh/.claude/hooks/**)",
-      "Read(//c/Users/haozh/.claude/skills/__TRACKED_VAR__/**)",
+      "Read(~/.claude/rules/**)",
+      "Read(~/.claude/agents/**)",
+      "Read(~/.claude/hooks/**)",
+      "Read(~/.claude/skills/__TRACKED_VAR__/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/0.AI/Claude Master/**)",
       "Read(//c/Users/haozh/Documents/Dropbox_Chapman/1. Research Projects/state capacity under fire/**)",
@@ -95,7 +95,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/pre-compact.py\"",
+            "command": "python \"$HOME/.claude/hooks/pre-compact.py\"",
             "timeout": 10
           }
         ]
@@ -106,7 +106,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/log-reminder.py\"",
+            "command": "python \"$HOME/.claude/hooks/log-reminder.py\"",
             "timeout": 10
           }
         ]
@@ -117,7 +117,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/econ-craft-reminder.py\"",
+            "command": "python \"$HOME/.claude/hooks/econ-craft-reminder.py\"",
             "timeout": 10
           }
         ]
@@ -129,7 +129,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/bib-guard.py\"",
+            "command": "python \"$HOME/.claude/hooks/bib-guard.py\"",
             "timeout": 10
           }
         ]
@@ -141,7 +141,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/latex-autocheck.py\"",
+            "command": "python \"$HOME/.claude/hooks/latex-autocheck.py\"",
             "timeout": 120
           }
         ]
@@ -152,7 +152,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/session-start-resume.py\"",
+            "command": "python \"$HOME/.claude/hooks/session-start-resume.py\"",
             "timeout": 15
           }
         ]
@@ -163,7 +163,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python \"C:/Users/haozh/.claude/hooks/config-autosync.py\"",
+            "command": "python \"$HOME/.claude/hooks/config-autosync.py\"",
             "timeout": 60
           }
         ]
@@ -172,7 +172,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "python \"C:/Users/haozh/.claude/statusline.py\""
+    "command": "python \"$HOME/.claude/statusline.py\""
   },
   "outputStyle": "Concise",
   "effortLevel": "low",
