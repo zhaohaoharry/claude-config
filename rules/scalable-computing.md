@@ -4,6 +4,12 @@ Method and tooling by Ohyun (2026-10-12), installed here 2026-10-15. Spread long
 (Monte Carlo, bootstraps, batch estimation — anything that would run for hours) over every PC the
 user has open, the coordinator's own PC included.
 
+Machines (names set by the user 2026-10-15): **LaoZhao** = `LAOZHAO`, the main machine and always the
+coordinator; **H2** = `LAPTOP-BIS2QGG1`, a Windows assistant that takes a share of the work; **HMac** =
+Hao's MacBook Air M3, which cannot run these tools (Windows-only) and is not a compute worker. Use the
+friendly names when reporting; `%COMPUTERNAME%` still returns the hostnames, and `D:\Dropbox\AI\MACHINES.md`
+holds the full register.
+
 Shared folder (live Dropbox account): `D:\Dropbox\AI\ScalableComputing`
 (`tools\`, `jobs\`, `machines\`, `WORKER_PROMPT.md`). A worker PC whose Dropbox sits at a different
 local path uses its own path to the same synced folder; each host's path is recorded in
