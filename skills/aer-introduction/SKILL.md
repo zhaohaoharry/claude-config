@@ -127,7 +127,7 @@ If the draft is over 100 words:
 
 ## Prose rules — load before drafting
 
-This skill supplies AER *structure*. It does not supply prose rules, and it must not contradict them. Before drafting or rewriting any sentence, read `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md` — authoritative on every surface rule, including the §0 stop-sign list, the ban on em-dashes, colons, and semicolons in prose, first-person active voice, and the rule that the introduction carries no math notation and no forward references.
+This skill supplies AER *structure*. It does not supply prose rules, and it must not contradict them. Before drafting or rewriting any sentence, read `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Academic.md` — authoritative on every surface rule, including the §0 stop-sign list, the ban on em-dashes, colons, and semicolons in prose, first-person active voice, and the rule that the introduction carries no math notation and no forward references.
 
 For the positive craft layer (rhythm, intuition-first exposition, welding magnitudes to benchmarks), hand off to `econ-craft` rather than duplicating it here. For the intellectual architecture of the introduction — the research question, the framing, the general-interest claim — `econ-introduction` establishes the contract first, and this skill formats it to AER conventions.
 

@@ -12,7 +12,7 @@ JPE, Econometrica, REStud) and top Chinese journals (经济研究, 管理世界,
 
 **Scope.** This skill governs JOURNAL FIT — framing, structure, abstract conventions,
 citation and policy norms, register. It does NOT replace prose-quality rules: defer to
-`D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md`
+`D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Academic.md`
 for grammar/style and to `~/.claude/rules/table-figure-format.md` for tables/figures.
 
 ## 1. Detect the target journal — in this priority order

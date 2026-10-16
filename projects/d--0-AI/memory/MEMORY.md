@@ -37,7 +37,7 @@
 - [AI_share sync folder](reference_ai_share_folder.md) — D:\Dropbox\AI\AI_share is phone-synced (Dropbox, since 2026-10-15; old Nutstore D:\AI_share stalled); copy PDF results there when asked to send them
 - [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
 - [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
-- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC framework at D:\Dropbox\AI\ScalableComputing; LaoZhao + H2 preflighted and ready, HMac ported to macOS but untested; GMM screens don't fit the unit contract
+- [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC framework at D:\Dropbox\AI\ScalableComputing; send compute tasks to the SC_task session on HMac/H2 (this kind of session only sets up); first real ETFP GMM job ran on HMac 2026-10-16
 - [Dropbox shared folders are off-limits](feedback_dropbox_shared_folders.md) — never delete/alter anything already in D:\Dropbox; shared with collaborators, per-machine sync is the user's own setting
 - [H2 Windows updates off](h2_windows_updates.md) — updates and auto-reboot deliberately disabled 2026-10-16 (compute-only box, Win10 Home); undo.ps1 on H2
 - [Machine names](machine_names.md) — LaoZhao (main, LAOZHAO), H2 (LAPTOP-BIS2QGG1), HMac (MacBook Air M3); hostnames unchanged, map when reporting

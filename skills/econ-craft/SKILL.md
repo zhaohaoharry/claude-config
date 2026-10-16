@@ -34,7 +34,7 @@ Run those for their jobs; cross-reference, don't re-do them here.
    - If `--audit` appears in the arguments, run in report-only mode (see below).
 
 2. **Load the craft layer (always, before composing).**
-   - `D:\0.AI\Claude Master\AI_Writing_Guide_Personal.md`
+   - `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Personal.md`
      — **read this first and treat it as authoritative.** These are the rules the author
      stated while looking at his own drafts, compiled from the project memories, and they
      override both other guides where they disagree. Three that reverse the default advice:
@@ -44,19 +44,19 @@ Run those for their jobs; cross-reference, don't re-do them here.
      measure 24.9 — build cumulatively, do not pad to a count, and see §1.2 for the
      unresolved part); discourse markers ("Crucially,", "Furthermore,") and flow markers
      ("I first look at") stay; and em-dash removal is a rewrite, never a substitution.
-   - `D:\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md`
+   - `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_EconCraft.md`
      — the 18 craft principles, idiom bank, and per-paper-type cheat sheet.
-   - `D:\0.AI\Claude Master\econ_prose_exemplars.md`
+   - `D:\Dropbox\AI\Claude Master\econ_prose_exemplars.md`
      — verified real passages; pull the one or two that match the move you need.
      Indexed by *craft move*, and weighted toward landmark and essayistic work
      (Coase, Friedman, Akerlof, Leamer, Deaton). Excellent, but those authors had
      a freedom an ordinary submission does not.
-   - `D:\0.AI\Claude Master\econ_exemplars_modern\README.md`
+   - `D:\Dropbox\AI\Claude Master\econ_exemplars_modern\README.md`
      — 34 passages from 21 top-5 **applied** papers, 2018–2025, indexed by
      **section**: abstract, intro hook, contribution, identification, results,
      mechanism, conclusion. This is the register a current submission is read
      against. See step 3b, which is not optional.
-   - `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md`
+   - `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Academic.md`
      — still authoritative on every surface rule (no em-dash/colon/semicolon,
      active voice, numbers not adjectives, no math/forward-refs in the intro).
      The Personal guide overrides the Academic guide, which overrides the Craft guide; apply the user request first.

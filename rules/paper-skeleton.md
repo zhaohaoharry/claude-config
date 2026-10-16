@@ -27,7 +27,7 @@ The skeleton is not a scratchpad. It is the paper, viewed at whatever stage it c
 
 If the user creates a new folder under `D:\0.AI\Research\`:
 
-1. Copy `D:\0.AI\ClaudeFiles\Research Project Template\` into the project folder.
+1. Copy `D:\Dropbox\AI\ClaudeFiles\Research Project Template\` into the project folder.
 2. The template already contains `latex\paper_skeleton.tex` with the skeleton system pre-wired (graphicx, color markers, TOC, standard section outline).
 3. Fill in the title, authors, and any known research question in the skeleton's first TODO.
 4. Compile once to confirm the skeleton renders: `pdflatex -interaction=nonstopmode paper_skeleton.tex`.
@@ -67,6 +67,6 @@ If the user creates a new folder under `D:\0.AI\Research\`:
 
 ## Skeleton Template Location
 
-Template: `D:\0.AI\ClaudeFiles\Research Project Template\latex\paper_skeleton.tex`
+Template: `D:\Dropbox\AI\ClaudeFiles\Research Project Template\latex\paper_skeleton.tex`
 
 Every new research project starts from this file.

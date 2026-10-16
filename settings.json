@@ -62,7 +62,8 @@
       "Bash(unix2dos*)",
       "Bash(py *)",
       "WebFetch",
-      "Bash(pdftotext*)"
+      "Bash(pdftotext*)",
+      "Read(//d/Dropbox/AI/**)"
     ],
     "deny": [
       "Edit(**/data/raw/**)",
@@ -85,7 +86,8 @@
       "C:\\Users\\haozh\\.claude",
       "D:\\0.AI\\Research\\SNWTP\\JEEM_Production_Submission",
       "C:\\Users\\haozh\\.claude\\plans",
-      "D:\\0.AI\\Claude Master"
+      "D:\\Dropbox\\AI\\Claude Master",
+      "D:\\Dropbox\\AI\\ClaudeFiles"
     ]
   },
   "model": "opus",

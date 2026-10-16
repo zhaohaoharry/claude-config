@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 0a73e471-ad5d-46a8-9221-27dd2d33c900
-  modified: 2026-10-16T10:00:00.000Z
+  modified: 2026-10-16T06:14:24.861Z
 ---
 
 Ohyun's `**ScalableComputing` framework was installed on 2026-10-15 so long computations (Monte Carlo, bootstraps, batch estimation, specification grids) can be split across the user's machines.
@@ -21,7 +21,9 @@ Locations: rule doc at `~/.claude/rules/scalable-computing.md`; trigger and work
 
 `tools/setup_mac.sh` is the one-shot macOS bring-up (stable host id, `python` on PATH for the hooks, packages, machine card, self-test assignment) and is safe to re-run. `jobs/selftest_mac/` is the cross-platform self-test: `{python}` placeholder and forward slashes, 48 units, no package dependencies, so it tests the framework rather than numpy. Windows accepts forward slashes, so one manifest runs on both platforms.
 
-**Job design constraint from the ETFP work:** a single 40–80 minute uncheckpointed GMM estimation does not fit the unit contract (units should be 1–5 minutes and resumable), so iterated GMM screens stay on LaoZhao. Specification grids and bootstraps are the right shape for distribution.
+**Dispatch targets (user, 2026-10-16):** each worker PC has a dedicated Claude session named **SC_task** (one on HMac, one on H2). Send all future computing tasks (`[ScalableComputing]` commands) to those SC_task sessions, not to whatever other session happens to be open on that PC. The coordinating session on LaoZhao is for setting up jobs; the SC_task sessions run them. ListAgents does not show the host, so resolve each SC_task row's machine from its preflight reply.
+
+**First real job, 2026-10-16 (ETFP `jobs/etfp_hettheta_g7`, 2 units, HMac):** one whole iterated-GMM estimation per unit worked despite breaking the 1–5 minute guideline (max_retries 0; a failure costs one estimation). HMac reproduced LaoZhao's single-theta estimates to the 5th digit (numpy 2.4.5 / pandas 3.0.3 / Python 3.13 vs LaoZhao's numpy 2.2.4). HMac now has jax 0.11.2 (CPU, user site). Like-for-like timing of one estimation: HMac 25 min (while running a second unit), LaoZhao alone 33 min; the 84 min seen in the grid came from several estimations contending for LaoZhao's cores (JAX/XLA takes ~7 cores per estimation regardless of intra_op threads). Lesson: trace every input file through the WHOLE unit, including post-estimation steps — the first launch failed after 23 min on a file read only at the end.
 
 - **The yield feature had never worked at all.** `ioreg -c IOHIDSystem -d 1` limits the walk to depth 1 of the whole IORegistry rather than of the matched object, so the HIDIdleTime line was never reached and `idle_seconds()` returned None forever; `--yield-when-active` therefore ran at full workers and never yielded, silently. `-r` fixes it. A broken idle probe now logs a warning rather than failing open, and the heartbeat publishes `idle_s` and `yielding`.
 

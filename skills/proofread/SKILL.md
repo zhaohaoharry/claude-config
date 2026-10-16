@@ -16,7 +16,7 @@ Run the proofreading protocol on the specified file or section. Produces a detai
    - If `$ARGUMENTS` is a section name (e.g., "introduction"): find and read that section in the context-resolved current manuscript root
    - Resolve the file or section from the current request, selection, conversation, and live project state; ask only if the target remains materially ambiguous.
 
-2. **Load the house standard.** Read `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Do not work from a remembered summary of it — the guide is 615 lines and changes, and any short list inlined here will drift out of date. Sections §1 (voice and register), §2 (sentence-level patterns), §6 (citations), §9 (LaTeX headings and housekeeping), and §10 (structural rules) are the proofreading-relevant ones.
+2. **Load the house standard.** Read `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Do not work from a remembered summary of it — the guide is 615 lines and changes, and any short list inlined here will drift out of date. Sections §1 (voice and register), §2 (sentence-level patterns), §6 (citations), §9 (LaTeX headings and housekeeping), and §10 (structural rules) are the proofreading-relevant ones.
 
 3. **Launch the `proofreader` agent** on the content. Pass **only** the file path or extracted passage and the target journal — not the drafting conversation or your own account of what the text is trying to do. A reviewer starting cold outperforms one carrying the author's framing.
    The agent checks:
