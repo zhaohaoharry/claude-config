@@ -1,6 +1,6 @@
 # Table and Figure Caption Format — AER/RES Style
 
-Universal rule for **all** research projects under `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Research\`.
+Universal rule for **all** research projects under `D:\0.AI\Research\`.
 
 ## Tables
 

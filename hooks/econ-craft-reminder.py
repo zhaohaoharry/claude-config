@@ -80,11 +80,11 @@ WORKSPACE_MARKERS = ["0.ai", "dropbox_chapman", "claude master"]
 
 # ----------------------------------------------------------------------------
 
-PERSONAL_GUIDE = r"C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md"
-CRAFT_GUIDE = r"C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md"
-EXEMPLARS = r"C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md"
-MODERN_BANK = r"C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_exemplars_modern\README.md"
-ACADEMIC_GUIDE = r"C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md"
+PERSONAL_GUIDE = r"D:\0.AI\Claude Master\AI_Writing_Guide_Personal.md"
+CRAFT_GUIDE = r"D:\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md"
+EXEMPLARS = r"D:\0.AI\Claude Master\econ_prose_exemplars.md"
+MODERN_BANK = r"D:\0.AI\Claude Master\econ_exemplars_modern\README.md"
+ACADEMIC_GUIDE = r"D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md"
 
 
 def has_word(text: str, words: list[str]) -> bool:

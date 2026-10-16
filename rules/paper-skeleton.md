@@ -1,6 +1,6 @@
 # Paper Skeleton — Standard Research Project Workflow
 
-Every research project in `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Research\` uses a **paper skeleton** as the single source of truth for what the paper *will be*, before and during writing. This replaces scattered drafts, side notes, and ad-hoc result files.
+Every research project in `D:\0.AI\Research\` uses a **paper skeleton** as the single source of truth for what the paper *will be*, before and during writing. This replaces scattered drafts, side notes, and ad-hoc result files.
 
 ## What the Skeleton Is
 
@@ -25,9 +25,9 @@ The skeleton is not a scratchpad. It is the paper, viewed at whatever stage it c
 
 ## When a New Research Project Is Created
 
-If the user creates a new folder under `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Research\`:
+If the user creates a new folder under `D:\0.AI\Research\`:
 
-1. Copy `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\ClaudeFiles\Research Project Template\` into the project folder.
+1. Copy `D:\0.AI\ClaudeFiles\Research Project Template\` into the project folder.
 2. The template already contains `latex\paper_skeleton.tex` with the skeleton system pre-wired (graphicx, color markers, TOC, standard section outline).
 3. Fill in the title, authors, and any known research question in the skeleton's first TODO.
 4. Compile once to confirm the skeleton renders: `pdflatex -interaction=nonstopmode paper_skeleton.tex`.
@@ -67,6 +67,6 @@ If the user creates a new folder under `C:\Users\haozh\Documents\Dropbox_Chapman
 
 ## Skeleton Template Location
 
-Template: `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\ClaudeFiles\Research Project Template\latex\paper_skeleton.tex`
+Template: `D:\0.AI\ClaudeFiles\Research Project Template\latex\paper_skeleton.tex`
 
 Every new research project starts from this file.

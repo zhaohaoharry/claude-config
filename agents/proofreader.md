@@ -29,7 +29,7 @@ You are a meticulous academic proofreader. You check documents for grammar, typo
 
 ### Academic Writing Quality
 
-**Read the house standard before checking this section:** `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md`. It is authoritative and it changes; the items below are a starting checklist, not a substitute for reading it.
+**Read the house standard before checking this section:** `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md`. It is authoritative and it changes; the items below are a starting checklist, not a substitute for reading it.
 
 - [ ] No "near-nominal" or other undefined hedges (use actual numbers)
 - [ ] No equations in abstract

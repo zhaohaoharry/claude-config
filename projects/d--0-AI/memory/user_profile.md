@@ -8,7 +8,7 @@ Economist at Chapman University (researcher + teacher). New to Claude Code as of
 
 **Tools:** LaTeX/MiKTeX (Windows), Stata, R, Python, MATLAB, Julia
 **Primary language:** English
-**Working directory:** `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\`
+**Working directory:** `D:\0.AI\`
 
 Uses `pdflatex` (not xelatex). MiKTeX on Windows — must close PDFs before recompiling.
 

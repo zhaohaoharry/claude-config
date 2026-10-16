@@ -33,18 +33,18 @@ These user preferences also apply when a bundled skill is selected. Do not edit 
 
 | File | Purpose |
 |------|---------|
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md` | **Highest-precedence writing rules.** Compiled from the project memories — rules you stated while looking at your own drafts. Overrides the other two guides on conflict. Load FIRST for any prose work |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` | Academic prose rules (the *surface* layer — removes AI tells) — load before editing any paper |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md` | Positive craft layer (flow, rhythm, voice, intuition-first, number-argument) — load alongside the academic guide when writing/refining/polishing prose |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_prose_exemplars.md` | Verified real exemplar passages of good economics prose, organized by craft move |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\econ_exemplars_modern\README.md` | 34 passages from 21 top-5 **applied** papers (2018–2025), organized **by section** (abstract, intro hook, contribution, identification, results, mechanism, conclusion). Read the matching section BEFORE composing it. Local only — verbatim published prose, never push to a public repo |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Email.md` | Email style guide |
-| `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\master_catalogue.md` | Cross-project session log |
+| `D:\0.AI\Claude Master\AI_Writing_Guide_Personal.md` | **Highest-precedence writing rules.** Compiled from the project memories — rules you stated while looking at your own drafts. Overrides the other two guides on conflict. Load FIRST for any prose work |
+| `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md` | Academic prose rules (the *surface* layer — removes AI tells) — load before editing any paper |
+| `D:\0.AI\Claude Master\AI_Writing_Guide_EconCraft.md` | Positive craft layer (flow, rhythm, voice, intuition-first, number-argument) — load alongside the academic guide when writing/refining/polishing prose |
+| `D:\0.AI\Claude Master\econ_prose_exemplars.md` | Verified real exemplar passages of good economics prose, organized by craft move |
+| `D:\0.AI\Claude Master\econ_exemplars_modern\README.md` | 34 passages from 21 top-5 **applied** papers (2018–2025), organized **by section** (abstract, intro hook, contribution, identification, results, mechanism, conclusion). Read the matching section BEFORE composing it. Local only — verbatim published prose, never push to a public repo |
+| `D:\0.AI\Claude Master\AI_Writing_Guide_Email.md` | Email style guide |
+| `D:\0.AI\Claude Master\master_catalogue.md` | Cross-project session log |
 
 ## Working Directory Layout
 
 ```
-C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\
+D:\0.AI\
   Research\      ← one subfolder per research paper
   Teaching\      ← one subfolder per course
   Work\          ← department and administrative tasks
@@ -81,7 +81,7 @@ Every research project has **two** LaTeX locations:
 ## Starting a New Research Project
 
 When the user creates a new folder under `Research\`:
-1. Copy `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\ClaudeFiles\Research Project Template\` into the new folder.
+1. Copy `D:\0.AI\ClaudeFiles\Research Project Template\` into the new folder.
 2. The template includes a pre-wired `latex\paper_skeleton.tex` with skeleton-driven development (color markers, TOC, standard 8-section outline).
 3. Fill in project title and authors in the skeleton; compile once to confirm it renders.
 4. From then on, all results, decisions, and open questions live in the skeleton.

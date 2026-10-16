@@ -36,9 +36,9 @@ This is distinct from `proofread` (grammar, typos, notation, LaTeX) and from `jo
 
 2. **Load the writing guides as FLAGGING SOURCES, not just rewrite constraints.**
 
-   First read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md`. It is authoritative and it reverses several defaults you would otherwise apply. In particular, **do not flag a 40-word cumulative sentence as a run-on** — that is the author's target register for body paragraphs, and short declaratives are the defect he actually complains about. Do not flag discourse or flow markers in isolation. Do not propose mechanical punctuation substitutions.
+   First read `D:\0.AI\Claude Master\AI_Writing_Guide_Personal.md`. It is authoritative and it reverses several defaults you would otherwise apply. In particular, **do not flag a 40-word cumulative sentence as a run-on** — that is the author's target register for body paragraphs, and short declaratives are the defect he actually complains about. Do not flag discourse or flow markers in isolation. Do not propose mechanical punctuation substitutions.
 
-   Then read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Two parts of it are audit input, and they carry priority over the generic list below:
+   Then read `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Two parts of it are audit input, and they carry priority over the generic list below:
    - **§0 Stop-sign list** (50 rows) — every match is a defect, by the guide's own words. This is the author's own documented register: "near-nominal", "headline result", "a 39% lift", "well within", "dislodge", "in the spirit of", "a soft signal that", "the honest reading is", "should be read as", manager-speak verbs, precision soup, author-decision meta-sentences.
    - **§12 Appendix: common AI phrases to avoid** (45 rows).
 

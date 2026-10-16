@@ -6,7 +6,7 @@ Authoritative rules, set 2026-10-15. The register of hardware and paths is `D:\D
 |---|---|---|
 | **LaoZhao** | `LAOZHAO` | Main machine. All canonical work lives here. Always the ScalableComputing coordinator |
 | **H2** | `LAPTOP-BIS2QGG1` | Compute assistant only. Receives jobs from LaoZhao, runs them, reports back |
-| **HMac** | MacBook Air M3 | Travel machine. Used for real writing work; cannot run compute jobs (Windows-only tooling) |
+| **HMac** | MacBook Air M3 | Travel machine, used for real writing work. Also takes compute jobs through the macOS port of the tools, but as opportunistic capacity only: fanless, throttles under sustained load, and a run dies if the lid closes. Never let a batch depend on it |
 
 ## What travels by which channel
 
@@ -16,7 +16,7 @@ Authoritative rules, set 2026-10-15. The register of hardware and paths is `D:\D
 | OAuth credential (`.credentials.json`) | never synced — each machine signs in itself | — | — | — |
 | Session transcripts, caches, `file-history\` | never synced — machine-local, regenerable | — | — | — |
 | Writing guides and templates: `AI\Claude Master\`, `AI\ClaudeFiles\` | Dropbox | yes | excluded from selective sync | yes |
-| Compute framework: `AI\ScalableComputing\` | Dropbox | yes | yes | yes (reference only) |
+| Compute framework: `AI\ScalableComputing\` | Dropbox | yes | yes | yes |
 | Travel working copies: `AI\Travel\<project>\` | Dropbox | yes | excluded | yes |
 | Project content: `D:\0.AI\Research`, `Teaching`, `Work` | not synced at all; local to LaoZhao | yes | — | — |
 | Raw datasets: `D:\0. Research Data\` | never synced; referenced in place | yes | — | — |

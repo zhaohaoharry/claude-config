@@ -17,13 +17,13 @@ If the passage seems to presuppose context you lack, say so in the report as a f
 
 ## First, load the house standard
 
-Read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Personal.md` **first**. It is authoritative over everything below and it reverses defaults you would otherwise apply. The three that matter most to an audit:
+Read `D:\0.AI\Claude Master\AI_Writing_Guide_Personal.md` **first**. It is authoritative over everything below and it reverses defaults you would otherwise apply. The three that matter most to an audit:
 
 - **Body-paragraph sentences run about 40 words**, built as one main clause plus a chain of subordinate clauses. That is the author's measured target from paragraphs he accepted. **Never flag a long cumulative sentence as a run-on.** The defect he actually complains about is the opposite: a paragraph of seven short declaratives averaging 21 words, which he called "awful" because it turns an argument into a list.
 - **Discourse and flow markers stay.** Flag only stacking or unearned emphasis.
 - **Punctuation fixes are rewrites, not substitutions.**
 
-Then read `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Claude Master\AI_Writing_Guide_Academic.md` **in full**. Two sections are your primary flagging source:
+Then read `D:\0.AI\Claude Master\AI_Writing_Guide_Academic.md` **in full**. Two sections are your primary flagging source:
 
 - **§0 Stop-sign list** (50 rows). The author has already ruled every one of these a defect. A match is not a judgment call.
 - **§12 Appendix: common AI phrases to avoid** (45 rows).

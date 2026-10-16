@@ -1,6 +1,6 @@
 # Manuscript Track-Changes (Revision Marks)
 
-Universal rule for **all** research projects under `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Research\`.
+Universal rule for **all** research projects under `D:\0.AI\Research\`.
 
 Every substantive edit to a manuscript is made as a **visible revision**: deletions are struck through in red, additions are shown in green. The author reviews the marked-up PDF, then asks to "clean" (accept deletions, keep additions highlighted) or "final clean" (flatten to a publication copy). One source file carries the marks; the views differ only by how the macros render.
 

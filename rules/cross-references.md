@@ -1,6 +1,6 @@
 # Cross-References in Academic Manuscript Prose
 
-Universal rule for all research projects under `C:\Users\haozh\Documents\Dropbox_Chapman\0.AI\Research\`.
+Universal rule for all research projects under `D:\0.AI\Research\`.
 
 ## The Rule
 
