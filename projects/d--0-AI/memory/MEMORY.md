@@ -34,7 +34,7 @@
 - [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
 - [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
 - [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online
-- [AI_share sync folder](reference_ai_share_folder.md) — D:\Dropbox\AI\AI_share is phone-synced (Dropbox, since 2026-10-15; old Nutstore D:\AI_share stalled); copy PDF results there when asked to send them
+- [AI_share sync folder](reference_ai_share_folder.md) — send PDFs to Nutstore D:\AI_share first (syncing again 2026-10-16); fall back to D:\Dropbox\AI\AI_share
 - [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
 - [ETFP first stage: no sigma](feedback_etfp_first_stage_no_sigma.md) — share coefficient is a nuisance; judge by 1+c scaling and e quality, never implied sigma
 - [Scalable Computing 2026-10](scalable_computing_2026_10.md) — Ohyun's multi-PC framework at D:\Dropbox\AI\ScalableComputing; send compute tasks to the SC_task session on HMac/H2 (this kind of session only sets up); first real ETFP GMM job ran on HMac 2026-10-16
