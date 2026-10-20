@@ -43,4 +43,5 @@
 - [Machine names](machine_names.md) — LaoZhao (main, LAOZHAO), H2 (LAPTOP-BIS2QGG1), HMac (MacBook Air M3); hostnames unchanged, map when reporting
 - [Travel sync modes](travel_sync_modes.md) — build Travel\<project> on request per trip: presentation (LaTeX+results) vs working (plus program and current data vintage)
 - [Stata per machine](stata_per_machine.md) — only LaoZhao (MP 18) is usable; H2 has 13.1, no HDFE packages, institutional licence not in user's name; compute layer = Python
+- [Online Healthcare project](project_doctor_air_quality_location.md) — Haodf doctor-preference/SMM project, now D:\0.AI\Research\Online Healthcare (ex-Dropbox "Air Quality on Doctor Behavior"); Python pipeline; Dropbox copy pending deletion
 - [Sources, not memory](feedback_sources_not_memory.md) — every manuscript number/parameter from a retrieved source or dataset with table/page; memory only as search lead (all studies)
