@@ -1,1 +1,2 @@
 - [Report only what serves the argument](feedback_report_only_what_serves_argument.md) — drop correct but confusing side results from the main text
+- [Final rerun uses no-label-drop COVID rule](project_final_rerun_covid_rule.md) — HDF_COVID_RULE=none + Jun-Dec robustness; checklist in the plan
