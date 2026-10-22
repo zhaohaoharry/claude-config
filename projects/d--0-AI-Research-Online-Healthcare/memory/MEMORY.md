@@ -1,0 +1,1 @@
+- [Report only what serves the argument](feedback_report_only_what_serves_argument.md) — drop correct but confusing side results from the main text
