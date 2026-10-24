@@ -185,7 +185,10 @@ MANNERED_PROSE = (
     "choose and cannot control. The fix is to say what you mean. When a literal phrase is "
     "available, use it.\n"
     "Match the length of written documents to what the task needs: cover the substance, but do "
-    "not pad with filler sections, redundant summaries, or boilerplate."
+    "not pad with filler sections, redundant summaries, or boilerplate.\n"
+    "No defensive writing: do not answer objections the text never raised, state what the work "
+    "does not do, or justify choices in passing. Delete any sentence whose removal costs the "
+    "reader no fact, only an answer to an imagined critic."
 )
 
 

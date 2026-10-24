@@ -1,6 +1,6 @@
 ---
 name: bib-validate
-description: Verify each entry in a .bib file or reference list against CrossRef, OpenAlex, and Semantic Scholar, flagging hallucinated, chimeric, and incorrect citations. Use before submission, after drafting a bibliography with AI assistance, or when checking that every reference actually exists. Checks whether references EXIST and metadata is correct, not whether the paper characterizes them accurately (that is review-paper).
+description: Verify each entry in a .bib file or reference list against CrossRef, OpenAlex, and Semantic Scholar, flagging hallucinated, chimeric, and incorrect citations. Use before submission, after drafting a bibliography with AI assistance, or when checking that every reference actually exists. Checks whether references EXIST and metadata is correct, not whether the paper characterizes them accurately (that is cite-verify).
 argument-hint: "[path to .bib file or reference list]"
 allowed-tools: ["Read", "Grep", "Glob", "Write", "WebSearch", "WebFetch"]
 ---

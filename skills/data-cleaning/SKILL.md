@@ -1,6 +1,6 @@
 ---
 name: data-cleaning
-description: Build a reproducible, scripted data-preparation pipeline in Stata or R — import, merge, reshape, construct variables, handle missing data, deduplicate, encode/label, winsorize, and save tidy analysis-ready files with CSV snapshots. Use when turning raw data into an analysis dataset, NOT for estimation (use econometrics-playbook for that).
+description: Build a reproducible, scripted data-preparation pipeline in Stata, R or Python — import, merge, reshape, construct variables, handle missing data, deduplicate, encode/label, winsorize, and save tidy analysis-ready files with CSV snapshots, a sample-flow ledger, and coverage cards. Use when turning raw data into an analysis dataset, NOT for estimation (use econometrics-playbook for that).
 argument-hint: "[raw file or task, e.g. 'survey.csv' or 'merge waves into a panel']"
 allowed-tools: ["Read", "Grep", "Glob", "Write", "Bash"]
 ---
@@ -13,26 +13,27 @@ Build a reproducible data-PREP pipeline that turns raw inputs into a tidy, analy
 
 ## Reproducible-build mindset
 
-- Everything is scripted in a do-file (Stata) or `.R` script. **Never edit the data by hand**, never overwrite raw inputs.
+- Everything is scripted in a do-file (Stata), `.R` script or `.py` script. **Never edit the data by hand**, never overwrite raw inputs.
 - The script runs top-to-bottom from raw inputs to the saved analysis file with no manual steps in between.
 - Re-running the script on the same raw data reproduces the same analysis file, byte-equivalent where possible.
 - Default to writing and running the script in `program\sandbox\` unless the user explicitly requests a production run.
+- **Every row lost has a count and a reason, and every variable used has a coverage card.** This is `~/.claude/rules/data-integrity.md`, which governs this whole skill: read it before scaffolding. Agents take the simplest path through messy data and stay quiet about it, so the counts are written by the script itself, not reported from memory. Helpers: `tools/sample_flow.py` (`Ledger`, `coverage_card`, `sentinel_scan`) and `tools/sample_flow.do` (`sf_init`, `sf_mark`, `sf_step`, `sf_merge`, `sf_cover`). Copy them into the project's `program\` folder rather than pointing at the skill folder.
 
 ## Steps
 
 1. **Understand the data and target.** From `$ARGUMENTS`, identify: the raw source(s) and format; the unit of observation; the desired unit of the final dataset (cross-section, panel, etc.); key variables needed downstream. Ask the user only if these are not inferable.
 
-2. **Pick the language.** Stata if the project already uses Stata or the raw is `.dta`; R if the project uses R or the raw is mixed/large CSV. State which and why.
+2. **Pick the language.** Use the project's language: Stata if the project already uses Stata or the raw is `.dta`, Python if the project is Python (the climate-similarity project is Python only), R if the project uses R. State which and why.
 
 3. **Scaffold the script** with a header (project, author, date, input, output), environment setup, and clearly numbered sections (import → inspect → clean → construct → missing → dedup → label → validate → save). Define path globals/objects at the top; use relative or global-defined paths, never hard-coded absolute paths scattered in the body.
 
-4. **Import and inspect.** Load raw data read-only. Inspect structure and ranges (`describe`, `codebook, compact`, `summarize` in Stata; `str`, `summary`, `skimr::skim` in R). Export a CSV snapshot of the as-loaded data to `log\`.
+4. **Import and inspect.** Load raw data read-only. Inspect structure and ranges (`describe`, `codebook, compact`, `summarize` in Stata; `str`, `summary`, `skimr::skim` in R; `info`, `describe` in pandas). Export a CSV snapshot of the as-loaded data to `log\`. Start the sample-flow ledger here (`sf_init` / `Ledger(...).start`), and run the sentinel scan on every numeric variable: values such as 9, 99, 999, 999996-999999, -1, -9 at the edge of a distribution are candidate missing codes. Decode each from the codebook or questionnaire with the page cited, or list it as an open question; never guess what a code means.
 
-5. **Merge / append / reshape** as needed. Always diagnose merges (`tab _merge` BEFORE asserting in Stata; check join key cardinality and unmatched rows in R). Confirm the post-reshape unit of observation. Snapshot to `log\` after each structural step.
+5. **Merge / append / reshape** as needed. Always diagnose merges: state the cardinality (`m:1`, `1:1`); `tab _merge` before any `keep` in Stata and then `sf_merge`; `Ledger.merge(..., how=, validate=)` in Python, never the pandas default inner merge; `relationship =` plus an `anti_join` count in R. Confirm the post-reshape unit of observation. Snapshot to `log\` and write a ledger line after each structural step.
 
 6. **Construct variables.** Derive analysis variables with documented logic; comment WHY, not just what. Guard against Stata's missing-sorts-high trap (`& !missing(x)` on every `>`/`>=` condition).
 
-7. **Handle missing data.** Decode missing-value codes (`mvdecode` / explicit `NA`), create missing-indicator variables where informative, and document the missingness (counts and patterns). Do not silently drop — record what is dropped and why.
+7. **Handle missing data.** Decode missing-value codes (`mvdecode` / explicit `NA`), create missing-indicator variables where informative, and document the missingness (counts and patterns). Do not silently drop — every drop is bracketed by `sf_mark` / `sf_step` (Stata) or passed through `Ledger.step` (Python) with its reason. Never a bare `dropna()`, `na.omit()` or `drop if missing(...)`; the `data-guard` hook flags them.
 
 8. **Deduplicate.** Report duplicates before acting (`duplicates report`/`list`), resolve by an explicit rule, then verify the key is unique (`isid`/`unique` in Stata; `stopifnot(!any(duplicated(...)))` in R).
 
@@ -40,7 +41,7 @@ Build a reproducible data-PREP pipeline that turns raw inputs into a tidy, analy
 
 10. **Outliers / winsorize.** When called for, winsorize or trim at stated cuts (e.g. 1/99) into NEW variables, never destroying the raw values. Document the cut and the affected count.
 
-11. **Validate.** Assert expected ranges, types, and key uniqueness. Use the house-rule failure idiom (see Important), not `assert ..., msg()`.
+11. **Validate and write coverage cards.** Assert expected ranges, types, and key uniqueness. Use the house-rule failure idiom (see Important), not `assert ..., msg()`. Write a coverage card (`sf_cover` / `coverage_card`) for every analysis variable, by the panel's time dimension at least, to `log\`. A variable below 80% coverage of the intended sample, or constant, is named as such in the report; it is never described as "available" on the strength of its column name.
 
 12. **Save and snapshot.** `compress` (Stata), order variables logically, save the tidy analysis file to the clean-data location, and export a final CSV snapshot to `log\`. Write a short codebook of the final file.
 
@@ -90,7 +91,7 @@ export delimited "${snap}/snap_final.csv", replace
 log close
 ```
 
-After producing the script, report: language chosen, where it was written/run, the snapshot files created in `log\`, and any rows dropped or values winsorized (with counts).
+After producing the script, report: language chosen, where it was written/run, the snapshot files created in `log\`, the sample-flow ledger (raw N to final N, every step that dropped rows, with its reason), any variable flagged LOW_COVERAGE or CONSTANT in its coverage card, every sentinel code decoded or still open, and any values winsorized (with counts). If a step crossed a stop threshold in `~/.claude/rules/data-integrity.md`, report that first and wait for the user's decision on it.
 
 ## Important
 

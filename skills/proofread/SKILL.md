@@ -18,6 +18,8 @@ Run the proofreading protocol on the specified file or section. Produces a detai
 
 2. **Load the house standard.** Read `D:\Dropbox\AI\Claude Master\AI_Writing_Guide_Academic.md` in full. Do not work from a remembered summary of it — the guide is 615 lines and changes, and any short list inlined here will drift out of date. Sections §1 (voice and register), §2 (sentence-level patterns), §6 (citations), §9 (LaTeX headings and housekeeping), and §10 (structural rules) are the proofreading-relevant ones.
 
+2b. **Load standing feedback.** Read `quality_reports/proofread_standing_feedback.md` in the project if it exists and pass its entries to the agent as binding: terms the author confirmed are correct, issue types not to flag, classifications the author set. When the author rejects a finding with a general instruction ("this is correct", "stop flagging this", "always treat X as Y"), append it there with the date, so it survives into later runs. A rule that is about prose in every project belongs in the Personal writing guide instead; say so rather than writing it to the project file.
+
 3. **Launch the `proofreader` agent** on the content. Pass **only** the file path or extracted passage and the target journal — not the drafting conversation or your own account of what the text is trying to do. A reviewer starting cold outperforms one carrying the author's framing.
    The agent checks:
    - Grammar (agreement, articles, prepositions, tense)
@@ -25,6 +27,7 @@ Run the proofreading protocol on the specified file or section. Produces a detai
    - Notation consistency (symbol used for two things, subscript inconsistency)
    - Academic writing quality, against the guide as loaded in step 2
    - LaTeX issues (overfull hbox, undefined references)
+   - **Every error found triggers a document-wide search** for the same error and the same pattern on other words (one subject-verb disagreement means re-checking every subject-verb pair of that construction; one "Earning" for "Earnings" means checking every such noun), so corrections are complete and consistent.
    - **Not** AI-tell prose, register, or rhythm — that is `writing-deslop`'s lane, and duplicate flags on the same em-dash help nobody.
 
 4. **For a requested audit or substantial review, save the report** to:

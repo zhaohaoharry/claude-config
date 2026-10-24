@@ -26,7 +26,8 @@ The loop:
 2. **Run** it. Stata batch uses the `-e` flag, never `/e`.
 3. **Read the log or stderr.** Stata's `-e` exits silently on failure, so a run that "finished" is not evidence it worked. Open the log and look for `r(...)` return codes, `no observations`, `variable not found`, and convergence warnings.
 4. **Revise and re-run** until it executes clean or you can state precisely what is blocking it (missing package, missing variable, data not where expected).
-5. **Report the estimate**, not just the code — coefficient, standard error, N, and the diagnostics for the design.
+5. **Reconcile the estimation sample.** Compare the estimation N (`e(N)` in Stata, `nobs` in statsmodels/pyfixest, `nobs()` in R) with the intended sample in the project's sample-flow ledger (`log/sample_flow.csv`). Name what caused any gap: listwise deletion over a control (count non-missing for each regressor), `reghdfe` singletons, `ppmlhdfe` separated observations. A gap above 5% of the intended sample is reported before the estimate, with the variable responsible. Never describe an estimate as "the full sample" without this check. The rule is `~/.claude/rules/data-integrity.md`.
+6. **Report the estimate**, not just the code — coefficient, standard error, N, and the diagnostics for the design.
 
 If you cannot run it (no data, no Stata on PATH, package missing), say so explicitly and report `RAN: no` with the reason. Never present unexecuted code as though it produced a result, and never state a coefficient you did not see the software print.
 
@@ -168,10 +169,12 @@ LANGUAGE + PACKAGES: <Stata: ... | R: ... | Python: ...>
 PITFALLS AVOIDED: <list or "none flagged">
 RAN: <yes — path to script and log | no — reason>
 RESULT: <coefficient, SE, N, and the design's key diagnostic — or "not estimated">
-HANDOFF: aer-identification (defensibility) | aer-robustness (check battery) | econ-reviewer (critique)
+SAMPLE: <estimation N vs intended N from the ledger; rows lost and the variable or rule that dropped them>
+COVERAGE: <any regressor below 80% non-missing in the intended sample, or "none">
+HANDOFF: aer-identification (defensibility) | aer-robustness (check battery) | econ-reviewer (critique) | verify-code (a custom-coded estimator rather than a packaged command)
 ```
 
-`RAN` and `RESULT` are not optional. `RAN: no` is an acceptable answer; omitting the fields is not, because it lets unexecuted code read as a finding.
+`RAN`, `RESULT`, `SAMPLE` and `COVERAGE` are not optional. `RAN: no` is an acceptable answer; omitting the fields is not, because it lets unexecuted code read as a finding.
 
 ## Important
 

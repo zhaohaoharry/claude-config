@@ -23,6 +23,8 @@ Produce a thorough referee report for an economics manuscript — the kind a top
    - `literature/LiteratureIndex.json` — if it exists, use it to verify citation accuracy
    - Any appendix `.tex` files
 
+2b. **Desk review (when the user names a target journal or asks where the paper should go).** Write a short editor desk review: the paper in three sentences (question, design, main finding) and its fit with the target journal's bar, read from the style guide that `journal-fit` loads. Report a desk-reject verdict, then run the referee pass anyway unless the user says stop.
+
 3. **Launch the econ-reviewer agent** to evaluate across 6 dimensions:
    - Identification strategy
    - Econometric specification
@@ -36,6 +38,8 @@ Produce a thorough referee report for an economics manuscript — the kind a top
    This is measured, not stylistic. A review session with no production history beats same-session self-review (F1 28.6% vs 24.6%, p=0.008) and also beats a *context-aware* subagent review (23.8%, p=0.004), while reviewing twice in the same session does not help at all (p=0.11). The losing condition is a subagent that inherited the author's framing (Song 2026, arXiv 2603.12123).
 
 4. **Generate 3-5 simulated referee questions** — the tough questions a top referee would ask.
+
+4b. **Quality-check the report before showing it.** Dispatch a fresh subagent with only the report (not the paper, not the conversation) and ask: which major concerns are generic enough to fit any paper; is each FATAL / ADDRESSABLE / TASTE label justified by the text of the concern; is each "what would change my mind" concrete and achievable; does the report contradict itself. Rewrite each flagged concern against the manuscript until it names a specific section, table, equation or number, and note at the end of the report what the check changed.
 
 5. **Save the full report** to:
    `quality_reports/paper_review_YYYY-MM-DD.md`
@@ -56,9 +60,11 @@ Convene an independent referee panel: each referee reviews in **isolation** unde
    - **(b) External-validity & magnitude skeptic** — accepts internal validity for argument's sake and attacks generalizability, mechanism, and whether effect sizes are economically meaningful (not merely significant), and whether the headline number survives sensible benchmarking.
    - **(c) Theory / measurement & literature referee** — model-to-data mapping, measurement and variable construction, derivation correctness, citation fidelity, and missing related work a referee would flag.
    - Use only (a) and (b) for a short empirical note; add (c) for a full paper or any paper with a model.
-   - Each agent uses the standard econ-reviewer Report Format and rates its dimensions 1-5. Reports are independent and may conflict — do not harmonize them.
+   - Each agent uses the standard econ-reviewer Report Format (every major concern labelled FATAL / ADDRESSABLE / TASTE with a "what would change my mind") and rates its dimensions 1-5. Reports are independent and may conflict — do not harmonize them.
 
 3. **Editor synthesis pass** — read all referee reports and write a prioritized editor report. Do NOT average the referees; adjudicate. For each major issue, label it **CONSENSUS** (raised or implied by multiple referees) or **DISAGREEMENT** (referees split, or one flags what another dismisses), and take an editorial position on each disagreement. Where referees conflict, re-read the relevant section of the paper to decide who is right. Issue a **single** recommendation (Strong Accept / Accept / R&R / Reject) that is the editor's, not a vote tally.
+
+   Then run the same report quality check as default step 4b on the editor synthesis.
 
 4. **Save the panel report** to:
    `quality_reports/paper_review_panel_YYYY-MM-DD.md`
@@ -82,7 +88,7 @@ Convene an independent referee panel: each referee reviews in **isolation** unde
 [2-3 paragraph adjudication: what the panel agrees on, where it splits, the editor's call.]
 
 ### Prioritized Required Changes
-1. [Highest-priority change] — CONSENSUS / DISAGREEMENT
+1. [Highest-priority change] — CONSENSUS / DISAGREEMENT — FATAL / ADDRESSABLE / TASTE
 2. ...
 
 ### Consensus
@@ -120,4 +126,5 @@ Convene an independent referee panel: each referee reviews in **isolation** unde
 - **Editor adjudicates, not averages.** The recommendation is the editor's judgment; resolve every DISAGREEMENT with a stated position, re-reading the paper where needed.
 - **Never fabricate.** If a claim needs code or data to verify, say so — for every referee and the editor.
 - **Be specific.** Reference exact sections, equations, tables, and page numbers; check page/table numbers against the compiled PDF, not the source.
-- **Cross-reference:** to draft the point-by-point response to this review, use `/aer-rebuttal`; to assess whether the target journal is the right home, use `/journal-fit`.
+- **Classify every major concern** FATAL / ADDRESSABLE / TASTE, calibrated to the target journal: a concern that is FATAL at AER can be ADDRESSABLE at a field journal. The editor's prioritized list leads with FATAL items.
+- **Cross-reference:** to draft the point-by-point response to this review, use `/aer-rebuttal`; to assess whether the target journal is the right home, use `/journal-fit`; to check that each citation supports its claim, use `/cite-verify`.

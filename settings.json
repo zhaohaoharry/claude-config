@@ -145,6 +145,11 @@
             "type": "command",
             "command": "python \"$HOME/.claude/hooks/latex-autocheck.py\"",
             "timeout": 120
+          },
+          {
+            "type": "command",
+            "command": "python \"$HOME/.claude/hooks/data-guard.py\"",
+            "timeout": 10
           }
         ]
       }

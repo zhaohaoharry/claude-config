@@ -150,6 +150,7 @@ Anchor every Major concern to which bucket it lives in. Do not inflate a Minor i
 
 ### MC1: [Title]
 - **Dimension:** Identification / Econometrics / Theory / Citations / Consistency
+- **Classification:** FATAL (unresolved, it justifies rejection at the target journal) / ADDRESSABLE (serious, fixable with analysis or rewriting) / TASTE (framing preference, not essential)
 - **Issue:** [Specific description]
 - **Suggestion:** [How to address]
 - **What would change my mind:** [Specific test/evidence/revision]

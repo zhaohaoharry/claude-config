@@ -123,6 +123,16 @@ Run those for their jobs; cross-reference, don't re-do them here.
    Say which path you took in one line before the rewrite, so the author can
    disagree. When genuinely unsure, revise: it is the reversible choice.
 
+5a. **Draft away from the conversation when the session is long.** A redraft,
+   or a polish of more than a paragraph, after a session in which objections,
+   abandoned designs or the author's reasoning were discussed: dispatch a fresh
+   subagent with only the passage (or its role and the results), the paper
+   contract, the guide paths above, and the target journal, never the chat. A
+   writer with every objection from the conversation in context answers them in
+   the prose, which is the defensive writing of Personal guide 3.8 and the
+   explanations-to-Claude of 3.3. Review its draft against step 7 before using
+   it. A local edit of a sentence or two can stay in the main session.
+
 5b. **Generate and choose for the sentences that carry voice.** A handful of
    sentences do most of the work: the opening sentence of the introduction, the
    sentence that states the mechanism, the topic sentence of each results
@@ -147,7 +157,9 @@ Run those for their jobs; cross-reference, don't re-do them here.
    intuition precedes formalism; subjects act; sentence length varies and at
    least one short verdict lands after a long setup; every magnitude has a
    benchmark; one name per concept; zero em-dashes/colons/semicolons in prose;
-   the academic-guide stop-sign list still passes. Then one more: put the new
+   the academic-guide stop-sign list still passes; every sentence passes the
+   deletion test of Personal guide 3.8 (removing it would cost the reader a fact
+   about the economics, not only an answer to an unraised objection). Then one more: put the new
    paragraph next to the exemplars you read in step 3b and name the move each of
    your sentences is making. If a sentence is making no move, cut it.
 
