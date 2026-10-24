@@ -92,5 +92,11 @@
       "source": "anthropic-example",
       "updatedAt": "2026-09-14T19:41:02.015956Z"
     }
+  ],
+  "pendingClaims": [
+    "4300:134372872832907306/artifact-emulator",
+    "4300:134372872832907306/pptx",
+    "30456:134372872832849055/artifact-emulator",
+    "30456:134372872832849055/pptx"
   ]
 }
