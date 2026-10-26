@@ -200,6 +200,6 @@
     }
   },
   "switchModelsOnFlag": true,
-  "remoteControlAtStartup": true,
+  "remoteControlAtStartup": false,
   "agentPushNotifEnabled": true
 }
