@@ -47,3 +47,6 @@
 - [Sources, not memory](feedback_sources_not_memory.md) — every manuscript number/parameter from a retrieved source or dataset with table/page; memory only as search lead (all studies)
 - [Skills upgrade 2026-10](project_skills_upgrade_2026_10.md) — done 2026-10-24: verify-code (StatsClaw), model-derivation, cite-verify, data-integrity rule + data-guard hook, defensive-writing rule 3.8, review/proofread tweaks
 - [Python not Stata (climate project)](feedback_python_not_stata_climate.md) — climate-similarity project: Python/Julia only, no Stata unless necessary; ignore coauthors' Stata build
+- [Open PDFs in preview](feedback_open_pdf_in_preview.md) — after building any PDF, open it with code -r <path> automatically
+- [ETFP runs to HMac](feedback_etfp_runs_to_hmac.md) — ETFP runs: HMac SC_task first; if HMac not connected, run on LaoZhao without asking; else do not run
+- [No reruns of existing results](feedback_no_rerun_existing_results.md) — check which specs already have results; run only missing ones; validate on one block, never by full rerun
