@@ -3,3 +3,4 @@
 - [Plain register like HospitalChoice.tex](feedback_plain_register.md) — mid-length plain sentences; 40-word chains read as machine-written
 - [Manuscript edited without track changes](feedback_manuscript_no_tracking.md) — manuscript.tex written from scratch; skeleton kept separate
 - [Final rerun done with no-label-drop COVID rule](project_final_rerun_covid_rule.md) — defaults none + quality W; facility data and bootstrap still open
+- [No defensive writing](feedback_no_defensive_writing.md) — cut caveats and quirks that only answer an all-knowing critic
