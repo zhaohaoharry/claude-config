@@ -15,3 +15,5 @@ Before launching any ETFP computation (GMM estimations, specification or IV vari
 **How to apply:** list running processes first (PowerShell Get-CimInstance Win32_Process, check command lines). Package the run as a job under D:\Dropbox\AI\ScalableComputing\jobs (self-contained code + task extract, per [[scalable-computing-2026-10]]) and message HMac's SC_task session. Keep LaoZhao for setup, packaging and merging. HMac is opportunistic capacity (lid must stay open), so for a batch that must finish, say so and keep a fallback.
 
 **Fallback order (user, 2026-10-28):** HMac first; if HMac's SC_task session is not connected (absent or offline in ListAgents), run on LaoZhao without asking; only if neither can run, do not run. H2 is not in this order.
+
+**Split weighting (user, 2026-11-02):** "use hmac more because h2 seems being very slow." On a real ETFP GMM unit H2 ran about 6 units/h at 3 workers against HMac's 24-26 at 4 workers (etfp_local2/local3). When H2 is used at all, give it a small share (plan from measured real-run rates, not self-test benches), and move its unstarted units to HMac when HMac goes idle first.

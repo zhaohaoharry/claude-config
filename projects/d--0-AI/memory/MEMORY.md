@@ -48,5 +48,7 @@
 - [Skills upgrade 2026-10](project_skills_upgrade_2026_10.md) — done 2026-10-24: verify-code (StatsClaw), model-derivation, cite-verify, data-integrity rule + data-guard hook, defensive-writing rule 3.8, review/proofread tweaks
 - [Python not Stata (climate project)](feedback_python_not_stata_climate.md) — climate-similarity project: Python/Julia only, no Stata unless necessary; ignore coauthors' Stata build
 - [Open PDFs in preview](feedback_open_pdf_in_preview.md) — after building any PDF, open it with code -r <path> automatically
-- [ETFP runs to HMac](feedback_etfp_runs_to_hmac.md) — ETFP runs: HMac SC_task first; if HMac not connected, run on LaoZhao without asking; else do not run
+- [ETFP runs to HMac](feedback_etfp_runs_to_hmac.md) — ETFP runs: HMac SC_task first (H2 ~4x slower on real units, small share only); if HMac not connected, run on LaoZhao without asking
+- [ETFP trim order](feedback_etfp_trim_order.md) — lightest trim first, heavier only if it fails; lightest passing trim goes straight to full downstream
 - [No reruns of existing results](feedback_no_rerun_existing_results.md) — check which specs already have results; run only missing ones; validate on one block, never by full rerun
+- [Always show ES figures](feedback_always_show_es_figures.md) — every event-study result reported with its 2x2 ES figure vs main spec, not only post means/lead counts
