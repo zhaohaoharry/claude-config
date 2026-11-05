@@ -52,3 +52,4 @@
 - [ETFP trim order](feedback_etfp_trim_order.md) — lightest trim first, heavier only if it fails; lightest passing trim goes straight to full downstream
 - [No reruns of existing results](feedback_no_rerun_existing_results.md) — check which specs already have results; run only missing ones; validate on one block, never by full rerun
 - [Always show ES figures](feedback_always_show_es_figures.md) — every event-study result reported with its 2x2 ES figure vs main spec, not only post means/lead counts
+- [Long jobs tracked](feedback_long_jobs_tracked.md) — no `&` launches or MSYS ps checks; run_in_background + PowerShell CommandLine; ETFP downstreams via run_locked.sh
