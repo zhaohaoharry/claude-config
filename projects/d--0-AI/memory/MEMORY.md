@@ -53,3 +53,4 @@
 - [No reruns of existing results](feedback_no_rerun_existing_results.md) — check which specs already have results; run only missing ones; validate on one block, never by full rerun
 - [Always show ES figures](feedback_always_show_es_figures.md) — every event-study result reported with its 2x2 ES figure vs main spec, not only post means/lead counts
 - [Long jobs tracked](feedback_long_jobs_tracked.md) — no `&` launches or MSYS ps checks; run_in_background + PowerShell CommandLine; ETFP downstreams via run_locked.sh
+- [Auto-move to H2](feedback_etfp_auto_move_h2.md) — standing yes: move queued units to H2 whenever online and free if it speeds the run; max 2 concurrent ETFP GMM units there
