@@ -65,3 +65,4 @@
 - [ETFP corrected pool](feedback_etfp_corrected_pool.md) — every ETFP run uses trim mode sc, never std or sa, including restarts and bootstraps
 - [HMac worker cap for ETFP](hmac_worker_cap_etfp.md) — 16 GB M3 thrashes at 6 workers (~5 GB/unit); use 3, 2 if swap grows; H2 not slower on these units
 - [ES tests prepare RR](feedback_es_tests_prepare_rr.md) — every ES test saves vcov and reports Rambachan-Roth breakdowns beside the figure
+- [ETFP symmetric share rule](feedback_etfp_symmetric_share_rule.md) — labor-share cleaning must be symmetric ([a,1-a] or pct); tl02l/tl01l dropped
