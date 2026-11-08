@@ -54,3 +54,14 @@
 - [Always show ES figures](feedback_always_show_es_figures.md) — every event-study result reported with its 2x2 ES figure vs main spec, not only post means/lead counts
 - [Long jobs tracked](feedback_long_jobs_tracked.md) — no `&` launches or MSYS ps checks; run_in_background + PowerShell CommandLine; ETFP downstreams via run_locked.sh
 - [Auto-move to H2](feedback_etfp_auto_move_h2.md) — standing yes: move queued units to H2 whenever online and free if it speeds the run; max 2 concurrent ETFP GMM units there
+- [ETFP bootstrap order](feedback_etfp_bootstrap_order.md) — firm-year resampling everywhere; local first, report and save, then standard from the full-sample estimate only
+- [ETFP ladder drops everywhere](feedback_etfp_ladder_drops_everywhere.md) — rows dropped by F1-F3 leave all analysis; out-of-sample e only for lags of kept rows
+- [ETFP jde after fl05](feedback_etfp_jde_after_fl05.md) — ladder: jde only after all fl05 trims finish, only for sigma-passing cells
+- [Letter update format](feedback_letter_update_format.md) — on "letter update" report three lists by comment: done to check, can update now, waiting on runs
+- [Tables with fit results](feedback_show_fit_tables.md) — always show a table or figure beside text when reporting fit or comparisons
+- [Carbon Pricing outranks ETFP](feedback_cpp_priority_over_etfp.md) — on LaoZhao pause ETFP for Carbon Pricing runs; no memory gates, never idle waiting on ETFP
+- [ETFP re-test scope](feedback_etfp_retest_scope.md) — cleaning and transition rules fixed; test bounds, FE, IV set, trim symmetry on F0/F3 only, few trims and thresholds
+- [ETFP round cap report](feedback_etfp_round_cap_report.md) — at the 30-round cap, report the final 5 rounds' adjustments before judging convergence
+- [ETFP corrected pool](feedback_etfp_corrected_pool.md) — every ETFP run uses trim mode sc, never std or sa, including restarts and bootstraps
+- [HMac worker cap for ETFP](hmac_worker_cap_etfp.md) — 16 GB M3 thrashes at 6 workers (~5 GB/unit); use 3, 2 if swap grows; H2 not slower on these units
+- [ES tests prepare RR](feedback_es_tests_prepare_rr.md) — every ES test saves vcov and reports Rambachan-Roth breakdowns beside the figure
