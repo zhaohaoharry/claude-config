@@ -90,7 +90,7 @@
       "D:\\Dropbox\\AI\\ClaudeFiles"
     ]
   },
-  "model": "opus",
+  "model": "fable",
   "hooks": {
     "PreCompact": [
       {
