@@ -19,3 +19,11 @@ For the Online Healthcare manuscript, the user judged prose built from 40-word c
 - Keep the surface rules: no colons, semicolons or em-dashes.
 
 Related: [[feedback-manuscript-no-tracking]], [[feedback_report_only_what_serves_argument]].
+
+**Refinement, 2026-11-10 (user, on the Section 5 rewrite):** plain sentences are not enough. A draft of 15 to 20 word declaratives, each recording one fact, was judged "not economics paper style ... like a research note just record things". The version the user called "the right direction" had these features, and the user asked for the whole draft in that style:
+- each paragraph opens with its purpose or claim, reports the estimate, then states what it implies ("Since online patients choose among the same hospitals without travelling, we attribute this difference to the cost of the trip");
+- sentences linked by economic reasoning (since, whereas, so that, which), mostly 20 to 30 words;
+- method statements in the usual register: "A challenge in including the home pairs is ... We calibrate ... For offline visits, we use ... For online consultations, ..." (the user's own template), not "A home pair needs a distance, and we use ...";
+- robustness framed as named concerns ("The first concern is that ...");
+- no subsection title such as "What remains"; a bridge to the next section belongs in that section's opening paragraph.
+The user also wants the logic agreed in chat before a section is redrafted when the argument is unclear ("clarify the logic to me first and then write").

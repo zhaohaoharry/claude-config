@@ -66,3 +66,5 @@
 - [HMac worker cap for ETFP](hmac_worker_cap_etfp.md) — 16 GB M3 thrashes at 6 workers (~5 GB/unit); use 3, 2 if swap grows; H2 not slower on these units
 - [ES tests prepare RR](feedback_es_tests_prepare_rr.md) — every ES test saves vcov and reports Rambachan-Roth breakdowns beside the figure
 - [ETFP symmetric share rule](feedback_etfp_symmetric_share_rule.md) — labor-share cleaning must be symmetric ([a,1-a] or pct); tl02l/tl01l dropped
+- [Answer in chat](feedback_answer_in_chat.md) — proposed text and answers go in the reply; a PDF or file only on request
+- [No own coding fixes in manuscripts](feedback_no_own_coding_fixes_in_manuscript.md) — never narrate fixes to our own code/mapping; only source-data corrections; build right in one pass, no wrong-then-patch scripts
