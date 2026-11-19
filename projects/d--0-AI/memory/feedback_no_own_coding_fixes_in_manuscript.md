@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: e0f69bb2-3049-48e5-8b02-442ca6dd3b02
-  modified: 2026-11-11T08:14:01.782Z
+  modified: 2026-11-18T01:57:25.832Z
 ---
 
 A manuscript never mentions correcting our own coding or mapping errors (said by the user 2026-11-11, Carbon Pricing
@@ -17,6 +17,10 @@ Also no before-and-after comparisons for source-data corrections (same day): the
 source, and never reports the uncorrected numbers or estimates, nor argues that results are unchanged. The user: a
 correction is justified because it is the right step, not because the result does not change. Do not propose or run
 re-estimations on the uncorrected data for the paper.
+
+This covers response letters too (2026-11-18, after I added a letter bullet explaining the counterfactual coverage
+fix): a change we make ourselves in the code is not explained anywhere, neither in the paper nor in the letter, unless
+someone finds the issue and asks; then we answer that inquiry only. "We don't answer to ourselves."
 
 **Why:** the code is supposed to be right; a paper that narrates its own bug fixes looks careless and the reader learns
 nothing from it.

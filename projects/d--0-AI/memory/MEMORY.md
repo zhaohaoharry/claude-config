@@ -31,8 +31,9 @@
 - [Write for human readers](feedback_write_for_human_readers.md) — manuscript prose in full paper sentences; no note-like compressed/pointer writing that assumes the reader has the project in mind (global)
 - [No super long paragraphs](feedback_no_super_long_paragraphs.md) — split manuscript paragraphs by topic; a half-page block is acceptable only when one argument cannot be split (global)
 - [No footprints of abandoned designs](feedback_no_footprints_of_abandoned_designs.md) — after dropping a design/result, delete every trace (no "rather than X" contrasts with results the paper no longer presents or models)
+- [JDE framing by idea, not word](feedback_jde_framing_not_word.md) — stress the unregulated side; "developing" only where it is the result, never as a keyword or repeated label
 - [Journal angle, not a new claim](feedback_journal_angle_not_new_claim.md) — retargeting a paper changes which element is salient, never what the paper says it does
-- [Intro in six paragraphs](feedback_intro_six_paragraphs.md) — question+gap+RQ, what we do, findings in folds, contribution, implication, roadmap; no long AER-formula intros
+- [Intro structure from related papers](feedback_intro_six_paragraphs.md) — six-paragraph rule relaxed 2026-11-16: map closely related papers' introductions first; motivation and clear results before journal framing
 - [Zotero first](feedback_zotero_first.md) — search Zotero (copy sqlite+wal, query by author) before downloading papers online
 - [AI_share sync folder](reference_ai_share_folder.md) — send PDFs to Nutstore D:\AI_share first (syncing again 2026-10-16); fall back to D:\Dropbox\AI\AI_share
 - [Downstream consistent with estimator](feedback_downstream_consistent_with_estimator.md) — audit inherited downstream code for re-estimations (VAR, FE, IVs, sample) and match the current estimator before reporting
@@ -67,4 +68,9 @@
 - [ES tests prepare RR](feedback_es_tests_prepare_rr.md) — every ES test saves vcov and reports Rambachan-Roth breakdowns beside the figure
 - [ETFP symmetric share rule](feedback_etfp_symmetric_share_rule.md) — labor-share cleaning must be symmetric ([a,1-a] or pct); tl02l/tl01l dropped
 - [Answer in chat](feedback_answer_in_chat.md) — proposed text and answers go in the reply; a PDF or file only on request
-- [No own coding fixes in manuscripts](feedback_no_own_coding_fixes_in_manuscript.md) — never narrate fixes to our own code/mapping; only source-data corrections; build right in one pass, no wrong-then-patch scripts
+- [No own coding fixes in manuscripts](feedback_no_own_coding_fixes_in_manuscript.md) — never narrate fixes to our own code/mapping, in manuscripts or letters, unless someone asks; only source-data corrections; build right in one pass, no wrong-then-patch scripts
+- [CPP counterfactual generator vintage](cpp_cf_generator_vintage.md) — make_cf_v2 and siblings need the pc main env plus CPP_CF_COV=2017 (since 2026-11-18); bare run silently rewrites Section 7 from an old run
+- [No negation tails](feedback_no_negation_tails.md) — manuscript prose states what is done and stops; never append "and it is not X"
+- [CPP: test on 1,000 products first](feedback_cpp_test_on_1000_first.md) — any estimation change is tested on the 1,000-product sample before the all-products run; the paper reports all-products only
+- [CPP guarded build](feedback_cpp_guarded_build.md) — rebuild only with program/python/build_manuscript_v3.sh; it stops on broken sentences or shifted numbers in the tracked copy
+- [Keep source data unless clear fix](feedback_keep_source_data_unless_clear_fix.md) — source records stay as reported unless documented wrong AND exactly fixable; no bounding runs for unfixable flags

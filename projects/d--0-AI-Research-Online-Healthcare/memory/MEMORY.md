@@ -1,6 +1,7 @@
 - [Report only what serves the argument](feedback_report_only_what_serves_argument.md) — drop correct but confusing side results from the main text
 - [Intro P1: debate then research question](feedback_intro_p1_question.md) — question in paragraph 1; outline before drafting
 - [Plain register like HospitalChoice.tex](feedback_plain_register.md) — mid-length plain sentences; 40-word chains read as machine-written
+- [Intro reference style](feedback_intro_reference_style.md) — user's own 2026-11-16 intro rewrite: principle → trade-off → question, China in P2; confident register
 - [Manuscript edited without track changes](feedback_manuscript_no_tracking.md) — manuscript.tex written from scratch; skeleton kept separate
 - [Final rerun done with no-label-drop COVID rule](project_final_rerun_covid_rule.md) — defaults none + quality W; facility data and bootstrap still open
 - [No defensive writing](feedback_no_defensive_writing.md) — cut caveats and quirks that only answer an all-knowing critic
