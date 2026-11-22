@@ -7,4 +7,4 @@
 - [No defensive writing](feedback_no_defensive_writing.md) — cut caveats and quirks that only answer an all-knowing critic
 - [No unreported numbers in text](feedback_no_unreported_numbers.md) — every cited number sits in a table; robustness gets its own paragraph after the result
 - [Short paragraphs by key meaning](feedback_short_paragraphs.md) — split long paragraphs at topic boundaries; one \paragraph head each
-- [Draft PDF to AI_share for the phone](project_travel_sync.md) — run sync_travel.py after every compile; PDF only, not a travel copy
+- [Draft edit workflow](project_travel_sync.md) — user pastes sentences + comments in one prompt, or points to an annotated PDF (read_pdf_notes.py); sync_travel.py to AI_share/Working Drafts after compile
