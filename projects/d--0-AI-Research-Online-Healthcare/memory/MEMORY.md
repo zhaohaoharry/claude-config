@@ -8,3 +8,6 @@
 - [No unreported numbers in text](feedback_no_unreported_numbers.md) — every cited number sits in a table; robustness gets its own paragraph after the result
 - [Short paragraphs by key meaning](feedback_short_paragraphs.md) — split long paragraphs at topic boundaries; one \paragraph head each
 - [Draft edit workflow](project_travel_sync.md) — user pastes sentences + comments in one prompt, or points to an annotated PDF (read_pdf_notes.py); sync_travel.py to AI_share/Working Drafts after compile
+- [Platform name hidden](project_platform_anonymized.md) — never name Haodf in the paper; "a large online consultation platform in China" / "the platform"
+- [No migrants in this paper](project_scope_no_migrants.md) — offline = official cross-border visits; migrant/return-home care is a separate future project
+- [Province / prefecture / county, not city](feedback_admin_levels.md) — name admin levels explicitly; user won't read reports, answer in chat
