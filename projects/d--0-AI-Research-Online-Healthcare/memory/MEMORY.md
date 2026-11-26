@@ -11,3 +11,4 @@
 - [Platform name hidden](project_platform_anonymized.md) — never name Haodf in the paper; "a large online consultation platform in China" / "the platform"
 - [No migrants in this paper](project_scope_no_migrants.md) — offline = official cross-border visits; migrant/return-home care is a separate future project
 - [Province / prefecture / county, not city](feedback_admin_levels.md) — name admin levels explicitly; user won't read reports, answer in chat
+- [Open PDFs in VS Code](feedback_open_pdf_in_vscode.md) — show answer PDFs in the VS Code preview, not an external viewer
