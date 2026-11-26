@@ -123,7 +123,7 @@ Follow `~/.claude/rules/math-compilation.md`. Save each compiled answer separate
 - NEVER add papers to a `.bib` file unless the user explicitly says to cite them.
 - A PDF in `literature\` does not mean it should be cited.
 - When characterizing a cited paper: verify what it actually says before writing the description.
-- **Never describe a paper, official document or policy from memory (settled rule, 2026-11-26).** The source must be in the project's `literature\` folder (or saved in the project) and read in full before any argument about it is written or proposed. If it is missing, say so and obtain it first.
+- **Never describe a paper, official document or policy from memory (settled rule, 2026-11-26).** The source must be in the project's `literature\` folder (or saved in the project) and read in full before any argument about it is written or proposed. If it is missing, search for and download it yourself first (Google Scholar, publisher, NBER/SSRN, author sites, official sites; legal copies only); ask the user only for what cannot be obtained, listed with full authors, year, title and journal.
 
 ### Prose anti-pattern: mannered writing (all models, all projects)
 
